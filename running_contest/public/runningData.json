@@ -1,0 +1,1575 @@
+{
+  "user": [
+    {
+      "id": 6,
+      "name": "Kaknukk",
+      "username": "Kaknukk@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/11ce9f"
+    },
+    {
+      "id": 5,
+      "name": "Botghak",
+      "username": "Botghak@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/8408c7"
+    },
+    {
+      "id": 10,
+      "name": "Urfzat",
+      "username": "Urfzat@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/2e2e0d"
+    },
+    {
+      "id": 3,
+      "name": "Lagbalg",
+      "username": "Lagbalg@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/3be6ba"
+    },
+    {
+      "id": 12,
+      "name": "Mubgad",
+      "username": "Mubgad@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/f7a081"
+    },
+    {
+      "id": 7,
+      "name": "Yaggzit",
+      "username": "Yaggzit@email.com",
+      "team": "Freiburg",
+      "avatar_url": "https://placeskull.com/100/100/5b3430"
+    },
+    {
+      "id": 16,
+      "name": "Mubglok",
+      "username": "Mubglok@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/c8d657"
+    },
+    {
+      "id": 11,
+      "name": "Snatvark",
+      "username": "Snatvark@email.com",
+      "team": "Hamburg",
+      "avatar_url": "https://placeskull.com/100/100/e1cf2a"
+    },
+    {
+      "id": 4,
+      "name": "Laggliz",
+      "username": "Laggliz@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/d7cf47"
+    },
+    {
+      "id": 8,
+      "name": "Shukgak",
+      "username": "Shukgak@email.com",
+      "team": "Freiburg",
+      "avatar_url": "https://placeskull.com/100/100/b55f2f"
+    },
+    {
+      "id": 19,
+      "name": "Gagar",
+      "username": "Gagar@email.com",
+      "team": "Berlin",
+      "avatar_url": "https://placeskull.com/100/100/74da09"
+    },
+    {
+      "id": 20,
+      "name": "Yadlikk",
+      "username": "Yadlikk@email.com",
+      "team": "Freiburg",
+      "avatar_url": "https://placeskull.com/100/100/331d56"
+    },
+    {
+      "id": 9,
+      "name": "Khadrat",
+      "username": "Khadrat@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/3c3f17"
+    },
+    {
+      "id": 21,
+      "name": "Bligmaz",
+      "username": "Bligmaz@email.com",
+      "team": "Freiburg",
+      "avatar_url": "https://placeskull.com/100/100/378521"
+    },
+    {
+      "id": 22,
+      "name": "Flugnag",
+      "username": "Flugnag@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/71ed69"
+    },
+    {
+      "id": 23,
+      "name": "Ghagga",
+      "username": "Ghagga@email.com",
+      "team": "Bonn",
+      "avatar_url": "https://placeskull.com/100/100/d3a5c6"
+    },
+    {
+      "id": 24,
+      "name": "Achburk",
+      "username": "Achburk@email.com",
+      "team": "Berlin",
+      "avatar_url": "https://placeskull.com/100/100/1284d4"
+    }
+  ],
+
+  "uploads": [
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-01",
+      "distance": 1.7,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-01",
+      "distance": 19.03,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-07-01",
+      "distance": 2.3,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-02",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-01",
+      "distance": 1,
+      "filename": null
+    },
+    {
+      "user_id": 12,
+      "team": "Bonn",
+      "date": "2021-07-02",
+      "distance": 1,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-02",
+      "distance": 4.81,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-03",
+      "distance": 18.4,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-03",
+      "distance": 15.95,
+      "filename": null
+    },
+    {
+      "user_id": 16,
+      "team": "Bonn",
+      "date": "2021-07-03",
+      "distance": 5.43,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-02",
+      "distance": 1.82,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-03",
+      "distance": 21.5,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-04",
+      "distance": 1.14,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-02",
+      "distance": 3.39,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-03",
+      "distance": 4.3,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-04",
+      "distance": 5.2,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-05",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 4,
+      "team": "Bonn",
+      "date": "2021-07-03",
+      "distance": 8,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-07-04",
+      "distance": 3.4,
+      "filename": null
+    },
+    {
+      "user_id": 16,
+      "team": "Bonn",
+      "date": "2021-07-05",
+      "distance": 2.14,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-04",
+      "distance": 2.6,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-03",
+      "distance": 2.98,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-03",
+      "distance": 4.04,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-04",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-07-03",
+      "distance": 4.4,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-05",
+      "distance": 7.6,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-04",
+      "distance": 12.5,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-05",
+      "distance": 5.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-04",
+      "distance": 7.99,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-05",
+      "distance": 3.25,
+      "filename": null
+    },
+    {
+      "user_id": 16,
+      "team": "Bonn",
+      "date": "2021-07-06",
+      "distance": 2.52,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-06",
+      "distance": 7.38,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-07-06",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-06",
+      "distance": 3.48,
+      "filename": null
+    },
+    {
+      "user_id": 16,
+      "team": "Bonn",
+      "date": "2021-07-07",
+      "distance": 3.01,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-07",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-06",
+      "distance": 3.9,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-06",
+      "distance": 6.78,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-07",
+      "distance": 9.91,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-07",
+      "distance": 3.1,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-07",
+      "distance": 12.16,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-06",
+      "distance": 19.14,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-07",
+      "distance": 10.1,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-07-08",
+      "distance": 5.6,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-08",
+      "distance": 4.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-09",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-09",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-11",
+      "distance": 9.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-11",
+      "distance": 22,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-11",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-07-11",
+      "distance": 13.9,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-11",
+      "distance": 10.6,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-11",
+      "distance": 17.4,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-12",
+      "distance": 3.7,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-10",
+      "distance": 7.8,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-10",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-12",
+      "distance": 9.4,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-13",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-12",
+      "distance": 10.2,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-11",
+      "distance": 6,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-11",
+      "distance": 4.03,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-12",
+      "distance": 3.82,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-13",
+      "distance": 3.42,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-13",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-13",
+      "distance": 10.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-14",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-14",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 4,
+      "team": "Bonn",
+      "date": "2021-07-13",
+      "distance": 3.6,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-15",
+      "distance": 7,
+      "filename": null
+    },
+    {
+      "user_id": 22,
+      "team": "Bonn",
+      "date": "2021-07-15",
+      "distance": 3,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-14",
+      "distance": 5.56,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-16",
+      "distance": 6.23,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-16",
+      "distance": 6.22,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-16",
+      "distance": 3.1,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-17",
+      "distance": 20.3,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-17",
+      "distance": 7.7,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-17",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-18",
+      "distance": 13.1,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-17",
+      "distance": 9.88,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-18",
+      "distance": 15.6,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-19",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-18",
+      "distance": 6.2,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-17",
+      "distance": 4.2,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-18",
+      "distance": 14.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-19",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-19",
+      "distance": 10.77,
+      "filename": null
+    },
+    {
+      "user_id": 23,
+      "team": "Bonn",
+      "date": "2021-07-19",
+      "distance": 7,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-20",
+      "distance": 0,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-20",
+      "distance": 15.5,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-19",
+      "distance": 12,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-18",
+      "distance": 15.5,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-19",
+      "distance": 6.09,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-20",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-07-19",
+      "distance": 3.68,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-20",
+      "distance": 10.3,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-20",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-21",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-21",
+      "distance": 4.1,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-21",
+      "distance": 10.1,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-22",
+      "distance": 6.71,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-23",
+      "distance": 0,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-22",
+      "distance": 8,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-23",
+      "distance": 11,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-24",
+      "distance": 8,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-23",
+      "distance": 15.04,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-24",
+      "distance": 11.04,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-24",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-25",
+      "distance": 5,
+      "filename": null
+    },
+    {
+      "user_id": 22,
+      "team": "Bonn",
+      "date": "2021-07-25",
+      "distance": 4,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-24",
+      "distance": 7.1,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-25",
+      "distance": 15.3,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-26",
+      "distance": 11.1,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-07-25",
+      "distance": 8,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-25",
+      "distance": 17.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-27",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-26",
+      "distance": 25.8,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-07-25",
+      "distance": 6.05,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-26",
+      "distance": 6.5,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-25",
+      "distance": 5.8,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-26",
+      "distance": 7.26,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-27",
+      "distance": 5.26,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-07-27",
+      "distance": 3,
+      "filename": null
+    },
+    {
+      "user_id": 3,
+      "team": "Bonn",
+      "date": "2021-07-27",
+      "distance": 4.9,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-07-27",
+      "distance": 5.35,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-28",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-27",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-29",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-28",
+      "distance": 12.6,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-07-28",
+      "distance": 19.01,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-07-28",
+      "distance": 10.18,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-29",
+      "distance": 5.7,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-07-29",
+      "distance": 11.25,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-28",
+      "distance": 4,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-07-29",
+      "distance": 10.2,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-07-30",
+      "distance": 7.8,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-07-31",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-01",
+      "distance": 3.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-01",
+      "distance": 17.2,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-07-31",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-01",
+      "distance": 10.2,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-01",
+      "distance": 17.88,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-02",
+      "distance": 12.3,
+      "filename": null
+    },
+    {
+      "user_id": 10,
+      "team": "Bonn",
+      "date": "2021-08-02",
+      "distance": 2.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-03",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-04",
+      "distance": 9.8,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-05",
+      "distance": 7.3,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-05",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-05",
+      "distance": 10.1,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-06",
+      "distance": 11.6,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-06",
+      "distance": 2.9,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-07",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-08",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-08",
+      "distance": 14.5,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-07",
+      "distance": 9,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-08",
+      "distance": 15.8,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-08-08",
+      "distance": 4.47,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-08-09",
+      "distance": 3.5,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-08",
+      "distance": 18.4,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-10",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-09",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-10",
+      "distance": 4,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-11",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-11",
+      "distance": 13.5,
+      "filename": null
+    },
+    {
+      "user_id": 23,
+      "team": "Bonn",
+      "date": "2021-08-10",
+      "distance": 7,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-08-12",
+      "distance": 4.2,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-12",
+      "distance": 11.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-13",
+      "distance": 11.95,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-14",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-15",
+      "distance": 10.1,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-14",
+      "distance": 10.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-15",
+      "distance": 25.8,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-08-14",
+      "distance": 3.6,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-08-15",
+      "distance": 8.61,
+      "filename": null
+    },
+    {
+      "user_id": 22,
+      "team": "Bonn",
+      "date": "2021-08-16",
+      "distance": 3,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-14",
+      "distance": 13.07,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-15",
+      "distance": 12.92,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-16",
+      "distance": 6.5,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-16",
+      "distance": 3.2,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-15",
+      "distance": 19,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-17",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-15",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-08-15",
+      "distance": 5.4,
+      "filename": null
+    },
+    {
+      "user_id": 24,
+      "team": "Berlin",
+      "date": "2021-08-15",
+      "distance": 20,
+      "filename": null
+    },
+    {
+      "user_id": 24,
+      "team": "Berlin",
+      "date": "2021-08-16",
+      "distance": 20,
+      "filename": null
+    },
+    {
+      "user_id": 24,
+      "team": "Berlin",
+      "date": "2021-08-17",
+      "distance": 20,
+      "filename": null
+    },
+    {
+      "user_id": 23,
+      "team": "Bonn",
+      "date": "2021-08-16",
+      "distance": 7,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-17",
+      "distance": 13.6,
+      "filename": null
+    },
+    {
+      "user_id": 9,
+      "team": "Bonn",
+      "date": "2021-08-17",
+      "distance": 7.22,
+      "filename": null
+    },
+    {
+      "user_id": 11,
+      "team": "Hamburg",
+      "date": "2021-08-17",
+      "distance": 3,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-18",
+      "distance": 11,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-18",
+      "distance": 8.4,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-19",
+      "distance": 10.8,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-19",
+      "distance": 14.2,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-20",
+      "distance": 15.9,
+      "filename": null
+    },
+    {
+      "user_id": 8,
+      "team": "Freiburg",
+      "date": "2021-08-19",
+      "distance": 5.78,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-19",
+      "distance": 10.25,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-20",
+      "distance": 16.4,
+      "filename": null
+    },
+    {
+      "user_id": 21,
+      "team": "Freiburg",
+      "date": "2021-08-21",
+      "distance": 7.5,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-20",
+      "distance": 7.71,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-21",
+      "distance": 15.86,
+      "filename": null
+    },
+    {
+      "user_id": 20,
+      "team": "Freiburg",
+      "date": "2021-08-22",
+      "distance": 11.5,
+      "filename": null
+    },
+    {
+      "user_id": 22,
+      "team": "Bonn",
+      "date": "2021-08-23",
+      "distance": 3,
+      "filename": null
+    },
+    {
+      "user_id": 7,
+      "team": "Freiburg",
+      "date": "2021-08-21",
+      "distance": 14.8,
+      "filename": null
+    },
+    {
+      "user_id": 19,
+      "team": "Berlin",
+      "date": "2021-08-21",
+      "distance": 5.9,
+      "filename": null
+    },
+    {
+      "user_id": 6,
+      "team": "Bonn",
+      "date": "2021-08-21",
+      "distance": 17.5,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-22",
+      "distance": 11.4,
+      "filename": null
+    },
+    {
+      "user_id": 5,
+      "team": "Bonn",
+      "date": "2021-08-23",
+      "distance": 0,
+      "filename": null
+    }
+  ]
+}
