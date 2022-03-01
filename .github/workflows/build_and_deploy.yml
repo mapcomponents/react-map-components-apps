@@ -17,7 +17,7 @@ jobs:
           yarn
           yarn build
           cd ..
-          cp running_contest/build docs-build/running_contest
+          cp -r running_contest/build docs-build/running_contest
       - name: copy catalogue metadata
         run: |
           cp catalogue_meta.json docs-build/catalogue_meta.json
