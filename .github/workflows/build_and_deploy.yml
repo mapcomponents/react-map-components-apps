@@ -13,6 +13,7 @@ jobs:
           persist-credentials: false
       - name: Install and build running contest🔧
         run: | # Install packages and build the Storybook files
+          mkdir docs-build || true
           cd running_contest
           yarn
           yarn build
