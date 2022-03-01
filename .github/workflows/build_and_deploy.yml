@@ -21,7 +21,7 @@ jobs:
           cp -r running_contest/build docs-build/running_contest
       - name: copy catalogue metadata
         run: |
-          cp catalogue_meta.json docs-build/catalogue_meta.json
+          cp mc_meta.json docs-build/mc_meta.json
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
