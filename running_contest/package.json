@@ -1,6 +1,7 @@
 {
   "name": "wg_running_contest",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.17.5",
