@@ -1,4 +1,4 @@
-name: Build and deploy storybook
+name: Build and deploy
 on:
   push:
     branches:
@@ -11,18 +11,21 @@ jobs:
         uses: actions/checkout@v2.3.1
         with:
           persist-credentials: false
-      - name: Install and build 🔧
+      - name: Install and build running contest🔧
         run: | # Install packages and build the Storybook files
+          cd running_contest
           yarn
-          yarn build-catalogue-meta
-          yarn build-catalogue-markdown-docs
-          yarn build-storybook
-          npx sb extract ./docs ./docs/stories.json
+          yarn build
+          cd ..
+          cp running_contest/build docs-build/running_contest
+      - name: copy catalogue metadata
+        run: |
+          cp catalogue_meta.json docs-build/catalogue_meta.json
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: docs-build # The folder that the build-storybook script generates files.
+          BRANCH: main # branch the action should deploy to.
+          FOLDER: docs-build # folder containing the build
           CLEAN: true # Automatically remove deleted files from the deploy branch
           TARGET_FOLDER: docs # The folder that we serve our Storybook files from
