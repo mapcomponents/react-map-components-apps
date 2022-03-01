@@ -1,0 +1,14 @@
+{
+  "AppRunningContest": {
+    "name": "AppRunningContest",
+    "title": "Running contest dashboard",
+    "description": "",
+    "i18n": {
+      "de": { "title": "Laufwettbewerb Dashboard", "description": "" }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "components": []
+  }
+}
