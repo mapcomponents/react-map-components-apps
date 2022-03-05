@@ -24,7 +24,7 @@ function Header() {
     <Grid container>
       <Grid xs={6} item>
         <img
-          src={"/assets/wheregroup-logo-icon.svg"}
+          src={"assets/wheregroup-logo-icon.svg"}
           style={{
             maxWidth: "38px",
             float: "left",
