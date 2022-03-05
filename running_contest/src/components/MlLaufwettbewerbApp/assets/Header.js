@@ -32,7 +32,7 @@ function Header() {
           }}
           alt=""
         />
-        <h1 style={{ fontWeight: 'normal',margin: 0, padding: 0, fontSize: "1.8em", lineHeight: "1.8em", color: theme.palette.text.primary }}>Lauf-Contest</h1>
+        <h1 style={{ fontWeight: 'normal',margin: 0, padding: 0, fontSize: "1.8em", lineHeight: "1.8em", color: theme.palette.text.primary }}>running contest</h1>
       </Grid>
       <Grid xs={6} item style={{ display: "flex", alignItems:'center', justifyContent: "flex-end" }}>
         <FormControlLabel
@@ -49,7 +49,8 @@ function Header() {
           }
           label="Dark Mode"
         />
-        {appContext.loggedIn || (
+        {/**
+          appContext.loggedIn || (
             <Button
               variant="contained"
               color="secondary"
@@ -60,7 +61,8 @@ function Header() {
             >
               Registrieren
             </Button>
-        )}
+            )
+            */}
         {appContext.user && appContext.loggedIn && (
           <>
             {/*

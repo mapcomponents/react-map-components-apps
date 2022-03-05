@@ -10,6 +10,7 @@ import route from "./route.json";
 //const routeTotalKm = Math.round(turf.length(route)*10)/10;
 const routeTotalKm = 1751.3;
 const debug = false;
+const useMercureServer = false;
 
 const backendUrl = "";
 //const backendUrl = 'http://localhost:6060';
@@ -30,7 +31,7 @@ const AppContextProvider = ({ children }) => {
   const [rawProgressData, setRawProgressData] = useState([]);
   const [routeProgressPosition, setRouteProgressPosition] = useState(false);
   const [users, setUsers] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [goalMarkerPosition, setGoalMarkerPosition] = useState(false);
   const meanTeamProgress = useMemo(() => {
     let displayDateDateObj = new Date(displayDate);
@@ -70,6 +71,7 @@ const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (rawProgressData.length) {
+      // process raw progress data
       let byDate = {};
       let byUser = {};
       let totalKm = 0;
@@ -118,24 +120,6 @@ const AppContextProvider = ({ children }) => {
       let tmpRouteProgess = turf.lineChunk(route, routeProgressInKm);
       if (typeof tmpRouteProgess.features[0] !== "undefined") {
         setRouteProgressFeature(tmpRouteProgess.features[0]);
-        //        setRouteProgressPosition({
-        //          type: "FeatureCollection",
-        //          features: [
-        //            {
-        //              type: "Feature",
-        //              properties: {
-        //                description: "RouteProgressMarker",
-        //              },
-        //              geometry: {
-        //                type: "Point",
-        //                coordinates:
-        //                  tmpRouteProgess.features[0].geometry.coordinates[
-        //                    tmpRouteProgess.features[0].geometry.coordinates.length - 1
-        //                  ],
-        //              },
-        //            },
-        //          ],
-        //        });
       }
     }
   }, [routeProgressInKm]);
@@ -175,16 +159,15 @@ const AppContextProvider = ({ children }) => {
   };
 
   const fetchProgressData = () => {
-    if (debug) {
-      fetch("/assets/laufwettbewerb_mock_data.json")
+      fetch(backendUrl + "runningData.json")
         .then((response) => response.json())
         .then((statsData) => {
-          setRawProgressData(statsData);
+          setUsers(statsData.user);
+          setRawProgressData(statsData.uploads);
         });
-    } else {
-      console.log("Hallo");
-      //const url = new URL('http://localhost/.well-known/mercure');
-      const url = new URL("https://lauf-contest.wheregroup.com/.well-known/mercure");
+    if (useMercureServer) {
+      // subscribe to mercure server topic providing running data
+      const url = new URL('http://localhost/.well-known/mercure');
       url.searchParams.append("topic", "/stat");
       // The URL class is a convenient way to generate URLs such as https://localhost/.well-known/mercure?topic=https://example.com/books/{id}&topic=https://example.com/users/dunglas
       const eventSource = new EventSource(url, { withCredentials: false });
@@ -197,13 +180,6 @@ const AppContextProvider = ({ children }) => {
         setUsers(data.user);
         setRawProgressData(data.uploads);
       };
-
-      fetch(backendUrl + "runningData.json")
-        .then((response) => response.json())
-        .then((statsData) => {
-          setUsers(statsData.user);
-          setRawProgressData(statsData.uploads);
-        });
     }
   };
 

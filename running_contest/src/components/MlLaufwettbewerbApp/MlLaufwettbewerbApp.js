@@ -7,13 +7,19 @@ import React, {
   useContext,
 } from "react";
 
-import { MlTransitionGeoJsonLayer, MlGeoJsonLayer, MlImageMarkerLayer, MlLayer, MlVectorTileLayer } from "@mapcomponents/react-maplibre";
+import {
+  MlTransitionGeoJsonLayer,
+  MlGeoJsonLayer,
+  MlImageMarkerLayer,
+  MlLayer,
+  MlVectorTileLayer,
+} from "@mapcomponents/react-maplibre";
 import DailyProgressChart from "./assets/DailyProgressChart";
 import StatsSidebar from "./assets/StatsSidebar";
 import Header from "./assets/Header";
 import Leaderboard from "./assets/Leaderboard";
-import { MapContext } from "@mapcomponents/react-core"
-import { MapLibreMap } from "@mapcomponents/react-maplibre"
+import { MapContext } from "@mapcomponents/react-core";
+import { MapLibreMap } from "@mapcomponents/react-maplibre";
 import { AppContext } from "./assets/AppContext";
 import { Grid, Paper, IconButton } from "@material-ui/core";
 import _ from "lodash";
@@ -56,9 +62,7 @@ const MlLaufwettbewerbApp = (props) => {
       appContext.darkMode ? colorTheme_dark : colorTheme_default
     );
   }, [appContext.darkMode]);
-  useEffect(() => {
-
-  },[]);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (!mapContext.mapExists(props.mapId)) return;
@@ -76,13 +80,19 @@ const MlLaufwettbewerbApp = (props) => {
 
     setTimeout(() => {
       setShowProgress(true);
-    },1000);
+    }, 1000);
 
     //mapContext.getMap(props.mapId).setZoom(6.1);
     //mapContext
     //  .getMap(props.mapId)
     //  .setCenter({ lng: 9.830202291394698, lat: 50.55342033900138 });
-  }, [mapContext.mapIds, mapContext,appContext.route, props.mapId, setShowProgress]);
+  }, [
+    mapContext.mapIds,
+    mapContext,
+    appContext.route,
+    props.mapId,
+    setShowProgress,
+  ]);
 
   const setNextDisplayDate = useCallback(() => {
     let nextDateIndex =
@@ -101,7 +111,7 @@ const MlLaufwettbewerbApp = (props) => {
     setTimeout(() => {
       if (playingRef.current) {
         playDisplayDates();
-        console.log('next display date');
+        console.log("next display date");
       }
     }, 2000);
   }, [setNextDisplayDate]);
@@ -117,9 +127,7 @@ const MlLaufwettbewerbApp = (props) => {
       }
       playDisplayDates();
     }
-  }, [playing,appContext.orderedDates]);
-
-
+  }, [playing, appContext.orderedDates]);
 
   return (
     <>
@@ -161,19 +169,24 @@ const MlLaufwettbewerbApp = (props) => {
                     options={{
                       zoom: 6.5,
                       //style: "https://demotiles.maplibre.org/style.json",
-                      attributionControl:true,
-                      customAttribution: '<a href="https://WhereGroup.com">© WhereGroup</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+                      attributionControl: true,
+                      customAttribution:
+                        '<a href="https://WhereGroup.com">© WhereGroup</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
                       style: {
                         version: 8,
                         name: "Blank",
-                        "maptiler_attribution":{"type":"vector","attribution":"<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"},
+                        maptiler_attribution: {
+                          type: "vector",
+                          attribution:
+                            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+                        },
                         center: [0, 0],
                         zoom: 0,
                         sources: {},
                         sprite:
                           "https://raw.githubusercontent.com/openmaptiles/osm-liberty-gl-style/gh-pages/sprites/osm-liberty",
                         glyphs:
-                          "mapbox://fonts/openmaptiles/{fontstack}/{range}.pbf",
+                          "https://wms.wheregroup.com/tileserver/fonts/{fontstack}/{range}.pbf",
                         layers: [
                           {
                             id: "background",
@@ -288,26 +301,27 @@ const MlLaufwettbewerbApp = (props) => {
                     type="line"
                     insertBeforeLayer={"routeMarker"}
                   />
-                  { appContext.goalMarkerPosition && (console.log(appContext.goalMarkerPosition) || true) && 
-                    <MlImageMarkerLayer
-                      idSuffix="goalMarkerPositionGeoJson"
-                      imgSrc="/assets/ziel.png"
-                      options={{
-                        type: "symbol",
-                        source: {
-                          type: "geojson",
-                          data: appContext.goalMarkerPosition,
-                        },
-                        layout: {
-                          "icon-allow-overlap": true,
-                          "icon-size": 0.14,
-                          "icon-offset": [0, -180],
-                        },
-                      }}
-                      insertBeforeLayer={"currentPositionMarker"}
-                    />
-                  }
-                  { showProgress && appContext.routeProgressFeature && (
+                  {appContext.goalMarkerPosition &&
+                    (console.log(appContext.goalMarkerPosition) || true) && (
+                      <MlImageMarkerLayer
+                        idSuffix="goalMarkerPositionGeoJson"
+                        imgSrc="assets/ziel.png"
+                        options={{
+                          type: "symbol",
+                          source: {
+                            type: "geojson",
+                            data: appContext.goalMarkerPosition,
+                          },
+                          layout: {
+                            "icon-allow-overlap": true,
+                            "icon-size": 0.14,
+                            "icon-offset": [0, -180],
+                          },
+                        }}
+                        insertBeforeLayer={"currentPositionMarker"}
+                      />
+                    )}
+                  {showProgress && appContext.routeProgressFeature && (
                     <MlTransitionGeoJsonLayer
                       geojson={appContext.routeProgressFeature}
                       idSuffix="progressGeoJson"
@@ -320,7 +334,7 @@ const MlLaufwettbewerbApp = (props) => {
                       type="line"
                       transitionTime={1500}
                       onTransitionEnd={(data) => {
-                        if(data && data.geometry){
+                        if (data && data.geometry) {
                           appContext.setRouteProgressPosition({
                             type: "FeatureCollection",
                             features: [
@@ -332,10 +346,9 @@ const MlLaufwettbewerbApp = (props) => {
                                 geometry: {
                                   type: "Point",
                                   coordinates:
-                                  data.geometry.coordinates[
-                                    data.geometry.coordinates
-                                    .length - 1
-                                  ],
+                                    data.geometry.coordinates[
+                                      data.geometry.coordinates.length - 1
+                                    ],
                                 },
                               },
                             ],
@@ -349,7 +362,7 @@ const MlLaufwettbewerbApp = (props) => {
                     <MlImageMarkerLayer
                       geojson={appContext.routeProgressPosition}
                       idSuffix="progressPositionGeoJson"
-                      imgSrc="/assets/marker.png"
+                      imgSrc="assets/marker.png"
                       options={{
                         type: "symbol",
                         source: {
@@ -384,8 +397,7 @@ const MlLaufwettbewerbApp = (props) => {
                               geometry: {
                                 type: "Point",
                                 coordinates: [
-                                  7.085006973885085,
-                                  50.738673903252966,
+                                  7.085006973885085, 50.738673903252966,
                                 ],
                               },
                             },
@@ -397,8 +409,7 @@ const MlLaufwettbewerbApp = (props) => {
                               geometry: {
                                 type: "Point",
                                 coordinates: [
-                                  13.330454571384802,
-                                  52.4928702653268,
+                                  13.330454571384802, 52.4928702653268,
                                 ],
                               },
                             },
@@ -410,8 +421,7 @@ const MlLaufwettbewerbApp = (props) => {
                               geometry: {
                                 type: "Point",
                                 coordinates: [
-                                  7.842812454054702,
-                                  47.989065548092675,
+                                  7.842812454054702, 47.989065548092675,
                                 ],
                               },
                             },
@@ -425,6 +435,9 @@ const MlLaufwettbewerbApp = (props) => {
                         "text-offset": [0, -300],
                         "text-size": colorTheme.map.cityLabels.textSize,
                         "text-allow-overlap": true,
+                        "text-font": [
+                          "Open Sans Italic"
+                        ],
                       },
                       paint: {
                         "text-color": colorTheme.map.cityLabels.textColor,
@@ -505,13 +518,16 @@ const MlLaufwettbewerbApp = (props) => {
                   minHeight: "200px",
                   flex: 1,
                   display: "flex",
-                  overflowX:'hidden',
+                  overflowX: "hidden",
                 }}
               >
                 <Paper elevation={1} style={{ flex: 1 }}>
                   <DailyProgressChart
                     data={appContext.progressDataByDate}
-                    onClick={(date) => {console.log('click');appContext.setDisplayDate(date)}}
+                    onClick={(date) => {
+                      console.log("click");
+                      appContext.setDisplayDate(date);
+                    }}
                     displayDate={appContext.displayDate}
                   />
                 </Paper>
