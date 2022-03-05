@@ -1,14 +1,21 @@
 {
   "AppRunningContest": {
     "name": "AppRunningContest",
-    "title": "Running contest dashboard",
+    "title": "Running contest",
     "description": "",
     "i18n": {
-      "de": { "title": "Laufwettbewerb Dashboard", "description": "" }
+      "de": { "title": "Laufwettbewerb", "description": "" }
     },
     "tags": [],
     "category": "",
     "type": "application",
-    "components": []
+    "components": [],
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
+    "demos": [
+      {
+        "name": "dashboard",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
+      }
+    ]
   }
 }
