@@ -9,7 +9,7 @@
     "tags": [],
     "category": "",
     "type": "application",
-    "components": [],
+    "components": ["MlTransitionGeoJsonLayer", "MlGeoJsonLayer", "MlVectorTileLayer"],
     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
     "demos": [
       {
