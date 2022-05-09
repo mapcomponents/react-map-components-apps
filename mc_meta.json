@@ -17,5 +17,24 @@
         "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
       }
     ]
+  },
+  "AppWebGis": {
+    "name": "AppWebGis",
+    "title": "WebGis",
+    "description": "",
+    "i18n": {
+      "de": { "title": "WebGis", "description": "" }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "components": ["MlNavigationTools"],
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
+    "demos": [
+      {
+        "name": "dashboard",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/webGis/"
+      }
+    ]
   }
 }
