@@ -10,13 +10,11 @@ import PropTypes from "prop-types";
 import { MapContext } from "@mapcomponents/react-maplibre";
 import { v4 as uuidv4 } from "uuid";
 
-import { MlLayer } from "@mapcomponents/react-maplibre";
+import { MlLayer, useWms, MlMarker } from "@mapcomponents/react-maplibre";
 
 import NestedListItem from "./NestedListItem";
 
 import AppContext from "../AppContext";
-import MlMarker from "./MlMarker";
-import useWms from "./useWms";
 
 var originShift = (2 * Math.PI * 6378137) / 2.0;
 const lngLatToMeters = function (

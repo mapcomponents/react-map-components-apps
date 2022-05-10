@@ -23,7 +23,7 @@ import LineGeoJSONIntersectionFeatureInfo from "./components/Frames/LineGeoJSONI
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import { ExampleConfig } from "./components/MlIconLayerstories";
-import MlFillExtrusionLayer from "./components/MlFillExtrusionLayer";
+import { MlFillExtrusionLayer } from "@mapcomponents/react-maplibre";
 
 import { useContext } from "react";
 import AppContext from "./AppContext";
@@ -140,7 +140,7 @@ function App() {
         <GeoJSONLoader />
       </DraggableFrame>
 
-      {pitch && <MlFillExtrusionLayer></MlFillExtrusionLayer>}
+      {pitch && <MlFillExtrusionLayer />}
 
       <MapLibreMap
         mapId="map_1"
