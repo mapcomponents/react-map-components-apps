@@ -16,7 +16,7 @@ jobs:
           mkdir docs-build || true
           cd webGis
           yarn
-          yarn build
+          CI=false yarn build
           cd ..
           cp -r webGis/build docs-build/webGis
       - name: copy catalogue metadata
