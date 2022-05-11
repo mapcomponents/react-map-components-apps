@@ -28,7 +28,7 @@
     "tags": [],
     "category": "",
     "type": "application",
-    "components": ["MlGeoJsonLayer", "MLFillExtrusionLayer", "MlMarker", "MlWmsLayer", "useWms", "MlNavigationTools"],
+    "components": ["MlGeoJsonLayer", "MlIconLayer", "MlWmsLoader", "MlNavigationTools"],
     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
     "demos": [
       {
