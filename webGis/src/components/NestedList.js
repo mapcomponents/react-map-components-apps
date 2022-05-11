@@ -66,13 +66,13 @@ export default function NestedList(props) {
       <MlWmsLoader
         handleClick={handleClick}
         open={open}
-        url="https://nvpub.vic-metria.nu/arcgis/services/Andra_skydd/MapServer/WMSServer"
+        url="https://www.wms.nrw.de/geobasis/wms_nw_tfis"
         id="1"
       ></MlWmsLoader>
       <MlWmsLoader
         handleClick={handleClick}
         open={open}
-        url="https://gis-services.metria.se/arcgis/rest/services/nv/InspireNV_NMD/MapServer/exts/InspireView/service"
+        url="https://www.wms.nrw.de/geobasis/wms_nw_dtk50"
         id="2"
       ></MlWmsLoader>
 

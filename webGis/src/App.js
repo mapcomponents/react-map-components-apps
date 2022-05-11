@@ -145,7 +145,7 @@ function App() {
       <MapLibreMap
         mapId="map_1"
         options={{
-          zoom: 8,
+          zoom: 11.5,
           style:
             //https://wms.wheregroup.com/tileserver/style/osm-bright.json
             "https://wms.wheregroup.com/tileserver/style/klokantech-basic.json",

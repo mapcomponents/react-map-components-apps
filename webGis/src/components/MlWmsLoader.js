@@ -237,23 +237,6 @@ const MlWmsLoader = (props) => {
           return layer;
         })
       );
-
-      // zoom to extent of first layer or Berlin in case it's the first start
-      if (appContext.includedWms.length == 0) {
-        if (mapRef.current) {
-          mapRef.current.fitBounds([
-            [12.947508, 52.665291],
-            [13.895765, 52.325001],
-          ]);
-        }
-      } else {
-        if (mapRef.current && _LatLonBoundingBox?.length > 3) {
-          mapRef.current.fitBounds([
-            [_LatLonBoundingBox[0], _LatLonBoundingBox[1]],
-            [_LatLonBoundingBox[2], _LatLonBoundingBox[3]],
-          ]);
-        }
-      }
     }
   }, [capabilities]);
 
