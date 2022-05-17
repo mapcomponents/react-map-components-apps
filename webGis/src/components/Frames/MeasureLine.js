@@ -17,7 +17,7 @@ function MeasureLine(props) {
             }}
             mode="draw_line_string"
         ></MlFeatureEditor>
-        Length: {length} km
+        Length: {length.toFixed(2)} km
     </>
   );
 }

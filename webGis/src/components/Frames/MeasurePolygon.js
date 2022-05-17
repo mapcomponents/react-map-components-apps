@@ -21,7 +21,7 @@ function MeasurePolygon(props) {
             }}
             mode="custom_polygon"
         ></MlFeatureEditor>
-        Area: {length} km&sup2;
+        Area: {length.toFixed(2)} km&sup2;
     </>
   );
 }
