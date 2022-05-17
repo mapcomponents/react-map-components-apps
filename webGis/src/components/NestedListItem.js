@@ -31,7 +31,6 @@ export default function NestedListItem(props) {
           style={{
             paddingLeft: "16px",
             paddingRight: "16px",
-            color: "#fff",
           }}
         >
           <ListItemIcon style={{ minWidth: "10px" }}>
@@ -40,14 +39,14 @@ export default function NestedListItem(props) {
                 style={{ padding: "0px" }}
                 onClick={() => props.handleClick(props.id)}
               >
-                <ExpandLess style={{ color: "#fff" }} />
+                <ExpandLess />
               </IconButton>
             ) : (
               <IconButton
                 style={{ padding: "0px" }}
                 onClick={() => props.handleClick(props.id)}
               >
-                <ExpandMore style={{ color: "#fff" }} />
+                <ExpandMore />
               </IconButton>
             )}
           </ListItemIcon>
@@ -66,9 +65,9 @@ export default function NestedListItem(props) {
           >
             {appContext.wmsOrGeoJSONVisible[props.wmsUrl] ||
             appContext.wmsOrGeoJSONVisible[props.wmsUrl] == undefined ? (
-              <VisibilityIcon style={{ color: "#fff" }} />
+              <VisibilityIcon />
             ) : (
-              <VisibilityOffIcon style={{ color: "#fff" }} />
+              <VisibilityOffIcon />
             )}
           </IconButton>
 
@@ -88,7 +87,6 @@ export default function NestedListItem(props) {
                   disablePadding
                   sx={{ pl: 6 }}
                   key={layer.Name + idx}
-                  style={{ color: "#fff" }}
                 >
                   <IconButton
                     disabled={
@@ -98,7 +96,6 @@ export default function NestedListItem(props) {
                     style={{
                       padding: "0px",
                       marginRight: "5px",
-                      color: "#fff",
                     }}
                     onClick={() => {
                       let _layers = [...props.layers];
