@@ -4,24 +4,25 @@ import theme from "../../theme";
 
 const MeasureWindow = (props) => {
 
-    return(
-        <div style={{ width: "200px" }}>
+    return (
+      <div style={{ width: "200px", color: "#fff" }}>
         <Grid
-            container
-            style={{
-                textAlign: "left",
-                alignItems: "center",
-            }}
+          container
+          style={{
+            textAlign: "left",
+            alignItems: "center",
+          }}
         >
-            {props.icon}
+          {props.icon}
 
-            <h4 style={{ margin: "0px" }}>Measure Line</h4>
+          <h4 style={{ margin: "0px" }}>{props.measureName}</h4>
         </Grid>
 
         <Box m={2} style={{ textAlign: "left" }}>
-            {props.measureType}
+          {props.measureType}
         </Box>
-    </div>)
+      </div>
+    );
 }
 
 export default MeasureWindow

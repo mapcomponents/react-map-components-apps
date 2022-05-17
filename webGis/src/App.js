@@ -93,7 +93,11 @@ function App() {
           framesEnabled={framesEnabled}
           setFramesEnabled={setFramesEnabled}
         >
-          <MeasureWindow measureType={<MeasureLine />} icon={<StraightenOutlinedIcon className={classes.iconTitle} />} />
+          <MeasureWindow
+            measureType={<MeasureLine />}
+            measureName={"Measure Line"}
+            icon={<StraightenOutlinedIcon className={classes.iconTitle} />}
+          />
         </DraggableFrame>
       )}
 
@@ -105,7 +109,11 @@ function App() {
           framesEnabled={framesEnabled}
           setFramesEnabled={setFramesEnabled}
         >
-          <MeasureWindow measureType={<MeasurePolygon />} icon={<SquareFootOutlinedIcon className={classes.iconTitle} />} />
+          <MeasureWindow
+            measureType={<MeasurePolygon />}
+            measureName={"Measure Polygon"}
+            icon={<SquareFootOutlinedIcon className={classes.iconTitle} />}
+          />
         </DraggableFrame>
       )}
 
