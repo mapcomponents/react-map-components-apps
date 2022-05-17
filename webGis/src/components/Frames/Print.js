@@ -57,7 +57,7 @@ function Print(props) {
       </Grid>
 
       <Box m={2} style={{ textAlign: "left", color: theme.palette.white }}>
-        <FormControl
+        {/*<FormControl
           fullWidth
           variant="standard"
           style={{ marginBottom: "20px" }}
@@ -107,58 +107,58 @@ function Print(props) {
           style={{ marginBottom: "20px" }}
         >
           <InputLabel id="select-label-1">Vorlage</InputLabel>
-          <Select
+            <Select
             labelId="select-label-1"
             MenuProps={{
-              style: { zIndex: "2001" },
-            }}
+            style: {zIndex: "2001"},
+          }}
             label="Vorlage"
             style={
-              {
-                //backgroundColor: theme.palette.green,
-              }
-            }
-          >
+          {
+            //backgroundColor: theme.palette.green,
+          }
+          }
+            >
             <MenuItem value={10}>nicht implementiert</MenuItem>
-          </Select>
-        </FormControl>
+            </Select>
+            </FormControl>
 
-        <FormControl
-          fullWidth
-          variant="standard"
-          style={{ marginBottom: "20px" }}
-        >
-          <InputLabel id="select-label-1">Drehung</InputLabel>
-          <Select
+            <FormControl
+            fullWidth
+            variant="standard"
+            style={{marginBottom: "20px"}}
+            >
+            <InputLabel id="select-label-1">Drehung</InputLabel>
+            <Select
             labelId="select-label-1"
             MenuProps={{
-              style: { zIndex: "2001" },
-            }}
+            style: {zIndex: "2001"},
+          }}
             label="Vorlage"
             style={
-              {
-                //backgroundColor: theme.palette.green,
-              }
-            }
-          >
+          {
+            //backgroundColor: theme.palette.green,
+          }
+          }
+            >
             <MenuItem value={10}>nicht implementiert</MenuItem>
-          </Select>
-        </FormControl>
+            </Select>
+            </FormControl>
 
-        <FormControl
-          fullWidth
-          variant="standard"
-          style={{ marginBottom: "20px" }}
-        >
-          <TextField id="standard-basic" label="Titel" variant="standard" />
-        </FormControl>
+            <FormControl
+            fullWidth
+            variant="standard"
+            style={{marginBottom: "20px"}}
+            >
+            <TextField id="standard-basic" label="Titel" variant="standard" />
+            </FormControl>
 
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox style={{ color: theme.palette.white }} />}
+            <FormGroup>
+            <FormControlLabel
+            control={<Checkbox style={{color: theme.palette.white}} />}
             label="Legende drucken"
-          />
-        </FormGroup>
+            />
+            </FormGroup>*/}
 
         <MlCreatePdfButton></MlCreatePdfButton>
       </Box>
