@@ -116,16 +116,17 @@ const MlWmsLoader = (props) => {
         FEATURE_COUNT: "10",
         LAYERS: layers
           .map((layer, idx) =>
-            layer.visible && layer.queryable ? layer.Name : undefined
+            layer.Name
           )
           .filter((n) => n),
         QUERY_LAYERS: layers
           .map((layer, idx) =>
-            layer.visible && layer.queryable ? layer.Name : undefined
+            layer.Name
           )
           .filter((n) => n),
         WIDTH: mapRef.current._container.clientWidth,
         HEIGHT: mapRef.current._container.clientHeight,
+        STYLES: "",
         srs: "EPSG:3857",
         CRS: "EPSG:3857",
         version: "1.3.0",
@@ -277,11 +278,6 @@ const MlWmsLoader = (props) => {
         handleClick={props.handleClick}
         id={props.id}
       ></NestedListItem>
-
-      {/* FeatureInfo Popup */}
-      {featureInfoLngLat && appContext.featureInfoEnabled && (
-        <MlMarker {...featureInfoLngLat} content={featureInfoContent} />
-      )}
     </>
   );
 };
