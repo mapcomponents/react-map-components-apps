@@ -41,18 +41,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159),
-  createData("Ice cream sandwich", 237),
-  createData("Eclair", 262),
-  createData("Cupcake", 305),
-  createData("Gingerbread", 356),
-];
-
 function LineGeoJSONIntersectionFeatureInfo(props) {
   const classes = useStyles(theme);
 
@@ -103,7 +91,7 @@ function LineGeoJSONIntersectionFeatureInfo(props) {
 
       {results.map((feature) => {
         return (
-          <Box m={2} style={{}}>
+          <Box m={2} >
             <TableContainer component={Paper}>
               <Table sx={{}} aria-label="simple table">
                 <TableHead>

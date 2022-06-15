@@ -33,7 +33,7 @@ function FeatureInfo(props) {
   useEffect(() => {});
 
   return (
-    <div style={{ width: "500px" }}>
+    <div style={{ width: "750px" }}>
       <Grid
         container
         style={{
@@ -43,7 +43,7 @@ function FeatureInfo(props) {
       >
         <InfoOutlinedIcon className={classes.iconTitle} />
 
-        <h4 style={{ margin: "0px", color: theme.palette.white }}>
+        <h4 style={{ margin: "0px" }}>
           WMS Feature Info
         </h4>
       </Grid>
@@ -54,8 +54,7 @@ function FeatureInfo(props) {
             <iframe
               style={{
                 width: "100%",
-                height: "150px",
-                color: theme.palette.white,
+                height: "300px",
                 display:
                   appContext.wmsOrGeoJSONVisible[key] ||
                   appContext.wmsOrGeoJSONVisible[key] == undefined
