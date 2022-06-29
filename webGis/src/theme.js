@@ -3,6 +3,13 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   typography: {},
   components: {
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        }
+      }
+    },
     MuiSelect: {
       styleOverrides: {
         icon: {
@@ -21,15 +28,26 @@ const theme = createTheme({
         },
       },
     },
-    MuiOutlinedInput: {
+    MuiIconButton: {
       styleOverrides: {
-        input: {
+        root: {
           color: "#fff",
-        },
-        notchedOutline: {
-          borderColor: "rgba(222,222,222,1)"
         }
-      },
+      }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        }
+      }
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        }
+      }
     },
     MuiFormLabel: {
       styleOverrides: {
