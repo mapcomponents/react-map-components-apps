@@ -14,8 +14,7 @@ import { useState, useEffect } from "react";
 import DraggableFrame from "./components/DraggableFrame";
 import Print from "./components/Frames/Print";
 import LayerTree from "./components/Frames/LayerTree";
-import MeasureLine from "./components/Frames/MeasureLine";
-import MeasurePolygon from "./components/Frames/MeasurePolygon";
+import MeasureWindow from "./components/Frames/MeasureWindow"
 import FeatureInfo from "./components/Frames/FeatureInfo";
 import WmsLoader from "./components/Frames/WmsLoader";
 import GeoJSONLoader from "./components/Frames/GeoJSONLoader";
@@ -25,15 +24,33 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { ExampleConfig } from "./components/MlIconLayerstories";
 import { MlFillExtrusionLayer } from "@mapcomponents/react-maplibre";
 
-import { useContext } from "react";
-import AppContext from "./AppContext";
+import StraightenOutlinedIcon from "@mui/icons-material/StraightenOutlined";
+import SquareFootOutlinedIcon from "@mui/icons-material/SquareFootOutlined";
+import makeStyles from "@mui/styles/makeStyles";
+import theme from "./theme";
+
+const useStyles = makeStyles((theme) => ({
+    icon: {
+        width: "40px",
+        margin: "10px",
+    },
+    iconTitle: {
+        width: "40px",
+        margin: "10px",
+        marginTop: "0px",
+        marginBottom: "0px",
+    },
+    iconbutton: {
+        padding: "0px !important",
+    },
+}));
 
 function App() {
   const [headerExtended, setHeaderExtended] = useState(false);
   const [framesEnabled, setFramesEnabled] = useState([]);
   const [pitch, setPitch] = useState(false);
 
-  const appContext = useContext(AppContext);
+  const classes = useStyles(theme);
 
   return (
     <>
@@ -74,7 +91,11 @@ function App() {
           framesEnabled={framesEnabled}
           setFramesEnabled={setFramesEnabled}
         >
-          <MeasureLine></MeasureLine>
+          <MeasureWindow
+            measureType={"line"}
+            measureName={"Measure Line"}
+            icon={<StraightenOutlinedIcon className={classes.iconTitle} />}
+          />
         </DraggableFrame>
       )}
 
@@ -86,7 +107,11 @@ function App() {
           framesEnabled={framesEnabled}
           setFramesEnabled={setFramesEnabled}
         >
-          <MeasurePolygon></MeasurePolygon>
+          <MeasureWindow
+            measureType={"polygon"}
+            measureName={"Measure Polygon"}
+            icon={<SquareFootOutlinedIcon className={classes.iconTitle} />}
+          />
         </DraggableFrame>
       )}
 
