@@ -1933,10 +1933,10 @@
   dependencies:
     d3 "^6.7.0"
 
-"@mapcomponents/react-maplibre@^0.1.40":
-  version "0.1.40"
-  resolved "https://registry.yarnpkg.com/@mapcomponents/react-maplibre/-/react-maplibre-0.1.40.tgz#208c0e66649b6a32bc797ee3142cc3f20c45f2a7"
-  integrity sha512-V9pkjxrozSS9qqRZqGSFEcDMj0x3fpQG1/Ck5HXFyQAr3wnBVsij59XltKQ6ee7/1bl+8LI5cA1TWwglNC+muA==
+"@mapcomponents/react-maplibre@^0.1.48":
+  version "0.1.48"
+  resolved "https://registry.yarnpkg.com/@mapcomponents/react-maplibre/-/react-maplibre-0.1.48.tgz#5bf68787bbb1082979624525fa98064a596a78cd"
+  integrity sha512-y5ROIcRRAxa0DY2ZzFk/DwQuREYXeEcgoOQKQZy3aVuyIb0ktaZv+6eTMcD5fj0EHQSR3nlZA8o6vceIkJOxVA==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@emotion/react" "^11.8.2"

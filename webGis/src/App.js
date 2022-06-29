@@ -14,9 +14,7 @@ import { useState, useEffect } from "react";
 import DraggableFrame from "./components/DraggableFrame";
 import Print from "./components/Frames/Print";
 import LayerTree from "./components/Frames/LayerTree";
-import MeasureLine from "./components/Frames/MeasureLine";
 import MeasureWindow from "./components/Frames/MeasureWindow"
-import MeasurePolygon from "./components/Frames/MeasurePolygon";
 import FeatureInfo from "./components/Frames/FeatureInfo";
 import WmsLoader from "./components/Frames/WmsLoader";
 import GeoJSONLoader from "./components/Frames/GeoJSONLoader";
@@ -94,7 +92,7 @@ function App() {
           setFramesEnabled={setFramesEnabled}
         >
           <MeasureWindow
-            measureType={<MeasureLine />}
+            measureType={"line"}
             measureName={"Measure Line"}
             icon={<StraightenOutlinedIcon className={classes.iconTitle} />}
           />
@@ -110,7 +108,7 @@ function App() {
           setFramesEnabled={setFramesEnabled}
         >
           <MeasureWindow
-            measureType={<MeasurePolygon />}
+            measureType={"polygon"}
             measureName={"Measure Polygon"}
             icon={<SquareFootOutlinedIcon className={classes.iconTitle} />}
           />

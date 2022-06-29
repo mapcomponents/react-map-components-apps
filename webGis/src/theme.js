@@ -21,6 +21,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: {
+          color: "#fff",
+        },
+        notchedOutline: {
+          borderColor: "rgba(222,222,222,1)"
+        }
+      },
+    },
     MuiFormLabel: {
       styleOverrides: {
         root: {
