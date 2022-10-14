@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import makeStyles from "@mui/styles/makeStyles";
 
 import AppContext from "../AppContext.js";
+import { useMediaQuery } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DraggableFrame(props) {
+  const mediaIsMobile = useMediaQuery("(max-width:900px)");
   const [pos, setPos] = useState(props.startPos);
   const [dragging, setDragging] = useState(false);
 
@@ -101,9 +103,9 @@ function DraggableFrame(props) {
         minHeight: "150px",
         position: "fixed",
         background: "rgba(55,55,55,0.8)",
-        left: pos.x, //"100px",
+        left: mediaIsMobile ? 0 : pos.x, //"100px",
         //bottom: pos.y, //"200px",
-        top: pos.y,
+        top: mediaIsMobile ? 180 : pos.y,
         zIndex: "2000",
         textAlign: "center",
         display: props.visible == false ? "none" : "block",

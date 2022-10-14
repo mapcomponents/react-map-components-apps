@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CustomDraggableFrame(props) {
+  const mediaIsMobile = useMediaQuery("(max-width:900px)");
   const classes = useStyles(theme);
 
   const entry = [
@@ -136,99 +137,3 @@ function CustomDraggableFrame(props) {
 }
 
 export default CustomDraggableFrame;
-
-{
-  /*<DraggableFrame
-        startPos={{
-          x: 100,
-          y: 200,
-        }}
-        closable
-        componentId="print"
-        framesEnabled={framesEnabled}
-        setFramesEnabled={setFramesEnabled}
-        visible={framesEnabled.includes("print")}
-      >
-        <Print />
-      </DraggableFrame>
-      <DraggableFrame
-        startPos={{
-          x: 500,
-          y: 200,
-        }}
-        closable
-        componentId="layers"
-        framesEnabled={framesEnabled}
-        setFramesEnabled={setFramesEnabled}
-        visible={framesEnabled.includes("layers")}
-      >
-        <LayerTree></LayerTree>
-      </DraggableFrame>
-   
-      {framesEnabled.includes("measureLine") && (
-        <DraggableFrame
-          startPos={{
-            x: 900,
-            y: 200,
-          }}
-          closable
-          componentId="measureLine"
-          framesEnabled={framesEnabled}
-          setFramesEnabled={setFramesEnabled}
-          visible={framesEnabled.includes("measureLine")}
-        >
-          <MeasureWindow
-            measureType={"line"}
-            measureName={"Measure Line"}
-            icon={<StraightenOutlinedIcon className={classes.iconTitle} />}
-          />
-        </DraggableFrame>
-      )}
-      {framesEnabled.includes("measurePolygon") && (
-        <DraggableFrame
-          startPos={{
-            x: 900,
-            y: 200,
-          }}
-          closable
-          componentId="measurePolygon"
-          framesEnabled={framesEnabled}
-          setFramesEnabled={setFramesEnabled}
-          visible={framesEnabled.includes("measurePolygon")}
-        >
-          <MeasureWindow
-            measureType={"polygon"}
-            measureName={"Measure Polygon"}
-            icon={<SquareFootOutlinedIcon className={classes.iconTitle} />}
-          />
-        </DraggableFrame>
-      )}
-      {framesEnabled.includes("featureInfo") && (
-        <DraggableFrame
-          startPos={{
-            x: 600,
-            y: 200,
-          }}
-          closable
-          componentId="featureInfo"
-          framesEnabled={framesEnabled}
-          setFramesEnabled={setFramesEnabled}
-        >
-          <FeatureInfo></FeatureInfo>
-        </DraggableFrame>
-      )}
-      {framesEnabled.includes("lgiFeatureInfo") && (
-        <DraggableFrame
-          startPos={{
-            x: 600,
-            y: 200,
-          }}
-          closable
-          componentId="lgiFeatureInfo"
-          framesEnabled={framesEnabled}
-          setFramesEnabled={setFramesEnabled}
-        >
-          <LineGeoJSONIntersectionFeatureInfo></LineGeoJSONIntersectionFeatureInfo>
-        </DraggableFrame>
-      )} */
-}
