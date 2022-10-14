@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     width: "40px",
     margin: "10px",
     "@media (max-width: 900px)": {
-      margin: "0px",
+      margin: "10px",
     },
   },
   iconV: {
@@ -203,22 +203,38 @@ function Header(props) {
         elevation={0}
         color="primary"
         style={{
-          marginTop: "50px",
+          marginTop: mediaIsMobile ? "0px" : "50px",
           backgroundColor: "rgba(55,55,55,0.8)",
-          height: "80px",
-          width: props.extended ? "" : "105px",
+          height: mediaIsMobile ? (props.extended ? "24.5%" : "80px") : "80px",
+          width: mediaIsMobile ? "100%" : props.extended ? "" : "105px",
         }}
       >
         <Toolbar style={{ paddingLeft: "10px" }}>
           <Grid container style={{ marginTop: "10px" }}>
-            {props.extended && (
+            {mediaIsMobile ? (
               <Grid
                 item
-                xs={4}
+                xs={12}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                }}
+              >
+                <MapcomponentsIconText className={classes.iconV} />
+              </Grid>
+            ) : (
+              ""
+            )}
+            {props.extended && (
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  alignItems: mediaIsMobile ? "space-evenly" : "center",
+                  justifyContent: mediaIsMobile ? "space-evenly" : "center",
                 }}
               >
                 <IconButton
@@ -298,30 +314,34 @@ function Header(props) {
                 </IconButton>
               </Grid>
             )}
-
-            <Grid
-              item
-              xs={props.extended ? 4 : 12}
-              style={{
-                display: "flex",
-                justifyContent: props.extended ? "center" : "flex-start",
-              }}
-            >
-              {props.extended ? (
-                <MapcomponentsIconText className={classes.iconV} />
-              ) : (
-                <MapcomponentsIcon className={classes.iconM} />
-              )}
-            </Grid>
+            {mediaIsMobile ? (
+              ""
+            ) : (
+              <Grid
+                item
+                xs={props.extended ? 4 : 12}
+                style={{
+                  display: "flex",
+                  justifyContent: props.extended ? "center" : "flex-start",
+                }}
+              >
+                {props.extended ? (
+                  <MapcomponentsIconText className={classes.iconV} />
+                ) : (
+                  <MapcomponentsIcon className={classes.iconM} />
+                )}
+              </Grid>
+            )}
 
             {props.extended && (
               <Grid
                 item
-                xs={4}
+                xs={12}
+                md={4}
                 style={{
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  alignItems: mediaIsMobile ? "space-evenly" : "center",
+                  justifyContent: mediaIsMobile ? "space-evenly" : "center",
                 }}
               >
                 <IconButton
@@ -401,26 +421,26 @@ function Header(props) {
                 </IconButton>
               </Grid>
             )}
-          </Grid>
 
-          <IconButton
-            style={{
-              position: "absolute",
-              marginBottom: "30px",
-              right: "0",
-            }}
-            edge="start"
-            color="inherit"
-            onClick={(ev) => {
-              props.setHeaderExtended(!props.extended);
-            }}
-          >
-            {props.extended ? (
-              <CloseOutlinedIcon style={{ width: "30px" }} />
-            ) : (
-              <MenuOutlinedIcon style={{ width: "30px" }} />
-            )}
-          </IconButton>
+            <IconButton
+              style={{
+                position: "absolute",
+                marginBottom: "30px",
+                right: "0",
+              }}
+              edge="start"
+              color="inherit"
+              onClick={(ev) => {
+                props.setHeaderExtended(!props.extended);
+              }}
+            >
+              {props.extended ? (
+                <CloseOutlinedIcon style={{ width: "30px" }} />
+              ) : (
+                <MenuOutlinedIcon style={{ width: "30px" }} />
+              )}
+            </IconButton>
+          </Grid>
         </Toolbar>
       </AppBar>
 
