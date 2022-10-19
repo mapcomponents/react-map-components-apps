@@ -16,6 +16,7 @@ import WmsLoader from "../components/Frames/WmsLoader";
 import GeoJSONLoader from "../components/Frames/GeoJSONLoader";
 import LineGeoJSONIntersectionFeatureInfo from "../components/Frames/LineGeoJSONIntersectionFeatureInfo";
 
+
 import { ExampleConfig } from "../components/MlIconLayerstories";
 
 const useStyles = makeStyles((theme) => ({
@@ -92,6 +93,7 @@ function CustomDraggableFrame(props) {
       easy: true,
     },
   ];
+
   return (
     <>
       {entry.map((entry) => (
