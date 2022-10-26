@@ -118,35 +118,89 @@ function Header(props) {
       } else {
         newState.push(element);
       }
+      ////////////////////////Try///////////////
 
-      //featureInfo, measureLine, measurePolygon and lgiFeatureInfo mutually exclusive
-      if (
-        [
-          "measurePolygon",
-          "measureLine",
-          "featureInfo",
-          "lgiFeatureInfo",
-        ].includes(element)
-      ) {
-        let index = newState.indexOf("measurePolygon");
-        if (index > -1 && element != "measurePolygon") {
-          newState.splice(index, 1);
+      if (mediaIsMobile == true) {
+        if (
+          [
+            "print",
+            "layers",
+            "measurePolygon",
+            "measureLine",
+            "featureInfo",
+            "lgiFeatureInfo",
+            "wmsLoader",
+            "geojsonLoader",
+          ].includes(element)
+        ) {
+          let index = newState.indexOf("print");
+          if (index > -1 && element != "print") {
+            newState.splice(index, 1);
+          }
+
+          index = newState.indexOf("layers");
+          if (index > -1 && element != "layers") {
+            newState.splice(index, 1);
+          }
+          index = newState.indexOf("measurePolygon");
+          if (index > -1 && element != "measurePolygon") {
+            newState.splice(index, 1);
+          }
+
+          index = newState.indexOf("measureLine");
+          if (index > -1 && element != "measureLine") {
+            newState.splice(index, 1);
+          }
+
+          index = newState.indexOf("featureInfo");
+          if (index > -1 && element != "featureInfo") {
+            newState.splice(index, 1);
+            appContext.setFeatureInfoEnabled(false);
+          }
+
+          index = newState.indexOf("lgiFeatureInfo");
+          if (index > -1 && element != "lgiFeatureInfo") {
+            newState.splice(index, 1);
+          }
+          index = newState.indexOf("wmsLoader");
+          if (index > -1 && element != "wmsLoader") {
+            newState.splice(index, 1);
+          }
+
+          index = newState.indexOf("geojsonLoader");
+          if (index > -1 && element != "geojsonLoader") {
+            newState.splice(index, 1);
+          }
         }
+      } else {
+        if (
+          [
+            "measurePolygon",
+            "measureLine",
+            "featureInfo",
+            "lgiFeatureInfo",
+          ].includes(element)
+        ) {
+          let index = newState.indexOf("measurePolygon");
+          if (index > -1 && element != "measurePolygon") {
+            newState.splice(index, 1);
+          }
 
-        index = newState.indexOf("measureLine");
-        if (index > -1 && element != "measureLine") {
-          newState.splice(index, 1);
-        }
+          index = newState.indexOf("measureLine");
+          if (index > -1 && element != "measureLine") {
+            newState.splice(index, 1);
+          }
 
-        index = newState.indexOf("featureInfo");
-        if (index > -1 && element != "featureInfo") {
-          newState.splice(index, 1);
-          appContext.setFeatureInfoEnabled(false);
-        }
+          index = newState.indexOf("featureInfo");
+          if (index > -1 && element != "featureInfo") {
+            newState.splice(index, 1);
+            appContext.setFeatureInfoEnabled(false);
+          }
 
-        index = newState.indexOf("lgiFeatureInfo");
-        if (index > -1 && element != "lgiFeatureInfo") {
-          newState.splice(index, 1);
+          index = newState.indexOf("lgiFeatureInfo");
+          if (index > -1 && element != "lgiFeatureInfo") {
+            newState.splice(index, 1);
+          }
         }
       }
 
@@ -205,7 +259,11 @@ function Header(props) {
         style={{
           marginTop: mediaIsMobile ? "0px" : "50px",
           backgroundColor: "rgba(55,55,55,0.8)",
-          height: mediaIsMobile ? (props.extended ? "24.5%" : "80px") : "80px",
+          height: mediaIsMobile
+            ? props.extended
+              ? "initial"
+              : "80px"
+            : "80px",
           width: mediaIsMobile ? "100%" : props.extended ? "" : "105px",
         }}
       >

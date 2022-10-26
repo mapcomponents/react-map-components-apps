@@ -102,6 +102,13 @@ function DraggableFrame(props) {
   return (
     <>
       {mediaIsMobile ? (
+        /* <div style={{
+          display: props.visible === false ? "none" : "block",
+        }}>
+          {props.closable && ""}
+          <BottomSidebar>{props.children? props.children:""}</BottomSidebar>
+        </div>
+        */
         <div>
           {props.visible ? <BottomSidebar>{props.children}</BottomSidebar> : ""}
           <div

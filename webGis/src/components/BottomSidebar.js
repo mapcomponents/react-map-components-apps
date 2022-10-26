@@ -44,7 +44,7 @@ function Sidebar(props) {
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            height: "83%", //`calc(75% - ${drawerBleeding}px)`,
+            height: `calc(100% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
