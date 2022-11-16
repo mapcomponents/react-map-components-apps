@@ -44,7 +44,7 @@ function Sidebar(props) {
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            height: `calc(100% - ${drawerBleeding}px)`,
+            height: `calc(30% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
@@ -57,10 +57,13 @@ function Sidebar(props) {
         onOpen={() => setOpen(true)}
         swipeAreaWidth={drawerBleeding}
         disableSwipeToOpen={false}
-        //hideBackdrop={true}
+        hideBackdrop={true}
         //sx={{ pointerEvents: "none" }}
         ModalProps={{
           keepMounted: true,
+          sx:{
+            top: `calc(70%)`,
+          }
         }}
       >
         <StyledBox
