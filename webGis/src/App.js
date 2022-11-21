@@ -4,7 +4,7 @@ import { MapLibreMap, MlNavigationTools } from "@mapcomponents/react-maplibre";
 import * as React from "react";
 import Header from "./components/Header";
 import { useState } from "react";
-import "maplibre-gl/dist/maplibre-gl.css";
+//import "maplibre-gl/dist/maplibre-gl.css";
 import { MlFillExtrusionLayer } from "@mapcomponents/react-maplibre";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CustomDraggableFrame from "./components/CustomDraggableFrame";
@@ -30,7 +30,19 @@ function App() {
         setFramesEnabled={setFramesEnabled}
       />
 
-      <MlNavigationTools componentId="toolbar" />
+      {mediaIsMobile ? (
+        <MlNavigationTools
+          componentId="toolbar"
+          show3DButton={false}
+          showZoomButtons={false}
+          sx={{ bottom: "50px", right: "15px" }}
+        />
+      ) : (
+        <MlNavigationTools
+          componentId="toolbar"
+          sx={{ bottom: "25px", right: "0px" }}
+        />
+      )}
 
       {pitch && <MlFillExtrusionLayer />}
       <MapLibreMap
