@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v2.3.1
         with:
           persist-credentials: false
-      - name: Install and build running contest and webGis🔧
+      - name: Install and build running contest, webGis and power Plants🔧
         run: | # Install packages and build the Storybook files
           mkdir docs-build || true
           cd running_contest
@@ -24,6 +24,11 @@ jobs:
           CI=false yarn build
           cd ..
           cp -r webGis/build docs-build/webGis
+          cd powerplants
+          yarn
+          yarn build
+          cd ..
+          cp -r powerplants/build docs-build/powerplants
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
