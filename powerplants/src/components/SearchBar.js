@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Plant_data from "../assets/Plant_data.json";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, TextField, IconButton } from "@mui/material";
 import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";

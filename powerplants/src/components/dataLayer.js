@@ -1,6 +1,6 @@
 import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
 import { useEffect, useMemo, useState } from "react";
-import Plant_data from "../assets/Plant_data.json";
+//import Plant_data from "../assets/Plant_data.json";
 import Sidebar from "./Sidebar";
 import Legend from "./Legend";
 import { useParams } from "react-router-dom";
@@ -27,7 +27,7 @@ const DataLayer = () => {
   const mapHook = useMap({ mapId: "map_1" });
   const [selectedFeature, setSelectedFeature] = useState();
   const { searchWord } = useParams();
- const [bbox, setBbox] = useState([-179.984, -62.877, 180, 73.122]);
+  const [bbox, setBbox] = useState([-179.984, -62.877, 180, 73.122]);
   var result_json = {};
   const [toShow, setToShow] = useState([
     "Biomass",
@@ -45,6 +45,7 @@ const DataLayer = () => {
 
   let [searchResult, setSearchResult] = useState();
 
+  const [plantData, setPlantData] = useState();
 
   const circleColorStops = useMemo(() => {
     return references.map((el) => {
@@ -56,34 +57,43 @@ const DataLayer = () => {
   }, [toShow]);
 
   useEffect(() => {
+    fetch("assets/Plant_data.json").then(function (response) {
+      return response.json();
+          }).then(
+            function(json){
+              setPlantData(json)
+            }
+          );
+  }, []);
+
+  useEffect(() => {
     function searchFunction() {
-      let filtered = Plant_data.features.filter((item) => {
+      let filtered = plantData.features.filter((item) => {
         return item.properties.country_long
           .toUpperCase()
           .includes(searchWord.toUpperCase());
       });
       setSearchResult(filtered);
-     
-      if (filtered.length > 0) { 
-         let num = Math.ceil(filtered.length/2);
-         console.log(num);
-       mapHook.map.map.flyTo({
-         center: [filtered[num].properties.longitude, filtered[num].properties.latitude],
-         zoom: 4,
-       })
-      }
 
+      if (filtered.length > 0) {
+        let num = Math.ceil(filtered.length / 2);
+        console.log(num);
+        mapHook.map.map.flyTo({
+          center: [
+            filtered[num].properties.longitude,
+            filtered[num].properties.latitude,
+          ],
+          zoom: 4,
+        });
+      }
     }
     if (searchWord === undefined) {
-      setSearchResult(Plant_data.features);
+      setSearchResult(plantData?.features);
       centerTo(0, 0);
     } else if (searchWord !== undefined) {
       searchFunction();
     }
-  }, [searchWord]);
-
-
-
+  }, [searchWord, plantData]);
 
   //  useEffect(() => {
   //    if (selectedFeature !== undefined) {
@@ -123,12 +133,12 @@ const DataLayer = () => {
         type: "name",
         properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" },
       };
-      setBbox(result_json)
-     return result_json;
+      setBbox(result_json);
+      return result_json;
     } else {
-      return Plant_data;
+      return plantData;
     }
-  }, [searchResult, searchWord]);
+  }, [searchResult, searchWord, plantData]);
 
   function centerTo(lati, longi) {
     if (lati == 0 && longi == 0) {
