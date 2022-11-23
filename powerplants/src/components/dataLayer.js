@@ -67,6 +67,7 @@ const DataLayer = () => {
   }, []);
 
   useEffect(() => {
+    if(!plantData?.features || !mapHook.map)return;
     function searchFunction() {
       let filtered = plantData.features.filter((item) => {
         return item.properties.country_long
@@ -93,7 +94,7 @@ const DataLayer = () => {
     } else if (searchWord !== undefined) {
       searchFunction();
     }
-  }, [searchWord, plantData]);
+  }, [searchWord, plantData, mapHook.map]);
 
   //  useEffect(() => {
   //    if (selectedFeature !== undefined) {
