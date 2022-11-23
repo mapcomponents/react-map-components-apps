@@ -26,7 +26,7 @@ jobs:
           cp -r webGis/build docs-build/webGis
           cd powerplants
           yarn
-          yarn build
+          CI=false yarn build
           cd ..
           cp -r powerplants/build docs-build/powerplants
       - name: copy catalogue metadata
