@@ -1,7 +1,8 @@
 {
-  "name": "powerplants",
+  "name": "PowerplantsGIS",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@mapcomponents/react-maplibre": "^0.1.57",
     "@testing-library/react": "^12.1.5",
