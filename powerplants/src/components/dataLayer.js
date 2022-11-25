@@ -86,8 +86,26 @@ const DataLayer = () => {
           ],
           zoom: 4,
         });
+      } else {
+      filtered = plantData.features.filter((item) => {
+         return item.properties.name
+            .toUpperCase()
+            .includes(searchWord.toUpperCase());
+      });
+      setSearchResult(filtered);
+      console.log(filtered);
+
+      if (filtered.length > 0) {
+         mapHook.map.map.flyTo({
+            center: [
+               filtered[0].properties.longitude,
+               filtered[0].properties.latitude,
+            ],
+            zoom: 6,
+         });
       }
-    }
+   }
+    } 
     if (searchWord === undefined) {
       setSearchResult(plantData?.features);
       centerTo(0, 0);
