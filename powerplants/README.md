@@ -2,7 +2,7 @@
 
 ## used Data Base 
 
-Title: Global Power Plant Database
+Title: Global Power Plant Database 
 Description: A comprehensive, global, open source database of power plants
 Version: 1.3.0
 Release Date: 2021-06-02
