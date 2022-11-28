@@ -8,6 +8,9 @@ import IconButton from "@mui/material/IconButton";
 import makeStyles from "@mui/styles/makeStyles";
 
 import AppContext from "../AppContext.js";
+import { useMediaQuery } from "@mui/material";
+
+import BottomSidebar from "./BottomSidebar";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -20,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DraggableFrame(props) {
+  const mediaIsMobile = useMediaQuery("(max-width:900px)");
   const [pos, setPos] = useState(props.startPos);
   const [dragging, setDragging] = useState(false);
 
@@ -96,46 +100,73 @@ function DraggableFrame(props) {
   }, [props.framesEnabled]);
 
   return (
-    <div
-      style={{
-        minHeight: "150px",
-        position: "fixed",
-        background: "rgba(55,55,55,0.8)",
-        left: pos.x, //"100px",
-        //bottom: pos.y, //"200px",
-        top: pos.y,
-        zIndex: "2000",
-        textAlign: "center",
-        display: props.visible == false ? "none" : "block",
-      }}
-    >
-      <div
-        onMouseDown={onMouseDown}
-        style={{
-          height: "15px",
-          marginLeft: "5px",
-          marginRight: "5px",
-          marginTop: "5px",
-          background: theme.palette.red,
-          cursor: "pointer",
-        }}
-      ></div>
-      {props.closable && (
-        <div
-          style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
-        >
-          <IconButton
-            color="inherit"
-            className={classes.iconbutton}
-            style={{ float: "right", color: theme.palette.white }}
-            onClick={handleClick}
+    <>
+      {mediaIsMobile ? (
+        /* <div style={{
+          display: props.visible === false ? "none" : "block",
+        }}>
+          {props.closable && ""}
+          <BottomSidebar>{props.children? props.children:""}</BottomSidebar>
+        </div>
+        */
+        <div>
+          {props.visible ? <BottomSidebar>{props.children}</BottomSidebar> : ""}
+          <div
+            style={{
+              display: "none",
+            }}
           >
-            <CloseOutlinedIcon className={classes.icon} />
-          </IconButton>
+            {props.closable && ""}
+            {props.children}
+          </div>
+        </div>
+      ) : (
+        <div
+          style={{
+            minHeight: "150px",
+            position: "fixed",
+            background: "rgba(55,55,55,0.9)",
+            zIndex: "2000",
+            textAlign: "center",
+            display: props.visible === false ? "none" : "block",
+            left: pos.x, //"100px",
+            //bottom: pos.y, //"200px",
+            top: pos.y,
+          }}
+        >
+          <div
+            onMouseDown={onMouseDown}
+            style={{
+              height: "15px",
+              marginLeft: "5px",
+              marginRight: "5px",
+              marginTop: "5px",
+              background: theme.palette.red,
+              cursor: "pointer",
+            }}
+          ></div>
+          {props.closable && (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <IconButton
+                color="inherit"
+                className={classes.iconbutton}
+                style={{ float: "right", color: theme.palette.white }}
+                onClick={handleClick}
+              >
+                <CloseOutlinedIcon className={classes.icon} />
+              </IconButton>
+            </div>
+          )}
+          {props.children}
         </div>
       )}
-      {props.children}
-    </div>
+    </>
   );
 }
 
