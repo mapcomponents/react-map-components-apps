@@ -44,6 +44,7 @@ function CustomDraggableFrame(props) {
       title: "print",
       component: <Print />,
       easy: true,
+      alwaysActive: false,
     },
     {
       title: "layers",
