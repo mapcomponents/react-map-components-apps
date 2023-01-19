@@ -1,9 +1,9 @@
 import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
 import { useEffect, useMemo, useState } from "react";
-import Plant_data from "../assets/Plant_data.json";
 import Sidebar from "./Sidebar";
+import Legend from "./Legend";
 import { useParams } from "react-router-dom";
-import ExtendLegend from "./extendLegend";
+import * as turf from "@turf/turf";
 
 var selectedStateId = undefined;
 
@@ -44,6 +44,8 @@ const DataLayer = () => {
 
    let [searchResult, setSearchResult] = useState();
 
+   const [plantData, setPlantData] = useState();
+
    const circleColorStops = useMemo(() => {
       return references.map((el) => {
          return [
@@ -54,8 +56,19 @@ const DataLayer = () => {
    }, [toShow]);
 
    useEffect(() => {
+      fetch("assets/Plant_data.json")
+         .then(function (response) {
+            return response.json();
+         })
+         .then(function (json) {
+            setPlantData(json);
+         });
+   }, []);
+
+   useEffect(() => {
+      if (!plantData?.features || !mapHook.map) return;
       function searchFunction() {
-         let filtered = Plant_data.features.filter((item) => {
+         let filtered = plantData.features.filter((item) => {
             return item.properties.country_long
                .toUpperCase()
                .includes(searchWord.toUpperCase());
@@ -65,7 +78,6 @@ const DataLayer = () => {
          if (filtered.length > 0) {
             let num = Math.ceil(filtered.length / 2);
             console.log(num);
-            console.log(filtered);
             mapHook.map.map.flyTo({
                center: [
                   filtered[num].properties.longitude,
@@ -74,7 +86,7 @@ const DataLayer = () => {
                zoom: 4,
             });
          } else {
-            filtered = Plant_data.features.filter((item) => {
+            filtered = plantData.features.filter((item) => {
                return item.properties.name
                   .toUpperCase()
                   .includes(searchWord.toUpperCase());
@@ -94,12 +106,12 @@ const DataLayer = () => {
          }
       }
       if (searchWord === undefined) {
-         setSearchResult(Plant_data.features);
+         setSearchResult(plantData?.features);
          centerTo(0, 0);
       } else if (searchWord !== undefined) {
          searchFunction();
       }
-   }, [searchWord]);
+   }, [searchWord, plantData, mapHook.map]);
 
    const geojson = useMemo(() => {
       if (searchResult?.length > 0) {
@@ -114,12 +126,12 @@ const DataLayer = () => {
          setBbox(result_json);
          return result_json;
       } else {
-         return Plant_data;
+         return plantData;
       }
-   }, [searchResult, searchWord]);
+   }, [searchResult, searchWord, plantData]);
 
    function centerTo(lati, longi) {
-      if (lati === 0 && longi === 0) {
+      if (lati == 0 && longi == 0) {
          mapHook.map?.map.flyTo({
             center: [longi, lati],
             zoom: 2.0,
@@ -142,6 +154,8 @@ const DataLayer = () => {
       );
       selectedStateId = undefined;
    }
+
+   console.log(geojson);
 
    return (
       <>
@@ -225,11 +239,9 @@ const DataLayer = () => {
                      [{ zoom: 16, value: 22500 }, 230],
                   ],
                },
-               //"circle-opacity": ["case", filterKey, 0.7, 0],
-               // "circle-stroke-opacity": ["case", filterKey, 0.8, 0],
             }}
          />
-         <ExtendLegend toShow={toShow} setToShow={setToShow} />
+         <Legend toShow={toShow} setToShow={setToShow} />
 
          <Sidebar
             open={open}
