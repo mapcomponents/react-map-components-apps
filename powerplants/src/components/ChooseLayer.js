@@ -1,190 +1,83 @@
 import { MlWmsLayer } from "@mapcomponents/react-maplibre";
-import { useState } from "react";
-import { Button, ButtonGroup, AppBar, Grid } from "@mui/material/";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import React, { useState } from "react";
+import { useMediaQuery } from "@mui/material/";
 import tonerpic from "../assets/tonerpic.png";
 import terrainpic from "../assets/terrainpic.png";
 import watercolorpic from "../assets/watercolorpic.jpg";
+import WmsCarousel from "./carousel";
+import ExtendBar from "./extendBar";
+
+const wmsOptions = [
+   {
+      title: "toner",
+      image: tonerpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+   },
+   {
+      title: "terrain",
+      image: terrainpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+   },
+   {
+      title: "watercolor",
+      image: watercolorpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+   },
+];
 
 export default function ChooseLayer() {
-  const [terrain, setTerrain] = useState(true);
-  const [toner, setToner] = useState(false);
-  const [watercolor, setWatercolor] = useState(false);
-  const [extended, setExtended] = useState(false);
+   const [currentIndex, setCurrentIndex] = useState(1);
+   const [showWMS, setShowWMS] = useState(wmsOptions[currentIndex].title);
+   const [disableWms, setDisableWms] = useState(false);
 
-  const terrainClick = () => {
-    setToner(false);
-    setWatercolor(false);
-    setTerrain(!terrain);
-  };
-  const tonerClick = () => {
-    setTerrain(false);
-    setWatercolor(false);
-    setToner(!toner);
-  };
-  const watercolorClick = () => {
-    setToner(false);
-    setTerrain(false);
-    setWatercolor(!watercolor);
-  };
+   const mediaIsMobile = useMediaQuery("(max-width:900px)");
 
-  return (
-     <>
-        <MlWmsLayer
-           url="https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
-           visible={toner}
-           insertBeforeLayer="Plant_data"
-           urlParameters={{ layers: "" }}
-        />
-        <MlWmsLayer
-           url="https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg"
-           visible={terrain}
-           insertBeforeLayer="Plant_data"
-           urlParameters={{ layers: "" }}
-        />
-        <MlWmsLayer
-           url="https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
-           visible={watercolor}
-           insertBeforeLayer="Plant_data"
-           urlParameters={{ layers: "" }}
-        />
-        <AppBar
-           position="fixed"
-           sx={{
-              top: "auto",
-              bottom: 33,
-              right: 100,
-              width: extended ? 410 : 180,
-              height: 115,
-              opacity: 0.8,
-           }}
-        >
-           <Grid container>
-              <Grid>
-                 <Button
-                    sx={{ height: 115, paddingRight: 3 }}
-                    onClick={() => setExtended(!extended)}
-                 >
-                    <DragHandleIcon
-                       color="secondary"
-                       sx={{ alignSelf: "center", transform: "rotate(90deg)" }}
-                    />
-                 </Button>
-              </Grid>
+   const wmsSetter = (index) => {
+      if (index === currentIndex) {
+         if (disableWms) {
+            setDisableWms(false);
+         } else {
+            setDisableWms(true);
+         }
+      } else {
+         setCurrentIndex(index);
+         setShowWMS(wmsOptions[index].title);
+         setDisableWms(false);
+      }
+   };
 
-              <Grid position="fixed" alignItems="flex-end" marginLeft={5}>
-                 {!extended ? (
-                    <ButtonGroup variant="text" color="secondary">
-                       {toner && (
-                          <Button onClick={tonerClick}>
-                             {" "}
-                             <img
-                                src={tonerpic}
-                                alt="toner layer"
-                                style={{ width: 100, height: 100, opacity: 1 }}
-                             />
-                          </Button>
-                       )}
-                       {terrain && (
-                          <Button onClick={terrainClick}>
-                             {" "}
-                             <img
-                                src={terrainpic}
-                                alt="terrain layer"
-                                style={{ width: 100, height: 100, opacity: 1 }}
-                             />
-                          </Button>
-                       )}
+   const WmsLayers = () => {
+      return (
+         <>
+            {wmsOptions?.map((el, index) => {
+               return (
+                  <MlWmsLayer
+                     key={el.title + "_" + index}
+                     url={el.link}
+                     visible={showWMS === el.title}
+                     insertBeforeLayer="Plant_data"
+                     urlParameters={{ layers: "" }}
+                  />
+               );
+            })}
+         </>
+      );
+   };
 
-                       {watercolor && (
-                          <Button onClick={watercolorClick}>
-                             {" "}
-                             <img
-                                src={watercolorpic}
-                                alt="watercolor layer"
-                                style={{ width: 100, height: 100, opacity: 1 }}
-                             />
-                          </Button>
-                       )}
-                    </ButtonGroup>
-                 ) : (
-                    <>
-                       <ButtonGroup variant="text" color="secondary">
-                          <Button onClick={tonerClick}>
-                             {toner ? (
-                                <img
-                                   src={tonerpic}
-                                   alt="toner layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 1,
-                                   }}
-                                />
-                             ) : (
-                                <img
-                                   src={tonerpic}
-                                   alt="toner layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 0.5,
-                                   }}
-                                />
-                             )}
-                          </Button>
-                          <Button onClick={terrainClick}>
-                             {terrain ? (
-                                <img
-                                   src={terrainpic}
-                                   alt="terrain layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 1,
-                                   }}
-                                />
-                             ) : (
-                                <img
-                                   src={terrainpic}
-                                   alt="terrain layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 0.5,
-                                   }}
-                                />
-                             )}
-                          </Button>
-                          <Button onClick={watercolorClick}>
-                             {watercolor ? (
-                                <img
-                                   src={watercolorpic}
-                                   alt="watercolor layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 1,
-                                   }}
-                                />
-                             ) : (
-                                <img
-                                   src={watercolorpic}
-                                   alt="watercolor layer"
-                                   style={{
-                                      width: 100,
-                                      height: 100,
-                                      opacity: 0.5,
-                                   }}
-                                />
-                             )}
-                          </Button>
-                       </ButtonGroup>
-                    </>
-                 )}
-              </Grid>
-           </Grid>
-        </AppBar>
-     </>
-  );
+   return (
+      <>
+         {!disableWms && <WmsLayers />}
+         {mediaIsMobile ? (
+            <WmsCarousel options={wmsOptions} setter={wmsSetter} current={currentIndex} />
+         ) : (
+            <ExtendBar
+               options={wmsOptions}
+               setter={wmsSetter}
+               current={currentIndex}
+               disabled={disableWms}
+            />
+         )}
+      </>
+   );
 }
+

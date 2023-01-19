@@ -7,13 +7,16 @@ import {
    ListItemText,
    Collapse,
    Grid,
+   useMediaQuery,
 } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
 export default function FeatureInfo(props) {
-   const [openLocation, setOpenLocation] = useState(false);
-   const [openInfo, setOpenInfo] = useState(false);
+   const mediaIsMobile = useMediaQuery("(max-width:900px)");
+
+   const [openLocation, setOpenLocation] = useState(true);
+   const [openInfo, setOpenInfo] = useState(true);
 
    const handleClick1 = () => {
       setOpenLocation(!openLocation);
@@ -32,30 +35,24 @@ export default function FeatureInfo(props) {
          }}
          component="nav"
          aria-labelledby="nested-list-subheader"
-         subheader={
-            <ListSubheader
-               component="div"
-               id="nested-list-subheader"
-               sx={{ backgroundColor: "#353535", color: "white" }}
-            >
-               Expand for more Information
-            </ListSubheader>
-         }
       >
          <ListItemButton onClick={handleClick2}>
             <ListItemText primary="Info" />
             {openInfo ? <ExpandLess /> : <ExpandMore />}
          </ListItemButton>
          <Collapse in={openInfo} timeout="auto" unmountOnExit>
-            <Grid paddingLeft={5}>
+            <Grid paddingLeft={mediaIsMobile ? 1.4 : 5} paddingRight={1}>
                <List component="div">
                   <ListItemText>
-                     Resource Type: {props.feature?.properties.primary_fuel}{" "}
-                     <br />
+                     Resource Type: <br />
+                     {props.feature?.properties.primary_fuel} <br />
                      Prduction Capacity [mw]:{" "}
                      {props.feature?.properties.capacity_mw} <br />
                      Year of Commision:{" "}
-                     {props.feature?.properties.commissioning_year} <br />
+                     {props.feature?.properties.commissioning_year
+                        ? parseInt(props.feature?.properties.commissioning_year)
+                        : "unkown"}{" "}
+                     <br />
                   </ListItemText>
                </List>
             </Grid>
@@ -66,7 +63,7 @@ export default function FeatureInfo(props) {
             {openLocation ? <ExpandLess /> : <ExpandMore />}
          </ListItemButton>
          <Collapse in={openLocation} timeout="auto" unmountOnExit>
-            <Grid paddingLeft={5}>
+            <Grid paddingLeft={mediaIsMobile ? 1.4 : 5} paddingRight={1}>
                <List component="div">
                   <ListItemText>
                      Country: {props.feature?.properties.country_long} <br />
