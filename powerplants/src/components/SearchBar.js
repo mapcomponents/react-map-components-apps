@@ -53,6 +53,11 @@ export default function SearchBar() {
             value={searchWord}
             placeholder="Search..."
             onChange={handleChange}
+            onKeyDown={(ev) => {
+               if (ev.key === "Enter") {
+                  handleClick();
+               }
+            }}
          />
          <IconButton aria-label="search" type="submit" onClick={handleClick}>
             <SearchIcon style={{ color: "white" }} />

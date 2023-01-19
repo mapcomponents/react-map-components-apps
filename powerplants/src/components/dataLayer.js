@@ -1,9 +1,8 @@
 import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
 import { useEffect, useMemo, useState } from "react";
 import Sidebar from "./Sidebar";
-import Legend from "./Legend";
+import ExtendLegend from "./extendLegend";
 import { useParams } from "react-router-dom";
-import * as turf from "@turf/turf";
 
 var selectedStateId = undefined;
 
@@ -131,7 +130,7 @@ const DataLayer = () => {
    }, [searchResult, searchWord, plantData]);
 
    function centerTo(lati, longi) {
-      if (lati == 0 && longi == 0) {
+      if (lati === 0 && longi === 0) {
          mapHook.map?.map.flyTo({
             center: [longi, lati],
             zoom: 2.0,
@@ -154,8 +153,6 @@ const DataLayer = () => {
       );
       selectedStateId = undefined;
    }
-
-   console.log(geojson);
 
    return (
       <>
@@ -241,7 +238,7 @@ const DataLayer = () => {
                },
             }}
          />
-         <Legend toShow={toShow} setToShow={setToShow} />
+         <ExtendLegend toShow={toShow} setToShow={setToShow} />
 
          <Sidebar
             open={open}

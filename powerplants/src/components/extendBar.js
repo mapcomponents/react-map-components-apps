@@ -15,7 +15,7 @@ export default function ExtendBar(props) {
          <>
             {props.options.map((el, index) => {
                return (
-                  <>
+                  <React.Fragment key={index}>
                      {extended | (props.current === index) ? (
                         <Button
                            key={index}
@@ -40,7 +40,7 @@ export default function ExtendBar(props) {
                      ) : (
                         <></>
                      )}
-                  </>
+                  </React.Fragment>
                );
             })}
          </>
