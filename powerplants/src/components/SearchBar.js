@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { Button, TextField, IconButton } from "@mui/material";
-import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
-import * as turf from "@turf/turf";
+import { Button, TextField, IconButton, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 
 export default function SearchBar() {
    const [searchWord, setSearchWord] = useState("");
    const [showButton, setShowButton] = useState(false);
-
+   const mediaIsMobile = useMediaQuery("(max-width:900px)");
    const handleChange = (e) => {
       e.preventDefault();
       setSearchWord(e.target.value);
@@ -47,7 +45,7 @@ export default function SearchBar() {
                paddingLeft: "4px",
                paddingTop: "2px",
                paddingBottom: "2px",
-               width: "15%",
+               width: mediaIsMobile ? "40%" : "15%",
                backgroundColor: "#fff",
             }}
             size="small"
@@ -55,6 +53,11 @@ export default function SearchBar() {
             value={searchWord}
             placeholder="Search..."
             onChange={handleChange}
+            onKeyDown={(ev) => {
+               if (ev.key === "Enter") {
+                  handleClick();
+               }
+            }}
          />
          <IconButton aria-label="search" type="submit" onClick={handleClick}>
             <SearchIcon style={{ color: "white" }} />

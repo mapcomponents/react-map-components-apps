@@ -1,10 +1,8 @@
 import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
 import { useEffect, useMemo, useState } from "react";
-//import Plant_data from "../assets/Plant_data.json";
 import Sidebar from "./Sidebar";
-import Legend from "./Legend";
+import ExtendLegend from "./extendLegend";
 import { useParams } from "react-router-dom";
-import * as turf from "@turf/turf";
 
 var selectedStateId = undefined;
 
@@ -57,17 +55,17 @@ const DataLayer = () => {
   }, [toShow]);
 
   useEffect(() => {
-    fetch("assets/Plant_data.json").then(function (response) {
-      return response.json();
-          }).then(
-            function(json){
-              setPlantData(json)
-            }
-          );
+    fetch("assets/Plant_data.json")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        setPlantData(json);
+      });
   }, []);
 
   useEffect(() => {
-    if(!plantData?.features || !mapHook.map)return;
+    if (!plantData?.features || !mapHook.map) return;
     function searchFunction() {
       let filtered = plantData.features.filter((item) => {
         return item.properties.country_long
@@ -87,25 +85,25 @@ const DataLayer = () => {
           zoom: 4,
         });
       } else {
-      filtered = plantData.features.filter((item) => {
-         return item.properties.name
+        filtered = plantData.features.filter((item) => {
+          return item.properties.name
             .toUpperCase()
             .includes(searchWord.toUpperCase());
-      });
-      setSearchResult(filtered);
-      console.log(filtered);
+        });
+        setSearchResult(filtered);
+        console.log(filtered);
 
-      if (filtered.length > 0) {
-         mapHook.map.map.flyTo({
+        if (filtered.length > 0) {
+          mapHook.map.map.flyTo({
             center: [
-               filtered[0].properties.longitude,
-               filtered[0].properties.latitude,
+              filtered[0].properties.longitude,
+              filtered[0].properties.latitude,
             ],
             zoom: 6,
-         });
+          });
+        }
       }
-   }
-    } 
+    }
     if (searchWord === undefined) {
       setSearchResult(plantData?.features);
       centerTo(0, 0);
@@ -113,34 +111,6 @@ const DataLayer = () => {
       searchFunction();
     }
   }, [searchWord, plantData, mapHook.map]);
-
-  //  useEffect(() => {
-  //    if (selectedFeature !== undefined) {
-  //      centerTo(
-  //        selectedFeature.properties.latitude,
-  //        selectedFeature.properties.longitude
-  //      );
-  //    } else {
-  //      if (result_json.features === undefined) {
-  //        result_json.bbox = [-179.984, -62.877, 180, 73.122];
-  //        mapHook.map?.map.fitBounds(result_json.bbox);
-  //      } else if (result_json.features.length == 0) {
-  //        result_json.bbox = [-179.984, -62.877, 180, 73.122];
-  //        mapHook.map?.map.fitBounds(result_json.bbox);
-  //      } else if (result_json.features.length === 1) {
-  //        result_json.bbox = [
-  //          [result_json.features[0].properties.longitude - 0.75],
-  //          [result_json.features[0].properties.latitude - 0.75],
-  //          [result_json.features[0].properties.longitude + 0.75],
-  //          [result_json.features[0].properties.latitude + 0.75],
-  //        ];
-  //        mapHook.map?.map.fitBounds(result_json.bbox);
-  //      } else {
-  //        result_json.bbox = turf.bbox(result_json);
-  //        mapHook.map?.map.fitBounds(result_json.bbox);
-  //      }
-  //    }
-  //  });
 
   const geojson = useMemo(() => {
     if (searchResult?.length > 0) {
@@ -160,7 +130,7 @@ const DataLayer = () => {
   }, [searchResult, searchWord, plantData]);
 
   function centerTo(lati, longi) {
-    if (lati == 0 && longi == 0) {
+    if (lati === 0 && longi === 0) {
       mapHook.map?.map.flyTo({
         center: [longi, lati],
         zoom: 2.0,
@@ -186,91 +156,89 @@ const DataLayer = () => {
 
   return (
     <>
-      <MlGeoJsonLayer
-        type="circle"
-        mapId="map_1"
-        layerId="Plant_data"
-        geojson={geojson}
-        onClick={(ev) => {
-          console.log("click");
+        <MlGeoJsonLayer
+          type="circle"
+          mapId="map_1"
+          layerId="Plant_data"
+          geojson={geojson}
+          onClick={(ev) => {
+            console.log("click");
 
-          if (!selectedStateId && !selectedFeature) {
-            selectedStateId = ev.features[0].id;
-            setSelectedFeature(ev.features[0]);
-            setOpen(true);
-            mapHook.map.setFeatureState(
-              {
-                source: "Plant_data",
-                id: selectedStateId,
-              },
-              { selected: true }
-            );
-            mapHook.map.map.flyTo({
-              center: [
-                ev.features[0].properties.longitude,
+            if (!selectedStateId && !selectedFeature) {
+              selectedStateId = ev.features[0].id;
+              setSelectedFeature(ev.features[0]);
+              setOpen(true);
+              mapHook.map.setFeatureState(
+                {
+                  source: "Plant_data",
+                  id: selectedStateId,
+                },
+                { selected: true }
+              );
+              mapHook.map.map.flyTo({
+                center: [
+                  ev.features[0].properties.longitude,
+                  ev.features[0].properties.latitude,
+                ],
+                zoom: 8,
+              });
+            } else if (selectedStateId !== ev.features[0].id) {
+              unselect();
+              setSelectedFeature(ev.features[0]);
+              selectedStateId = ev.features[0].id;
+              setOpen(true);
+              mapHook.map.setFeatureState(
+                {
+                  source: "Plant_data",
+                  id: selectedStateId,
+                },
+                { selected: true }
+              );
+              centerTo(
                 ev.features[0].properties.latitude,
-              ],
-              zoom: 8,
-            });
-          } else if (selectedStateId !== ev.features[0].id) {
-            unselect();
-            setSelectedFeature(ev.features[0]);
-            selectedStateId = ev.features[0].id;
-            setOpen(true);
-            mapHook.map.setFeatureState(
-              {
-                source: "Plant_data",
-                id: selectedStateId,
-              },
-              { selected: true }
-            );
-            centerTo(
-              ev.features[0].properties.latitude,
-              ev.features[0].properties.longitude
-            );
-          } else if (selectedStateId === ev.features[0].id) {
-            unselect();
-            setOpen(false);
-            centerTo(0, 0);
-          }
-        }}
-        paint={{
-          "circle-color": {
-            property: "primary_fuel",
-            type: "categorical",
-            default: "#fff",
-            stops: circleColorStops,
-          },
+                ev.features[0].properties.longitude
+              );
+            } else if (selectedStateId === ev.features[0].id) {
+              unselect();
+              setOpen(false);
+              centerTo(0, 0);
+            }
+          }}
+          paint={{
+            "circle-color": {
+              property: "primary_fuel",
+              type: "categorical",
+              default: "#fff",
+              stops: circleColorStops,
+            },
 
-          "circle-stroke-color": [
-            "case",
-            ["boolean", ["feature-state", "selected"], false],
-            "black",
-            "silver",
-          ],
-          "circle-stroke-width": [
-            "case",
-            ["boolean", ["feature-state", "selected"], false],
-            4,
-            0.2,
-          ],
-
-          "circle-radius": {
-            property: "capacity_mw",
-            stops: [
-              [{ zoom: 2, value: 1 }, 2],
-              [{ zoom: 2, value: 3000 }, 10],
-              [{ zoom: 2, value: 22500 }, 23],
-              [{ zoom: 16, value: 1 }, 10],
-              [{ zoom: 16, value: 3000 }, 100],
-              [{ zoom: 16, value: 22500 }, 230],
+            "circle-stroke-color": [
+              "case",
+              ["boolean", ["feature-state", "selected"], false],
+              "black",
+              "silver",
             ],
-          },
-          //"circle-opacity": ["case", filterKey, 0.7, 0],
-          // "circle-stroke-opacity": ["case", filterKey, 0.8, 0],
-        }}
-      />
-      <Legend toShow={toShow} setToShow={setToShow} />
+            "circle-stroke-width": [
+              "case",
+              ["boolean", ["feature-state", "selected"], false],
+              4,
+              0.2,
+            ],
+
+            "circle-radius": {
+              property: "capacity_mw",
+              stops: [
+                [{ zoom: 2, value: 1 }, 2],
+                [{ zoom: 2, value: 3000 }, 10],
+                [{ zoom: 2, value: 22500 }, 23],
+                [{ zoom: 16, value: 1 }, 10],
+                [{ zoom: 16, value: 3000 }, 100],
+                [{ zoom: 16, value: 22500 }, 230],
+              ],
+            },
+          }}
+        />
+      <ExtendLegend toShow={toShow} setToShow={setToShow} />
 
       <Sidebar
         open={open}
