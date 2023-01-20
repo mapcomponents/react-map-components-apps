@@ -7,17 +7,17 @@ import { useParams } from "react-router-dom";
 var selectedStateId = undefined;
 
 const references = [
-  { fuel: "Biomass", color: "#109540" },
-  { fuel: "Coal", color: "#5c4033" },
-  { fuel: "Gas", color: "#a450ff" },
-  { fuel: "Geothermal", color: "#ee9000" },
-  { fuel: "Hydro", color: "#0202ff" },
-  { fuel: "Oil", color: "#000" },
-  { fuel: "Nuclear", color: "#ffff00" },
-  { fuel: "Solar", color: "#92ff00" },
-  { fuel: "Waste", color: "#999999" },
-  { fuel: "Wind", color: "#50bbff" },
-  { fuel: "Other", color: "#fff" },
+  ["Biomass", "#109540"],
+  ["Coal", "#5c4033"],
+  ["Gas", "#a450ff"],
+  ["Geothermal", "#ee9000"],
+  ["Hydro", "#0202ff"],
+  ["Oil", "#000"],
+  ["Nuclear", "#ffff00"],
+  ["Solar", "#92ff00"],
+  ["Waste", "#999999"],
+  ["Wind", "#50bbff"],
+  ["Other", "#fff"],
 ];
 
 const DataLayer = () => {
@@ -156,90 +156,100 @@ const DataLayer = () => {
 
   return (
     <>
-        <MlGeoJsonLayer
-          type="circle"
-          mapId="map_1"
-          layerId="Plant_data"
-          geojson={geojson}
-          onClick={(ev) => {
-            console.log("click");
+      <MlGeoJsonLayer
+        type="circle"
+        mapId="map_1"
+        layerId="Plant_data"
+        geojson={geojson}
+        onClick={(ev) => {
+          console.log("click");
 
-            if (!selectedStateId && !selectedFeature) {
-              selectedStateId = ev.features[0].id;
-              setSelectedFeature(ev.features[0]);
-              setOpen(true);
-              mapHook.map.setFeatureState(
-                {
-                  source: "Plant_data",
-                  id: selectedStateId,
-                },
-                { selected: true }
-              );
-              mapHook.map.map.flyTo({
-                center: [
-                  ev.features[0].properties.longitude,
-                  ev.features[0].properties.latitude,
-                ],
-                zoom: 8,
-              });
-            } else if (selectedStateId !== ev.features[0].id) {
-              unselect();
-              setSelectedFeature(ev.features[0]);
-              selectedStateId = ev.features[0].id;
-              setOpen(true);
-              mapHook.map.setFeatureState(
-                {
-                  source: "Plant_data",
-                  id: selectedStateId,
-                },
-                { selected: true }
-              );
-              centerTo(
+          if (!selectedStateId && !selectedFeature) {
+            selectedStateId = ev.features[0].id;
+            setSelectedFeature(ev.features[0]);
+            setOpen(true);
+            mapHook.map.setFeatureState(
+              {
+                source: "Plant_data",
+                id: selectedStateId,
+              },
+              { selected: true }
+            );
+            mapHook.map.map.flyTo({
+              center: [
+                ev.features[0].properties.longitude,
                 ev.features[0].properties.latitude,
-                ev.features[0].properties.longitude
-              );
-            } else if (selectedStateId === ev.features[0].id) {
-              unselect();
-              setOpen(false);
-              centerTo(0, 0);
-            }
-          }}
-          paint={{
-            "circle-color": {
-              property: "primary_fuel",
-              type: "categorical",
-              default: "#fff",
-              stops: circleColorStops,
-            },
+              ],
+              zoom: 8,
+            });
+          } else if (selectedStateId !== ev.features[0].id) {
+            unselect();
+            setSelectedFeature(ev.features[0]);
+            selectedStateId = ev.features[0].id;
+            setOpen(true);
+            mapHook.map.setFeatureState(
+              {
+                source: "Plant_data",
+                id: selectedStateId,
+              },
+              { selected: true }
+            );
+            centerTo(
+              ev.features[0].properties.latitude,
+              ev.features[0].properties.longitude
+            );
+          } else if (selectedStateId === ev.features[0].id) {
+            unselect();
+            setOpen(false);
+            centerTo(0, 0);
+          }
+        }}
+        paint={{
+          "circle-color": {
+            property: "primary_fuel",
+            type: "categorical",
+            default: "#fff",
+            stops: references,
+          },
 
-            "circle-stroke-color": [
+          "circle-stroke-color": [
+            "case",
+            ["in", ["get", "primary_fuel"], ["literal", toShow]],
+            [
               "case",
               ["boolean", ["feature-state", "selected"], false],
               "black",
               "silver",
             ],
-            "circle-stroke-width": [
-              "case",
-              ["boolean", ["feature-state", "selected"], false],
-              4,
-              0.2,
+            "rgba(0,0,0,0)",
+          ],
+          "circle-stroke-width": [
+            "case",
+            ["in", ["get", "primary_fuel"], ["literal", toShow]],
+            ["case", ["boolean", ["feature-state", "selected"], false], 4, 0.2],
+            0,
+          ],
+
+          "circle-radius": [
+            "case",
+            ["in", ["get", "primary_fuel"], ["literal", toShow]],
+            [
+              "interpolate",
+              ["linear"],
+              ["get", "capacity_mw"],
+              1,
+              2,
+              3000,
+              10,
+              22500,
+              23,
             ],
+            0,
+          ],
+        }}
+      />
 
-            "circle-radius": {
-              property: "capacity_mw",
-              stops: [
-                [{ zoom: 2, value: 1 }, 2],
-                [{ zoom: 2, value: 3000 }, 10],
-                [{ zoom: 2, value: 22500 }, 23],
-                [{ zoom: 16, value: 1 }, 10],
-                [{ zoom: 16, value: 3000 }, 100],
-                [{ zoom: 16, value: 22500 }, 230],
-              ],
-            },
-          }}
-        />
       <ExtendLegend toShow={toShow} setToShow={setToShow} />
-
       <Sidebar
         open={open}
         closeHandler={() => {
