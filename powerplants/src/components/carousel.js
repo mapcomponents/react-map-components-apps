@@ -31,39 +31,39 @@ export default function WmsCarousel(props) {
   }
 
   return (
-    <>
-      <Box
-        sx={{
-          position: "fixed",
-          bottom: mediaIsLandscape ? 4 : 38,
-          left: mediaIsLandscape ? 120 : 4,
-          height: 65,
-          opacity: 0.8,
-          zIndex: 110,
-          display: "flex",
-          justifyContent: "space-evenly",
-          backgroundColor: "#353535",
-        }}
-      >
-        <IconButton onClick={clickLeft}>
-          <ArrowBackIosIcon color="secondary" />
-        </IconButton>
-        <Button
-          onClick={() => props.setter(showIndex)}
-          sx={{ display: "flex", alignItems: "stretch" }}
+     <>
+        <Box
+           sx={{
+              position: "fixed",
+              bottom: mediaIsLandscape ? 4 : 38,
+              left: mediaIsLandscape ? 120 : 4,
+              height: 100,
+              width: 140,
+              opacity: 0.8,
+              zIndex: 110,
+              display: "flex",
+              justifyContent: "center",
+              backgroundColor: "#353535",
+           }}
         >
-          <img
-            src={props.options[showIndex].image}
-            alt={props.options[showIndex].title}
-            style={{
-              opacity: 1,
-            }}
-          />
-        </Button>
-        <IconButton onClick={clickRight}>
-          <ArrowForwardIosIcon color="secondary" />
-        </IconButton>
-      </Box>
-    </>
+           <IconButton onClick={clickLeft}>
+              <ArrowBackIosIcon color="secondary" />
+           </IconButton>
+           <Button onClick={() => props.setter(showIndex)}>
+              <img
+                 src={props.options[showIndex].image}
+                 alt={props.options[showIndex].title}
+                 style={{
+                    width: 88,
+                    height: 88,
+                    opacity: 1,
+                 }}
+              />
+           </Button>
+           <IconButton onClick={clickRight}>
+              <ArrowForwardIosIcon color="secondary" />
+           </IconButton>
+        </Box>
+     </>
   );
 }
