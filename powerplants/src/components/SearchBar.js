@@ -24,7 +24,7 @@ export default function SearchBar() {
   const navigate = useNavigate();
 
   function handleX() {
-    navigate("");
+    navigate(pathname);
     setSearchWord("");
   }
 
