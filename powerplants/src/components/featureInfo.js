@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import {
-   ListSubheader,
    List,
    ListItemButton,
    ListItemText,
@@ -46,7 +45,7 @@ export default function FeatureInfo(props) {
                   <ListItemText>
                      Resource Type: <br />
                      {props.feature?.properties.primary_fuel} <br />
-                     Prduction Capacity [mw]:{" "}
+                     Production Capacity [mw]:{" "}
                      {props.feature?.properties.capacity_mw} <br />
                      Year of Commision:{" "}
                      {props.feature?.properties.commissioning_year
