@@ -14,6 +14,8 @@ const theme = createTheme({
    },
 });
 
+const pathname = window.location.pathname;
+
 function App() {
    const mediaIsMobile = useMediaQuery("(max-width:900px)");
 
@@ -38,8 +40,8 @@ function App() {
             )}
 
             <Routes>
-               <Route path="/:searchWord" element={<DataLayer />} />
-               <Route path="/" element={<DataLayer />} />
+               <Route path={pathname + ":searchWord"} element={<DataLayer />} />
+               <Route path={pathname + ""} element={<DataLayer />} />
             </Routes>
          </ThemeProvider>
       </>
