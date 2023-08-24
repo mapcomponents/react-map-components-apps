@@ -27,13 +27,12 @@ export default function ExtendBar(props) {
                               src={el.image}
                               alt={el.title + "_layer"}
                               style={{
-                                 opacity: extended
-                                    ? index === props.current
+                                 opacity:
+                                    index === props.current
                                        ? props.disabled
-                                          ? 0.6
+                                          ? 0.7
                                           : 1
-                                       : 0.6
-                                    : 0.95,
+                                       : 0.7,
                                  ...imageStyle,
                               }}
                            />
@@ -85,3 +84,4 @@ export default function ExtendBar(props) {
       </>
    );
 }
+

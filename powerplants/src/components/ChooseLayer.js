@@ -1,43 +1,36 @@
-import { useMap } from "@mapcomponents/react-maplibre";
-import React, { useState, useEffect } from "react";
+import { MlWmsLayer } from "@mapcomponents/react-maplibre";
+import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material/";
-import OSM_Fiordpic from "../assets/OSM_Fiordpic.png";
-import OSM_Brightpic from "../assets/OSM_Brightpic.png";
-import Medieval_kingdompic from "../assets/Medieval_kingdompic.png";
+import tonerpic from "../assets/tonerpic.png";
+import terrainpic from "../assets/terrainpic.png";
+import watercolorpic from "../assets/watercolorpic.jpg";
 import WmsCarousel from "./carousel";
-import DataLayer from "./dataLayer";
 import ExtendBar from "./extendBar";
-import OSM_Bright from "../assets/OSM_Bright.json";
-import OSM_Fiord from "../assets/OSM_Fiord.json";
-import Medieval_Kingdom from "../assets/medieval_kingdom.js";
 
-const styleOptions = [
-   { style: OSM_Bright, image: OSM_Brightpic, title: "Bright" },
-   { style: OSM_Fiord, image: OSM_Fiordpic, title: "Fiord" },
+const wmsOptions = [
    {
-      style: Medieval_Kingdom,
-      image: Medieval_kingdompic,
-      title: "Medieval",
+      title: "toner",
+      image: tonerpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+   },
+   {
+      title: "terrain",
+      image: terrainpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+   },
+   {
+      title: "watercolor",
+      image: watercolorpic,
+      link: "https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
    },
 ];
 
 export default function ChooseLayer() {
-   const mapHook = useMap({ mapId: "map_1" });
    const [currentIndex, setCurrentIndex] = useState(1);
+   const [showWMS, setShowWMS] = useState(wmsOptions[currentIndex].title);
    const [disableWms, setDisableWms] = useState(false);
-   const [mapReady, setMapReady] = useState(false);
 
    const mediaIsMobile = useMediaQuery("(max-width:900px)");
-
-   useEffect(() => {
-      styleOptions[currentIndex].style.layers.forEach((el) => {
-         if (mapHook.map?.map.getLayer(el.id)) {
-            mapHook.map?.removeLayer(el.id);
-         }
-         mapHook.map?.addLayer(el, "Plant_data");
-         setMapReady(true);
-      });
-   }, [currentIndex, mapHook.map]);
 
    const wmsSetter = (index) => {
       if (index === currentIndex) {
@@ -48,23 +41,37 @@ export default function ChooseLayer() {
          }
       } else {
          setCurrentIndex(index);
+         setShowWMS(wmsOptions[index].title);
          setDisableWms(false);
       }
    };
 
+   const WmsLayers = () => {
+      return (
+         <>
+            {wmsOptions?.map((el, index) => {
+               return (
+                  <MlWmsLayer
+                     key={el.title + "_" + index}
+                     url={el.link}
+                     visible={showWMS === el.title}
+                     insertBeforeLayer="Plant_data"
+                     urlParameters={{ layers: "" }}
+                  />
+               );
+            })}
+         </>
+      );
+   };
+
    return (
       <>
-         {!disableWms}
-         <DataLayer ready={mapReady} />
+         {!disableWms && <WmsLayers />}
          {mediaIsMobile ? (
-            <WmsCarousel
-               options={styleOptions}
-               setter={wmsSetter}
-               current={currentIndex}
-            />
+            <WmsCarousel options={wmsOptions} setter={wmsSetter} current={currentIndex} />
          ) : (
             <ExtendBar
-               options={styleOptions}
+               options={wmsOptions}
                setter={wmsSetter}
                current={currentIndex}
                disabled={disableWms}
@@ -73,3 +80,4 @@ export default function ChooseLayer() {
       </>
    );
 }
+

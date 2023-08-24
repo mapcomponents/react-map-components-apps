@@ -26,7 +26,7 @@ function App() {
                mapId="map_1"
                options={{
                   zoom: 1.8,
-                  style: "https://wms.wheregroup.com/tileserver/style/osm-fiord-color.json",
+                  style: "https://wms.wheregroup.com/tileserver/style/osm-bright.json",
                   center: [0, 0],
                }}
             />
