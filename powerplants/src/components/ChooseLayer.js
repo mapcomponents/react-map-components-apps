@@ -7,6 +7,8 @@ import watercolorpic from "../assets/watercolorpic.jpg";
 import WmsCarousel from "./carousel";
 import ExtendBar from "./extendBar";
 
+//change
+
 const wmsOptions = [
    {
       title: "toner",
