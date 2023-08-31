@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "./static/css/main.b2414a84.css",
-    "main.js": "./static/js/main.69a63e80.js",
+    "main.js": "./static/js/main.c27ca01e.js",
     "static/js/498.fc3f7d5d.chunk.js": "./static/js/498.fc3f7d5d.chunk.js",
     "static/js/703.d79aeea6.chunk.js": "./static/js/703.d79aeea6.chunk.js",
-    "static/js/610.ddc764bc.chunk.js": "./static/js/610.ddc764bc.chunk.js",
+    "static/js/610.a3f59509.chunk.js": "./static/js/610.a3f59509.chunk.js",
     "static/js/787.0213f48d.chunk.js": "./static/js/787.0213f48d.chunk.js",
-    "static/media/terrainpic.png": "./static/media/terrainpic.1d1659e18a4170c2ff4d.png",
-    "static/media/tonerpic.png": "./static/media/tonerpic.f953a04713cd594e3a80.png",
-    "static/media/watercolorpic.jpg": "./static/media/watercolorpic.85c9afe024c65bfdca54.jpg",
+    "static/media/OSM_Fiordpic.png": "./static/media/OSM_Fiordpic.f60ed8a7ca8860ec44a8.png",
+    "static/media/OSM_Brightpic.png": "./static/media/OSM_Brightpic.7bb41e042bc1423c543a.png",
+    "static/media/Medieval_kingdompic.png": "./static/media/Medieval_kingdompic.5cf65554a2f071d4ccce.png",
     "index.html": "./index.html",
     "main.b2414a84.css.map": "./static/css/main.b2414a84.css.map",
-    "main.69a63e80.js.map": "./static/js/main.69a63e80.js.map",
+    "main.c27ca01e.js.map": "./static/js/main.c27ca01e.js.map",
     "498.fc3f7d5d.chunk.js.map": "./static/js/498.fc3f7d5d.chunk.js.map",
     "703.d79aeea6.chunk.js.map": "./static/js/703.d79aeea6.chunk.js.map",
-    "610.ddc764bc.chunk.js.map": "./static/js/610.ddc764bc.chunk.js.map",
+    "610.a3f59509.chunk.js.map": "./static/js/610.a3f59509.chunk.js.map",
     "787.0213f48d.chunk.js.map": "./static/js/787.0213f48d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2414a84.css",
-    "static/js/main.69a63e80.js"
+    "static/js/main.c27ca01e.js"
   ]
 }
