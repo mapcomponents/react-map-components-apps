@@ -40,7 +40,7 @@ function App() {
       ) : (
         <MlNavigationTools
           componentId="toolbar"
-          sx={{ bottom: "25px", right: "0px" }}
+          sx={{ bottom: "25px" }}
         />
       )}
 

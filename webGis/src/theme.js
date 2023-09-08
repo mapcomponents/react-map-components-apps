@@ -1,6 +1,8 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
+import { deepmerge } from '@mui/utils';
+import { getTheme } from "@mapcomponents/react-maplibre";
 
-const theme = createTheme({
+const theme = createTheme(deepmerge(getTheme("light"),{
   typography: {},
   components: {
     MuiGrid: {
@@ -78,6 +80,6 @@ const theme = createTheme({
   zIndex: {
     snackbar: 3000,
   },
-});
+}));
 
 export default theme;
