@@ -5,10 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MapComponentsProvider } from "@mapcomponents/react-maplibre";
 import theme from "./theme.js";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { AppContextProvider } from "./AppContext";
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AppContextProvider>
       <MapComponentsProvider>
@@ -17,8 +17,7 @@ ReactDOM.render(
         </ThemeProvider>
       </MapComponentsProvider>
     </AppContextProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
