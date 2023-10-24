@@ -185,11 +185,7 @@ const DataLayer = () => {
                      ev.features[0].properties.latitude,
                      ev.features[0].properties.longitude
                   );
-               } else if (selectedStateId === ev.features[0].id) {
-                  unselect();
-                  setOpen(false);
-                  centerTo(0, 0);
-               }
+               } 
             }}
             paint={{
                "circle-color": {
