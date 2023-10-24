@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "./static/css/main.9ba2d1c4.css",
-    "main.js": "./static/js/main.67843e1f.js",
+    "main.js": "./static/js/main.78290c17.js",
     "static/js/498.d7485348.chunk.js": "./static/js/498.d7485348.chunk.js",
     "static/js/703.7e3ccc14.chunk.js": "./static/js/703.7e3ccc14.chunk.js",
     "static/js/198.009428f0.chunk.js": "./static/js/198.009428f0.chunk.js",
-    "static/js/496.7251c10b.chunk.js": "./static/js/496.7251c10b.chunk.js",
+    "static/js/496.2c240e0c.chunk.js": "./static/js/496.2c240e0c.chunk.js",
     "static/media/airplane-icon.png": "./static/media/airplane-icon.79089079dc6fc91e51c3.png",
     "static/media/WG-MapComponents-Logo_rgb-weisse-schrift.svg": "./static/media/WG-MapComponents-Logo_rgb-weisse-schrift.5a4a22a9d31320488d25f8c7128a2698.svg",
     "static/media/WG-MapComponents-Signet_rgb.svg": "./static/media/WG-MapComponents-Signet_rgb.55c30e07bc0a95c7d01cabb6c955603e.svg",
     "index.html": "./index.html",
     "main.9ba2d1c4.css.map": "./static/css/main.9ba2d1c4.css.map",
-    "main.67843e1f.js.map": "./static/js/main.67843e1f.js.map",
+    "main.78290c17.js.map": "./static/js/main.78290c17.js.map",
     "498.d7485348.chunk.js.map": "./static/js/498.d7485348.chunk.js.map",
     "703.7e3ccc14.chunk.js.map": "./static/js/703.7e3ccc14.chunk.js.map",
     "198.009428f0.chunk.js.map": "./static/js/198.009428f0.chunk.js.map",
-    "496.7251c10b.chunk.js.map": "./static/js/496.7251c10b.chunk.js.map"
+    "496.2c240e0c.chunk.js.map": "./static/js/496.2c240e0c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ba2d1c4.css",
-    "static/js/main.67843e1f.js"
+    "static/js/main.78290c17.js"
   ]
 }
