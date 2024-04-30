@@ -25,7 +25,7 @@ export default function ChooseLayer() {
    const mapHook = useMap({ mapId: "map_1" });
    const [currentIndex, setCurrentIndex] = useState(1);
    const [disableWms, setDisableWms] = useState(false);
-   const [mapReady, setMapReady] = useState(false);
+   const [mapReady, setMapReady] = useState(true);
 
    const mediaIsMobile = useMediaQuery("(max-width:900px)");
 
