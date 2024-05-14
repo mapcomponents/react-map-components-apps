@@ -64,7 +64,7 @@ export default function Legend(props) {
             style={
                mediaIsMobile
                   ? {
-                       opacity: props.toShow.includes(el.fuel) ? 0.8 : 0.2,
+                       opacity: props.toShow.includes(el.fuel) ? 0.95 : 0.5,
                        backgroundColor: "#353535",
                        color: "white",
                        justifyContent: "left",
@@ -72,7 +72,7 @@ export default function Legend(props) {
                        height: 22,
                     }
                   : {
-                       opacity: props.toShow.includes(el.fuel) ? 0.8 : 0.2,
+                       opacity: props.toShow.includes(el.fuel) ? 0.95 : 0.5,
                        backgroundColor: "#353535",
                        color: "white",
                        justifyContent: "left",

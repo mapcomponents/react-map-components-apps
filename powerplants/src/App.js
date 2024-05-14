@@ -39,9 +39,10 @@ function App() {
                <MlNavigationTools mapId="map1" showZoomButtons={true} />
             )}
 
+            {/*Problem: Bei Suche wird DataLayer ein zweites mal geladen und doppelt übereinander dargestellt*/}
             <Routes>
                <Route path={pathname + ":searchWord"} element={<DataLayer />} />
-               <Route path={pathname + ""} element={<DataLayer />} />
+               <Route path={pathname} element={<DataLayer />} />
             </Routes>
          </ThemeProvider>
       </>
