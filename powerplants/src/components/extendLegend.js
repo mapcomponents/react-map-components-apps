@@ -13,15 +13,13 @@ import Legend from "./Legend";
 export default function ExtendLegend(props) {
   const mediaIsMobile = useMediaQuery("(max-width:900px)");
 
-  const [extended, setExtended] = useState(false);
+  const [extended, setExtended] = useState(true);
 
-useEffect(()=>{
-   if(mediaIsMobile){
-      setExtended(false)
-   } else {
-      setExtended(true)
-   }
-}, [mediaIsMobile])
+  useEffect(() => {
+     if (mediaIsMobile) {
+        setExtended(false);
+     }
+  }, [mediaIsMobile]);
 
 
   return (

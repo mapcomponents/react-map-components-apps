@@ -1,11 +1,11 @@
 import "./App.css";
 import { MapLibreMap, MlNavigationTools } from "@mapcomponents/react-maplibre";
-import DataLayer from "./components/dataLayer";
 import "maplibre-gl/dist/maplibre-gl.css";
 import TopBar from "./components/TopBar";
 import ChooseLayer from "./components/ChooseLayer";
 import { createTheme, ThemeProvider, useMediaQuery } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
+import SearchLayer from "./components/searchLayer";
 
 const theme = createTheme({
    palette: {
@@ -40,8 +40,11 @@ function App() {
             )}
 
             <Routes>
-               <Route path={pathname + ":searchWord"} element={<DataLayer />} />
-               <Route path={pathname + ""} element={<DataLayer />} />
+               <Route
+                  path={pathname + ":searchWord"}
+                  element={<SearchLayer />}
+               />
+               <Route path={pathname + ""} element={<SearchLayer />} />
             </Routes>
          </ThemeProvider>
       </>
