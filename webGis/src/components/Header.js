@@ -5,13 +5,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import DynamicFeedOutlinedIcon from "@mui/icons-material/DynamicFeedOutlined";
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
-import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
 import { ReactComponent as MapcomponentsIconText } from "../assets/WG-MapComponents-Logo_rgb-weisse-schrift.svg";
 import { ReactComponent as MapcomponentsIcon } from "../assets/WG-MapComponents-Signet_rgb.svg";
