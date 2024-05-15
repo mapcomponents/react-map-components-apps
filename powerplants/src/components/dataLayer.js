@@ -8,10 +8,10 @@ import { useParams } from "react-router-dom";
 var selectedStateId = undefined;
 
 const DataLayer = () => {
-   const [open, setOpen] = useState(false);
    const mapHook = useMap({ mapId: "map_1" });
    const [selectedFeature, setSelectedFeature] = useState();
    const { searchWord } = useParams();
+   const [open, setOpen] = useState(false);
    const [toShow, setToShow] = useState([
       "Biomass",
       "Coal",
@@ -105,7 +105,11 @@ const DataLayer = () => {
 
    return (
       <>
-         <SearchLayer />
+         <SearchLayer
+            setOpen={setOpen}
+            selectedFeature={selectedFeature}
+            setSelectedFeature={setSelectedFeature}
+         />
          <ExtendLegend toShow={toShow} setToShow={setToShow} />
          <Sidebar
             open={open}

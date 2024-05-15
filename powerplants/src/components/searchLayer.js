@@ -2,11 +2,11 @@ import { MlGeoJsonLayer, useMap } from "@mapcomponents/react-maplibre";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
 var selectedStateId = undefined;
 
-const SearchLayer = () => {
+const SearchLayer = (props) => {
    const mapHook = useMap({ mapId: "map_1" });
-   const [selectedFeature, setSelectedFeature] = useState();
    const { searchWord } = useParams();
    const [bbox, setBbox] = useState([-179.984, -62.877, 180, 73.122]);
    var result_json = {};
@@ -124,11 +124,10 @@ const SearchLayer = () => {
             layerId="Plant_data"
             geojson={geojson}
             onClick={(ev) => {
-               console.log("click");
-
-               if (!selectedStateId && !selectedFeature) {
+               props.setOpen(true);
+               if (!selectedStateId && !props.selectedFeature) {
                   selectedStateId = ev.features[0].id;
-                  setSelectedFeature(ev.features[0]);
+                  props.setSelectedFeature(ev.features[0]);
                   mapHook.map.setFeatureState(
                      {
                         source: "Plant_data",
@@ -145,7 +144,7 @@ const SearchLayer = () => {
                   });
                } else if (selectedStateId !== ev.features[0].id) {
                   unselect();
-                  setSelectedFeature(ev.features[0]);
+                  props.setSelectedFeature(ev.features[0]);
                   selectedStateId = ev.features[0].id;
                   mapHook.map.setFeatureState(
                      {
