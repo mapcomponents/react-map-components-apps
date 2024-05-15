@@ -3,9 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
-var selectedStateId = undefined;
-
-const SearchLayer = (props) => {
+function SearchLayer(props) {
+   console.log(props);
    const mapHook = useMap({ mapId: "map_1" });
    const { searchWord } = useParams();
    const [bbox, setBbox] = useState([-179.984, -62.877, 180, 73.122]);
@@ -105,17 +104,6 @@ const SearchLayer = (props) => {
       }
    }
 
-   function unselect() {
-      mapHook.map.setFeatureState(
-         {
-            source: "Plant_data",
-            id: selectedStateId,
-         },
-         { selected: false }
-      );
-      selectedStateId = undefined;
-   }
-
    return (
       <>
          <MlGeoJsonLayer
@@ -124,14 +112,21 @@ const SearchLayer = (props) => {
             layerId="Plant_data"
             geojson={geojson}
             onClick={(ev) => {
-               props.setOpen(true);
-               if (!selectedStateId && !props.selectedFeature) {
-                  selectedStateId = ev.features[0].id;
+               console.log(
+                  "selectedstate=",
+                  props.selectedStateId,
+                  "selectedfeature=",
+                  props.selectedFeature
+               );
+               props.setOpen();
+               if (!props.selectedStateId && !props.selectedFeature) {
+                  console.log("wir sind bei 1");
+                  props.setSelectedStateId(ev.features[0].id);
                   props.setSelectedFeature(ev.features[0]);
                   mapHook.map.setFeatureState(
                      {
                         source: "Plant_data",
-                        id: selectedStateId,
+                        id: ev.features[0].id,
                      },
                      { selected: true }
                   );
@@ -142,14 +137,22 @@ const SearchLayer = (props) => {
                      ],
                      zoom: 8,
                   });
-               } else if (selectedStateId !== ev.features[0].id) {
-                  unselect();
-                  props.setSelectedFeature(ev.features[0]);
-                  selectedStateId = ev.features[0].id;
+               } else if (props.selectedStateId !== ev.features[0].id) {
+                  console.log("wir sind bei 2");
+                  props.unselect();
                   mapHook.map.setFeatureState(
                      {
                         source: "Plant_data",
-                        id: selectedStateId,
+                        id: props.selectedStateId,
+                     },
+                     { selected: false }
+                  );
+                  props.setSelectedFeature(ev.features[0]);
+                  props.setSelectedStateId(ev.features[0].id);
+                  mapHook.map.setFeatureState(
+                     {
+                        source: "Plant_data",
+                        id: ev.features[0].id,
                      },
                      { selected: true }
                   );

@@ -5,13 +5,13 @@ import Sidebar from "./Sidebar";
 import ExtendLegend from "./extendLegend";
 import { useParams } from "react-router-dom";
 
-var selectedStateId = undefined;
 
 const DataLayer = () => {
    const mapHook = useMap({ mapId: "map_1" });
    const [selectedFeature, setSelectedFeature] = useState();
    const { searchWord } = useParams();
    const [open, setOpen] = useState(false);
+   const [selectedStateId, setSelectedStateId] = useState(undefined);
    const [toShow, setToShow] = useState([
       "Biomass",
       "Coal",
@@ -40,6 +40,19 @@ const DataLayer = () => {
             zoom: 7,
          });
       }
+   }
+
+   function unselect() {
+      console.log("löschen ", selectedStateId);
+      mapHook.map.setFeatureState(
+         {
+            source: "Plant_data",
+            id: selectedStateId,
+         },
+         { selected: false }
+      );
+      setSelectedFeature(undefined);
+      setSelectedStateId(undefined);
    }
 
    useEffect(() => {
@@ -106,24 +119,19 @@ const DataLayer = () => {
    return (
       <>
          <SearchLayer
-            setOpen={setOpen}
+            setOpen={() => setOpen(true)}
             selectedFeature={selectedFeature}
             setSelectedFeature={setSelectedFeature}
+            unselect={unselect}
+            selectedStateId={selectedStateId}
+            setSelectedStateId={setSelectedStateId}
          />
          <ExtendLegend toShow={toShow} setToShow={setToShow} />
          <Sidebar
             open={open}
             closeHandler={() => {
                setOpen(false);
-               setSelectedFeature(undefined);
-               mapHook.map.setFeatureState(
-                  {
-                     source: "Plant_data",
-                     id: selectedStateId,
-                  },
-                  { selected: false }
-               );
-               centerTo(0, 0);
+               unselect();
             }}
             feature={selectedFeature}
          ></Sidebar>
