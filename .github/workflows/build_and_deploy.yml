@@ -29,6 +29,11 @@ jobs:
           CI=false yarn build
           cd ..
           cp -r powerplants/build docs-build/powerplants
+          cd multi_tab
+          yarn
+          CI=false yarn build
+          cd ..
+          cp -r multi_tab/build docs-build/multi_tab
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
