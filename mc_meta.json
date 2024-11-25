@@ -1,77 +1,98 @@
 {
-  "AppRunningContest": {
-     "name": "AppRunningContest",
-     "title": "Running contest",
-     "description": "A WebGis application which shows the results of a running contest between members of the different WhereGroup company locations in Germany.",
-     "i18n": {
-        "de": {
-           "title": "Laufwettbewerb",
-           "description": "Eine WebGis Anwendung die den Laufwettbewerb zwischen Mitarbeitern der verschiedenen WhereGroup Standorte in Deutschland darstellt."
-        }
-     },
-     "tags": [],
-     "category": "",
-     "type": "application",
-     "components": [
-        "MlTransitionGeoJsonLayer",
-        "MlGeoJsonLayer",
-        "MlVectorTileLayer"
-     ],
-     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
-     "demos": [
-        {
-           "name": "Demo",
-           "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
-        }
-     ]
-  },
-  "AppWebGis": {
-     "name": "AppWebGis",
-     "title": "WebGis",
-     "description": "An example of a WebGis application with different measure tools, visualizing multiple layers containg various data within north-rhine westphalia",
-     "i18n": {
-        "de": {
-           "title": "WebGis",
-           "description": "Eine WebGis Anwenung mit Messwerkzeugen, dargestellt werden mehere Layer mit unetrschiedlichen Informationen in NRW"
-        }
-     },
-     "tags": [],
-     "category": "",
-     "type": "application",
-     "components": [
-        "MlGeoJsonLayer",
-        "MlIconLayer",
-        "MlWmsLoader",
-        "MlNavigationTools"
-     ],
-     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
-     "demos": [
-        {
-           "name": "Demo",
-           "url": "https://mapcomponents.github.io/react-map-components-apps/webGis/"
-        }
-     ]
-  }, 
-  "PowerPlantsApp": {
-     "name": "PowerPlantsApp",
-     "title": "World Power Plants",
-     "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
-     "i18n": {
-        "de": {
-           "title": "Energiekraftwerke weltweit",
-           "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
-        }
-     },
-     "tags": [],
-     "category": "",
-     "type": "application",
-     "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
-     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
-     "demos": [
-        {
-           "name": "Demo",
-           "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
-        }
-     ]
-  }
+   "AppRunningContest": {
+      "name": "AppRunningContest",
+      "title": "Running contest",
+      "description": "A WebGis application which shows the results of a running contest between members of the different WhereGroup company locations in Germany.",
+      "i18n": {
+         "de": {
+            "title": "Laufwettbewerb",
+            "description": "Eine WebGis Anwendung die den Laufwettbewerb zwischen Mitarbeitern der verschiedenen WhereGroup Standorte in Deutschland darstellt."
+         }
+      },
+      "tags": [],
+      "category": "",
+      "type": "application",
+      "components": [
+         "MlTransitionGeoJsonLayer",
+         "MlGeoJsonLayer",
+         "MlVectorTileLayer"
+      ],
+      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
+      "demos": [
+         {
+            "name": "Demo",
+            "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
+         }
+      ]
+   },
+   "AppWebGis": {
+      "name": "AppWebGis",
+      "title": "WebGis",
+      "description": "An example of a WebGis application with different measure tools, visualizing multiple layers containg various data within north-rhine westphalia",
+      "i18n": {
+         "de": {
+            "title": "WebGis",
+            "description": "Eine WebGis Anwenung mit Messwerkzeugen, dargestellt werden mehere Layer mit unetrschiedlichen Informationen in NRW"
+         }
+      },
+      "tags": [],
+      "category": "",
+      "type": "application",
+      "components": [
+         "MlGeoJsonLayer",
+         "MlIconLayer",
+         "MlWmsLoader",
+         "MlNavigationTools"
+      ],
+      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
+      "demos": [
+         {
+            "name": "Demo",
+            "url": "https://mapcomponents.github.io/react-map-components-apps/webGis/"
+         }
+      ]
+   },
+   "PowerPlantsApp": {
+      "name": "PowerPlantsApp",
+      "title": "World Power Plants",
+      "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
+      "i18n": {
+         "de": {
+            "title": "Energiekraftwerke weltweit",
+            "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
+         }
+      },
+      "tags": [],
+      "category": "",
+      "type": "application",
+      "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
+      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
+      "demos": [
+         {
+            "name": "Demo",
+            "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
+         }
+      ]
+   },"MultiTab": {
+   "name": "MultiTab",
+   "title": "MultiTab",
+   "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
+   "i18n": {
+      "de": {
+         "title": "Energiekraftwerke weltweit",
+         "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
+      }
+   },
+   "tags": [],
+   "category": "",
+   "type": "application",
+   "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
+   "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
+   "demos": [
+      {
+         "name": "Demo",
+         "url": "https://mapcomponents.github.io/react-map-components-apps/multi_tab/"
+      }
+   ]
+}
 }

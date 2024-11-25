@@ -73,5 +73,26 @@
            "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
         }
      ]
+  },"MultiTab": {
+     "name": "MultiTab",
+     "title": "MultiTab",
+     "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
+     "i18n": {
+        "de": {
+           "title": "Energiekraftwerke weltweit",
+           "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
+        }
+     },
+     "tags": [],
+     "category": "",
+     "type": "application",
+     "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
+     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
+     "demos": [
+        {
+           "name": "Demo",
+           "url": "https://mapcomponents.github.io/react-map-components-apps/multi_tab/"
+        }
+     ]
   }
 }
