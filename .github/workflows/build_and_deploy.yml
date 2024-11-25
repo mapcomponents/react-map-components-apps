@@ -33,7 +33,7 @@ jobs:
           yarn
           CI=false yarn build
           cd ..
-          cp -r multi_tab/build docs-build/multi_tab
+          cp -r multi_tab/dist docs-build/multi_tab
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
