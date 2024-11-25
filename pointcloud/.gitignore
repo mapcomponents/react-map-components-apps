@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 sample*
-output_pointcloud.json
 public/output_pointcloud.json
