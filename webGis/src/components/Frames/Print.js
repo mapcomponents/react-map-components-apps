@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -8,9 +6,6 @@ import Grid from "@mui/material/Grid";
 
 import makeStyles from "@mui/styles/makeStyles";
 import theme from "../../theme.js";
-
-import Stack from "@mui/material/Stack";
-import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -39,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Print(props) {
+function Print() {
   const classes = useStyles(theme);
 
   return (

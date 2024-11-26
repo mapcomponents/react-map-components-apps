@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { MapContext } from "@mapcomponents/react-maplibre";
 import { v4 as uuidv4 } from "uuid";
 
-import { MlLayer, useWms, MlMarker } from "@mapcomponents/react-maplibre";
+import { MlLayer, useWms} from "@mapcomponents/react-maplibre";
 
 import NestedListItem from "./NestedListItem";
 
@@ -149,7 +149,7 @@ const MlWmsLoader = (props) => {
       var keysToDelete = [];
       for (var key of _urlParamsFromUrl.keys()) {
         for (var key2 in props.urlParameters) {
-          if (key.toLowerCase() == key2.toLowerCase()) {
+          if (key.toLowerCase() === key2.toLowerCase()) {
             keysToDelete.push(key);
           }
         }

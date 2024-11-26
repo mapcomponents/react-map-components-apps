@@ -4,7 +4,6 @@ import { MapContext } from "@mapcomponents/react-maplibre";
 
 import createPdf from "./createPdf";
 
-import PrinterIcon from "@mui/icons-material/Print";
 import Button from "@mui/material/Button";
 
 import theme from "../../../theme";

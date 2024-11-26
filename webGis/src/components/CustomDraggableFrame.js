@@ -4,7 +4,6 @@ import theme from "../theme";
 import StraightenOutlinedIcon from "@mui/icons-material/StraightenOutlined";
 import SquareFootOutlinedIcon from "@mui/icons-material/SquareFootOutlined";
 import makeStyles from "@mui/styles/makeStyles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import DraggableFrame from "./DraggableFrame";
@@ -17,9 +16,9 @@ import GeoJSONLoader from "../components/Frames/GeoJSONLoader";
 import LineGeoJSONIntersectionFeatureInfo from "../components/Frames/LineGeoJSONIntersectionFeatureInfo";
 
 
-import { ExampleConfig } from "../components/MlIconLayerstories";
+import { ExampleConfig } from "./MlIconLayerstories";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   icon: {
     width: "40px",
     margin: "10px",
@@ -36,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CustomDraggableFrame(props) {
-  const mediaIsMobile = useMediaQuery("(max-width:900px)");
   const classes = useStyles(theme);
 
   const entry = [

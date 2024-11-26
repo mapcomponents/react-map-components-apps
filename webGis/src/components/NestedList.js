@@ -1,5 +1,4 @@
 import * as React from "react";
-import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 
 import AppContext from "../AppContext";
@@ -8,10 +7,9 @@ import { useEffect, useCallback, useContext, useRef } from "react";
 import MlWmsLoader from "./MlWmsLoader";
 import NestedListItemGeoJSON from "./NestedListItemGeoJSON";
 
-import { useMap } from "@mapcomponents/react-maplibre";
 import { MapContext } from "@mapcomponents/react-maplibre";
 
-export default function NestedList(props) {
+export default function NestedList() {
   const [open, setOpen] = React.useState({});
 
   const appContext = useContext(AppContext);

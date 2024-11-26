@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useContext } from "react";
+import { useCallback, useState, useContext } from "react";
 
 import Grid from "@mui/material/Grid";
 
@@ -16,7 +16,7 @@ import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternate
 import TextField from "@mui/material/TextField";
 import AppContext from "../../AppContext.js";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   icon: {
     width: "40px",
     margin: "10px",
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function WmsLoader(props) {
+function WmsLoader() {
   const classes = useStyles(theme);
 
   const appContext = useContext(AppContext);
