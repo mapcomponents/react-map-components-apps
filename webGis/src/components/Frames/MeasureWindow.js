@@ -1,10 +1,9 @@
-import theme from "../../theme";
 import {MlMeasureTool} from "@mapcomponents/react-maplibre"
 import { Select, Box, Grid, MenuItem, FormControl } from "@mui/material";
 import { useState } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 
-const useStyles = makeStyles((theme)=> ({
+const useStyles = makeStyles(()=> ({
   icon: {
     width: "40px",
     margin: "10px",
@@ -25,7 +24,6 @@ const MeasureWindow = (props) => {
     const handleChange = (event) => {
       setUnit(event.target.value);
     };
-  const classes = useStyles(theme);
 
     return (
       <div style={{color: "#ddd", margin: "5px", minWidth: "200px" }}>

@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-
-import IconButton from "@mui/material/IconButton";
-
 import makeStyles from "@mui/styles/makeStyles";
 import theme from "../../theme.js";
 import Grid from "@mui/material/Grid";
@@ -26,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LayerTree(props) {
+function LayerTree() {
   const classes = useStyles(theme);
 
   return (

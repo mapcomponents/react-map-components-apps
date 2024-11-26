@@ -4,13 +4,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import DynamicFeedOutlinedIcon from "@mui/icons-material/DynamicFeedOutlined";
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
-import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
 import { ReactComponent as MapcomponentsIconText } from "../assets/WG-MapComponents-Logo_rgb-weisse-schrift.svg";
 import { ReactComponent as MapcomponentsIcon } from "../assets/WG-MapComponents-Signet_rgb.svg";
@@ -34,7 +32,7 @@ import { MapContext } from "@mapcomponents/react-maplibre";
 
 import * as React from "react";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   icon: {
     width: "40px",
     margin: "10px",
@@ -101,8 +99,8 @@ function Header(props) {
     (element) => {
       //if there is no geojson loaded, show error snackbar
       if (
-        appContext.includedGeoJSONs.length == 0 &&
-        element == "lgiFeatureInfo"
+        appContext.includedGeoJSONs.length === 0 &&
+        element === "lgiFeatureInfo"
       ) {
         handleClickSnackbar();
         return;
@@ -120,7 +118,7 @@ function Header(props) {
       }
       ////////////////////////Try///////////////
 
-      if (mediaIsMobile == true) {
+      if (mediaIsMobile === true) {
         if (
           [
             "print",
@@ -134,41 +132,41 @@ function Header(props) {
           ].includes(element)
         ) {
           let index = newState.indexOf("print");
-          if (index > -1 && element != "print") {
+          if (index > -1 && element !== "print") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("layers");
-          if (index > -1 && element != "layers") {
+          if (index > -1 && element !== "layers") {
             newState.splice(index, 1);
           }
           index = newState.indexOf("measurePolygon");
-          if (index > -1 && element != "measurePolygon") {
+          if (index > -1 && element !== "measurePolygon") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("measureLine");
-          if (index > -1 && element != "measureLine") {
+          if (index > -1 && element !== "measureLine") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("featureInfo");
-          if (index > -1 && element != "featureInfo") {
+          if (index > -1 && element !== "featureInfo") {
             newState.splice(index, 1);
             appContext.setFeatureInfoEnabled(false);
           }
 
           index = newState.indexOf("lgiFeatureInfo");
-          if (index > -1 && element != "lgiFeatureInfo") {
+          if (index > -1 && element !== "lgiFeatureInfo") {
             newState.splice(index, 1);
           }
           index = newState.indexOf("wmsLoader");
-          if (index > -1 && element != "wmsLoader") {
+          if (index > -1 && element !== "wmsLoader") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("geojsonLoader");
-          if (index > -1 && element != "geojsonLoader") {
+          if (index > -1 && element !== "geojsonLoader") {
             newState.splice(index, 1);
           }
         }
@@ -182,29 +180,29 @@ function Header(props) {
           ].includes(element)
         ) {
           let index = newState.indexOf("measurePolygon");
-          if (index > -1 && element != "measurePolygon") {
+          if (index > -1 && element !== "measurePolygon") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("measureLine");
-          if (index > -1 && element != "measureLine") {
+          if (index > -1 && element !== "measureLine") {
             newState.splice(index, 1);
           }
 
           index = newState.indexOf("featureInfo");
-          if (index > -1 && element != "featureInfo") {
+          if (index > -1 && element !== "featureInfo") {
             newState.splice(index, 1);
             appContext.setFeatureInfoEnabled(false);
           }
 
           index = newState.indexOf("lgiFeatureInfo");
-          if (index > -1 && element != "lgiFeatureInfo") {
+          if (index > -1 && element !== "lgiFeatureInfo") {
             newState.splice(index, 1);
           }
         }
       }
 
-      if (element == "featureInfo") {
+      if (element === "featureInfo") {
         appContext.setFeatureInfoEnabled(newState.includes(element));
       }
 

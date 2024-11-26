@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useContext, useRef } from "react";
+import {  useContext, useRef } from "react";
 
 import Grid from "@mui/material/Grid";
 
@@ -10,10 +10,10 @@ import { Button } from "@mui/material";
 
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
-import TextField from "@mui/material/TextField";
+
 import AppContext from "../../AppContext.js";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   icon: {
     width: "40px",
     margin: "10px",
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function GeoJSONLoader(props) {
+function GeoJSONLoader() {
   const classes = useStyles(theme);
 
   const inputRef = useRef(null);

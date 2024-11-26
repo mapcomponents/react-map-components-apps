@@ -1,8 +1,9 @@
 {
-  "name": "app_title",
+  "name": "multi_tab",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
