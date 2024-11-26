@@ -20,28 +20,28 @@ jobs:
           cd ..
           cp -r running_contest/build docs-build/running_contest
       - name: Install and build webGis🔧
-        run:
+        run: | # Install packages and build the Storybook files
           cd webGis
           yarn
           CI=false yarn build
           cd ..
           cp -r webGis/build docs-build/webGis
       - name: Install and build power plants🔧
-        run:
+        run: | # Install packages and build the Storybook files
           cd powerplants
           yarn
           CI=false yarn build
           cd ..
           cp -r powerplants/build docs-build/powerplants
       - name: Install and build multi tab🔧
-        run:
+        run: | # Install packages and build the Storybook files
           cd multi_tab
           yarn
           yarn build
           cd ..
           cp -r multi_tab/dist docs-build/multi_tab
       - name: copy catalogue metadata
-        run: |
+        run: | # Install packages and build the Storybook files
           cp mc_meta.json docs-build/mc_meta.json
           cp -r assets docs-build/assets
       - name: Deploy 🚀
