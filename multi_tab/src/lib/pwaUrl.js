@@ -1,3 +1,3 @@
-const pwaUrl = window.location.origin + "/";
+const pwaUrl = window.location.origin + "/react-map-components-apps/multi_tab/";
 
 export default pwaUrl;
