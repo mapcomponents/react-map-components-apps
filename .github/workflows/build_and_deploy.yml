@@ -39,7 +39,7 @@ jobs:
           yarn
           CI=false yarn build
           cd ..
-          cp -r multi_tab/dist/* docs-build/
+          cp -r multi_tab/dist/ docs-build/
       - name: copy catalogue metadata
         run: | # Install packages and build the Storybook files
           cp mc_meta.json docs-build/mc_meta.json
