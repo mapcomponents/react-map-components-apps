@@ -34,12 +34,12 @@ jobs:
           cd ..
           cp -r powerplants/build docs-build/powerplants
       - name: Install and build multi tab🔧
-        run: | # Install packages and build the Storybook files
+        run: |
           cd multi_tab
           yarn
-          yarn build
+          CI=false yarn build
           cd ..
-          cp -r multi_tab/dist docs-build/multi_tab
+          cp -r multi_tab/dist/* docs-build/
       - name: copy catalogue metadata
         run: | # Install packages and build the Storybook files
           cp mc_meta.json docs-build/mc_meta.json
