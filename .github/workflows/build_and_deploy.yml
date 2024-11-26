@@ -19,14 +19,14 @@ jobs:
           yarn build
           cd ..
           cp -r running_contest/build docs-build/running_contest
-      - name: Install and build webGis, power plants and multi tab🔧
+      - name: Install and build webGis🔧
         run:
           cd webGis
           yarn
           CI=false yarn build
           cd ..
           cp -r webGis/build docs-build/webGis
-      - name: Install and build power plants and multi tab🔧
+      - name: Install and build power plants🔧
         run:
           cd powerplants
           yarn
@@ -37,7 +37,7 @@ jobs:
         run:
           cd multi_tab
           yarn
-          CI=false yarn build
+          yarn build
           cd ..
           cp -r multi_tab/dist docs-build/multi_tab
       - name: copy catalogue metadata
