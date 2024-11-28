@@ -75,19 +75,19 @@
       ]
    },"MultiTab": {
    "name": "MultiTab",
-   "title": "MultiTab",
-   "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
+   "title": "Multi-Tab Demo",
+   "description": "This application is one way to split visual and information. You can open a table which contains all the information you can see on the map. Looking for an object but can't find it in one of the pages? Just click on it the programm will find it for you!",
    "i18n": {
       "de": {
-         "title": "Energiekraftwerke weltweit",
-         "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
+         "title": "Multi-Tab Demo",
+         "description": "Diese Anwendung ist eine Möglichkeit, visuelle Objekte und Informationen aufzuteilen. Sie können eine Tabelle öffnen, die alle Informationen, von den Objekten, die Sie auf der Karte sehen können, enthält. Suchen Sie ein Objekt, können es aber auf einer der Seiten nicht finden? Klicken Sie einfach auf das Objekt, das sie suchen. Das Programm findet es für Sie!"
       }
    },
    "tags": [],
    "category": "",
    "type": "application",
-   "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
-   "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
+   "components": ["MlGeoJsonLayer", "MlLayerList", "MlLayerListItem", "MlHighlightFeature"],
+   "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/MultiTab.png",
    "demos": [
       {
          "name": "Demo",
