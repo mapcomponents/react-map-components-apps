@@ -6,7 +6,7 @@ import {Button} from "@mui/material";
 function App() {
 
     const openTable = () => {
-        const newUrl = `${window.location.href}table`;
+        const newUrl = `${window.location.href}#/table`;
         window.open(newUrl, "_blank", "popup");
     }
     return (
