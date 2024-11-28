@@ -23,21 +23,22 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+/*const pathname = window.location.pathname;*/
 
-const router = createBrowserRouter([
+/*const router = createBrowserRouter([
     {
-        path: '/',
+        path: pathname + '/',
         element: (
             <App/>
         ),
     },
     {
-        path: '/table',
+        path: pathname + '/table',
         element: (
             <DataTableManager />
         )
     }
-])
+])*/
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
