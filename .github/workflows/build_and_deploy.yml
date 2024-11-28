@@ -40,13 +40,6 @@ jobs:
           CI=false yarn build
           cd ..
           cp -r multi_tab/dist docs-build/multi_tab
-      - name: Install and build test_app🔧
-        run: |
-          cd test_app
-          yarn
-          CI=false yarn build
-          cd ..
-          cp -r test_app/dist docs-build/test_app
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
