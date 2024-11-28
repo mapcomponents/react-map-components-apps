@@ -44,7 +44,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <QueryClientProvider client={queryClient}>
             <MapComponentsProvider>
                 <DataContextProvider>
-                    <RouterProvider router={router}/>
+                    <App></App>
                 </DataContextProvider>
             </MapComponentsProvider>
         </QueryClientProvider>
