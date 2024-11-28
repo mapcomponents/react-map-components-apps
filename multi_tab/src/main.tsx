@@ -4,7 +4,7 @@ import {MapComponentsProvider} from "@mapcomponents/react-maplibre";
 import App from './App';
 import DataTableManager from './components/DataTableManager.jsx';
 import './index.css';
-import { Route, HashRouter as Router } from "react-router-dom";
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {DataContextProvider} from "./contexts/DataContext";
 import pwaUrl from "./lib/pwaUrl";
@@ -20,7 +20,6 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-const pathname = window.location.pathname;
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -29,8 +28,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <MapComponentsProvider>
                 <DataContextProvider>
                     <Router>
-                        <Route path={pathname + "/table"} element={<DataTableManager />} />
-                        <Route path={pathname + "/"} element={<App />} />
+                        <Routes>
+                            <Route path="*" element={<div>404 - Page Not Found</div>}/>
+                            <Route path={`/table`} element={<DataTableManager/>}/>
+                            <Route path={`/`} element={<App/>}/>
+                        </Routes>
                     </Router>
                 </DataContextProvider>
             </MapComponentsProvider>
