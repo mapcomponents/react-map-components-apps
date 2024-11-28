@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {MapComponentsProvider} from "@mapcomponents/react-maplibre";
 import App from './App';
-/*import DataTableManager from './components/DataTableManager.jsx';*/
+import DataTableManager from './components/DataTableManager.jsx';
 import './index.css';
-/*import {
+import {
     createBrowserRouter,
     RouterProvider,
-} from "react-router-dom";*/
+} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {DataContextProvider} from "./contexts/DataContext";
 import pwaUrl from "./lib/pwaUrl";
@@ -23,9 +23,9 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-/*const pathname = window.location.pathname;*/
+const pathname = window.location.pathname;
 
-/*const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: pathname + '/',
         element: (
@@ -38,14 +38,14 @@ if ('serviceWorker' in navigator) {
             <DataTableManager />
         )
     }
-])*/
+])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
             <MapComponentsProvider>
                 <DataContextProvider>
-                    <App></App>
+                    <RouterProvider router={router}></RouterProvider>
                 </DataContextProvider>
             </MapComponentsProvider>
         </QueryClientProvider>
