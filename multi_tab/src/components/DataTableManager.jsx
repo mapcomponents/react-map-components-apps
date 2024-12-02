@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
-import TopToolBar from "./UI_Components/TopToolbar.tsx";
+import TopToolBar from "./UI_Components/TableToolbar.tsx";
 import CreateTable from "./UI_Components/DataTable.jsx";
 import {DataContext} from "../contexts/DataContext.tsx";
 
@@ -11,8 +11,6 @@ export default function DataTableManager() {
     const [selected, setSelected] = useState();
     const [selectedLayer, setSelectedLayer] = useState("all");
     const [tableSplit, setTableSplit] = useState(false);
-    const [parksVisible, setParksVisible] = useState(true);
-    const [restaurantsVisible, setRestaurantsVisible] = useState(true);
     /*const [showOnlyVisibleObjects, setShowOnlyVisibleObjects] = useState(true);*/
 
     useEffect(() => {
@@ -27,9 +25,6 @@ export default function DataTableManager() {
                         setSelected(message.selected);
                         break;
                     case"visibleLayers":
-                        console.log(message);
-                        setParksVisible(message.parksShown);
-                        setRestaurantsVisible(message.restaurantsShown);
                         setSelectedLayer(
                             message.parksShown && message.restaurantsShown
                                 ? 'all'
@@ -37,7 +32,7 @@ export default function DataTableManager() {
                                     ? 'restaurant'
                                     : message.parksShown
                                         ? 'park'
-                                        : ''
+                                        : 'all'
                         );
 
                         break;
