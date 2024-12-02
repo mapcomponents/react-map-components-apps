@@ -8,9 +8,9 @@ export default function DataTableManager() {
     const data = useContext(DataContext);
 
     const [visibleIDs, setVisibleIDs] = useState([]);
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState();
     const [selectedLayer, setSelectedLayer] = useState("all");
-    const [tableSplit, setTableSplit] = useState(false);
+    const [tableSplit, setTableSplit] = useState(true);
     /*const [showOnlyVisibleObjects, setShowOnlyVisibleObjects] = useState(true);*/
 
     useEffect(() => {
@@ -37,10 +37,6 @@ export default function DataTableManager() {
         }
     }, []);
 
-
-    //sorts all Objects which is Layer codependent
-    useEffect(() => {
-    }, [visibleIDs, selectedLayer, data]);
 
     if (!data) {
         return <div>Loading data...</div>;

@@ -73,26 +73,29 @@
             "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
          }
       ]
-   },"MultiTab": {
-   "name": "MultiTab",
-   "title": "Multi-Tab Demo",
-   "description": "This application is one way to split visual and information. You can open a table which contains all the information you can see on the map. Looking for an object but can't find it in one of the pages? Just click on it the programm will find it for you!",
-   "i18n": {
-      "de": {
-         "title": "Multi-Tab Demo",
-         "description": "Diese Anwendung ist eine Möglichkeit, visuelle Objekte und Informationen aufzuteilen. Sie können eine Tabelle öffnen, die alle Informationen, von den Objekten, die Sie auf der Karte sehen können, enthält. Suchen Sie ein Objekt, können es aber auf einer der Seiten nicht finden? Klicken Sie einfach auf das Objekt, das sie suchen. Das Programm findet es für Sie!"
-      }
    },
-   "tags": [],
-   "category": "",
-   "type": "application",
-   "components": ["MlGeoJsonLayer"],
-   "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/MultiTab.png",
-   "demos": [
-      {
-         "name": "Demo",
-         "url": "https://mapcomponents.github.io/react-map-components-apps/multi_tab/"
-      }
-   ]
-}
+   "MultiTab": {
+      "name": "MultiTab",
+      "title": "Multi-Tab Demo",
+      "description": "This application combines graphical and text-based information of objects that are represented in a table and map: Open a table with all the information visible on the map. Looking for an object and can't find it? Just click on it - the program will show it to you!",
+      "i18n": {
+         "de": {
+            "title": "Multi-Tab Demo",
+            "description": "Diese Anwendung kombiniert grafische und textbasierte Informationen von Objekten, die in einer Tabelle und einer Karte dargestellt werden: Öffnen Sie eine Tabelle mit allen Informationen, die auf der Karte sichtbar sind. Sie suchen ein Objekt und können es nicht finden? Klicken Sie es einfach an - das Programm zeigt es Ihnen an!"
+         }
+      },
+      "tags": [],
+      "category": "",
+      "type": "application",
+      "components": [
+         "MlGeoJsonLayer"
+      ],
+      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/MultiTab.png",
+      "demos": [
+         {
+            "name": "Demo",
+            "url": "https://mapcomponents.github.io/react-map-components-apps/multi_tab/"
+         }
+      ]
+   }
 }

@@ -48,7 +48,7 @@ const getSelectedFeature = (data, id) => {
 };
 
 
-export default function LayerManager() {
+export default function LayerManager(props) {
     const mapHook = useMap();
 
     const [selected, setSelected] = useState();
@@ -56,6 +56,7 @@ export default function LayerManager() {
     const [src, setSrc] = useState(null);
 
     const data = useContext(DataContext);
+
 
     useEffect(() => {
         if ('serviceWorker' in navigator) {
@@ -122,11 +123,26 @@ export default function LayerManager() {
         };
     }, [mapHook.map]);
 
+    useEffect(() => {
+        console.log("test")
+        if (!mapHook.map) return;
+
+        console.log({
+            parksShown: mapHook.map.getLayer('parks').visibility === "visible",
+            restaurantsShown: mapHook.map.getLayer('restaurants').visibility === "visible",
+        })
+        sendMessageToServiceWorker({
+            type: "visibleLayers",
+            message: {
+                parksShown: mapHook.map.getLayer('parks').visibility === "visible",
+                restaurantsShown: mapHook.map.getLayer('restaurants').visibility === "visible",
+            }
+        })
+    }, [mapHook.map.style._layers.parks.visibility === "visible"]);
     return (
         <>
-            <Sidebar open={true} name={"Layers"}>
+            <Sidebar open={props.openSidebar} setOpen={props.setOpenSidebar} name={"Layers"} >
                 <LayerList>
-                    {/* <RestaurantLayer /> */}
                     <ParkLayer
                         selected={selected}
                         setSelected={setSelected}
@@ -138,8 +154,8 @@ export default function LayerManager() {
                         setSrc={setSrc}
                     />
                 </LayerList>
-                {selectedFeature && <MlHighlightFeature features={[selectedFeature]} variant={"hell"} offset={1}/>}
             </Sidebar>
+            {selectedFeature && <MlHighlightFeature features={[selectedFeature]} variant={"hell"} offset={1}/>}
         </>
     );
 }

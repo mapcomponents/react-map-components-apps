@@ -67,6 +67,9 @@ function TopToolbar(props: TopToolbarProps) {
                                 variant={'outlined'}
                                 value={props.selectedLayer}
                                 onChange={handleLayerSelect}
+                                sx={{
+                                    width: '122px',
+                                }}
                             >
                                 <MenuItem value={"all"}>all</MenuItem>
                                 {layers.map(layerName => (
@@ -83,6 +86,9 @@ function TopToolbar(props: TopToolbarProps) {
                             <Button
                                 variant={'outlined'}
                                 onClick={handleTableSplit}
+                                sx={{
+                                    color: '#238ee5'
+                                }}
                             >
                                 {props.tableSplit ? ("merge table") : ("split table")}
                             </Button>
