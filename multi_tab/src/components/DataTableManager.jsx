@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
-import TopToolBar from "./UI_Components/TopToolbar.tsx";
+import TopToolBar from "./UI_Components/TableToolbar.tsx";
 import CreateTable from "./UI_Components/DataTable.jsx";
 import {DataContext} from "../contexts/DataContext.tsx";
 
@@ -8,7 +8,7 @@ export default function DataTableManager() {
     const data = useContext(DataContext);
 
     const [visibleIDs, setVisibleIDs] = useState([]);
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState();
     const [selectedLayer, setSelectedLayer] = useState("all");
     const [tableSplit, setTableSplit] = useState(false);
     /*const [showOnlyVisibleObjects, setShowOnlyVisibleObjects] = useState(true);*/
@@ -24,6 +24,18 @@ export default function DataTableManager() {
                     case "selectedFromLayerManager":
                         setSelected(message.selected);
                         break;
+                    case"visibleLayers":
+                        setSelectedLayer(
+                            message.parksShown && message.restaurantsShown
+                                ? 'all'
+                                : message.restaurantsShown
+                                    ? 'restaurant'
+                                    : message.parksShown
+                                        ? 'park'
+                                        : 'all'
+                        );
+
+                        break;
                     default:
                         console.warn(`Unhandled message type: ${type}`);
                 }
@@ -37,10 +49,6 @@ export default function DataTableManager() {
         }
     }, []);
 
-
-    //sorts all Objects which is Layer codependent
-    useEffect(() => {
-    }, [visibleIDs, selectedLayer, data]);
 
     if (!data) {
         return <div>Loading data...</div>;

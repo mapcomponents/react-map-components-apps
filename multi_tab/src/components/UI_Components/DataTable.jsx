@@ -2,21 +2,20 @@ import React, {useMemo} from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import {sendMessageToServiceWorker} from "../../js/sendMessageToSW.js";
 
+//Returns an Array of all objects which are visible on the map
 const createObjectList = (data, visibleIDs, selectedLayer) => {
-    console.log(data);
-    console.log(visibleIDs);
-    console.log(selectedLayer);
     if (!data) return [];
 
     return Object.values(data).flatMap(value =>
         value.features.filter(feature => {
             const isVisible = visibleIDs.length === 0 || visibleIDs.includes(feature.id);
-            const isCorrectLayer = selectedLayer === "all" || feature.properties.amenity === selectedLayer;
+            const isCorrectLayer = (selectedLayer === "all" || feature.properties.amenity === selectedLayer);
             return isVisible && isCorrectLayer;
         })
     );
 };
 
+//Returns an array containing the properties as objects of the parameter list
 const createPropertiesList = (objectList) => {
     if (!objectList) return [];
     const propertiesList = [];
@@ -26,6 +25,7 @@ const createPropertiesList = (objectList) => {
     return propertiesList;
 };
 
+//Returns an array containing all the keys from the properties (used in table to
 const createKeyList = (propertiesList) => {
     const keyFrequency = {};
     const minUsage = propertiesList.length < 4 ? 0 : 4;
@@ -53,7 +53,6 @@ const selecting = (id, src) => {
 
 const DataTable = (props) => {
     const objectList = useMemo(() => createObjectList(props.data, props.visibleIDs, props.selectedLayer), [props.data, props.visibleIDs, props.selectedLayer]);
-    console.log(objectList);
     const propertiesList = useMemo(() => createPropertiesList(objectList), [objectList]);
     const keyList = useMemo(() => createKeyList(propertiesList), [propertiesList]);
 

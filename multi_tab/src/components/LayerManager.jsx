@@ -1,4 +1,4 @@
-import {LayerList, Sidebar, useMap,} from "@mapcomponents/react-maplibre";
+import {LayerList, Sidebar, useMap, useMapState,} from "@mapcomponents/react-maplibre";
 import ParkLayer from "./Layers/ParkLayer.tsx";
 import {useContext, useEffect, useState} from "react";
 import {sendMessageToServiceWorker} from "../js/sendMessageToSW";
@@ -48,7 +48,7 @@ const getSelectedFeature = (data, id) => {
 };
 
 
-export default function LayerManager() {
+export default function LayerManager(props) {
     const mapHook = useMap();
 
     const [selected, setSelected] = useState();
@@ -56,6 +56,13 @@ export default function LayerManager() {
     const [src, setSrc] = useState(null);
 
     const data = useContext(DataContext);
+
+    const mapState = useMapState({
+        watch:{
+            layers: true
+        },
+    })
+
 
     useEffect(() => {
         if ('serviceWorker' in navigator) {
@@ -72,7 +79,7 @@ export default function LayerManager() {
                 navigator.serviceWorker.removeEventListener('message', handleMessage);
             };
         }
-    }, [setSelected]);
+    }, []);
 
     useEffect(() => {
         if (!mapHook.map || !selected) return;
@@ -122,11 +129,22 @@ export default function LayerManager() {
         };
     }, [mapHook.map]);
 
+    useEffect(() => {
+        if (!mapHook.map) return;
+        console.log("send")
+
+        sendMessageToServiceWorker({
+            type: "visibleLayers",
+            message: {
+                parksShown: mapHook.map.getLayer('parks').visibility === "visible",
+                restaurantsShown: mapHook.map.getLayer('restaurants').visibility === "visible",
+            }
+        })
+    }, [mapState.layers]);
     return (
         <>
-            <Sidebar open={true} name={"Layers"}>
+            <Sidebar open={props.openSidebar} setOpen={props.setOpenSidebar} name={"Layers"} >
                 <LayerList>
-                    {/* <RestaurantLayer /> */}
                     <ParkLayer
                         selected={selected}
                         setSelected={setSelected}
@@ -138,8 +156,8 @@ export default function LayerManager() {
                         setSrc={setSrc}
                     />
                 </LayerList>
-                {selectedFeature && <MlHighlightFeature features={[selectedFeature]} variant={"hell"} offset={1}/>}
             </Sidebar>
+            {selectedFeature && <MlHighlightFeature features={[selectedFeature]} variant={"hell"} offset={1}/>}
         </>
     );
 }

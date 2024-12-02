@@ -8,7 +8,7 @@ interface ParkLayerProps {
     setSrc: React.Dispatch<React.SetStateAction<string>>
 }
 
-// Function to initialize all parks to the map
+// Function to initialize all parks to the map if the data is fetched successfully
 export default function ParkLayer({
                                       setSelected,
                                       setSrc

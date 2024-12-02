@@ -8,7 +8,7 @@ interface RestaurantLayerProps {
     setSrc: React.Dispatch<React.SetStateAction<string>>
 }
 
-// Function to initialize all restaurants to the map
+// Function to initialize all restaurants to the map if the data is fetched successfully
 export default function RestaurantLayer({
                                             setSelected,
                                             setSrc
