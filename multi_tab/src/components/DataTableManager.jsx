@@ -10,7 +10,9 @@ export default function DataTableManager() {
     const [visibleIDs, setVisibleIDs] = useState([]);
     const [selected, setSelected] = useState();
     const [selectedLayer, setSelectedLayer] = useState("all");
-    const [tableSplit, setTableSplit] = useState(true);
+    const [tableSplit, setTableSplit] = useState(false);
+    const [parksVisible, setParksVisible] = useState(true);
+    const [restaurantsVisible, setRestaurantsVisible] = useState(true);
     /*const [showOnlyVisibleObjects, setShowOnlyVisibleObjects] = useState(true);*/
 
     useEffect(() => {
@@ -23,6 +25,21 @@ export default function DataTableManager() {
                         break;
                     case "selectedFromLayerManager":
                         setSelected(message.selected);
+                        break;
+                    case"visibleLayers":
+                        console.log(message);
+                        setParksVisible(message.parksShown);
+                        setRestaurantsVisible(message.restaurantsShown);
+                        setSelectedLayer(
+                            message.parksShown && message.restaurantsShown
+                                ? 'all'
+                                : message.restaurantsShown
+                                    ? 'restaurant'
+                                    : message.parksShown
+                                        ? 'park'
+                                        : ''
+                        );
+
                         break;
                     default:
                         console.warn(`Unhandled message type: ${type}`);

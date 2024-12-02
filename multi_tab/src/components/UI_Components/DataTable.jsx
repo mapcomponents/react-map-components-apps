@@ -9,7 +9,7 @@ const createObjectList = (data, visibleIDs, selectedLayer) => {
     return Object.values(data).flatMap(value =>
         value.features.filter(feature => {
             const isVisible = visibleIDs.length === 0 || visibleIDs.includes(feature.id);
-            const isCorrectLayer = selectedLayer === "all" || feature.properties.amenity === selectedLayer;
+            const isCorrectLayer = (selectedLayer === "all" || feature.properties.amenity === selectedLayer);
             return isVisible && isCorrectLayer;
         })
     );

@@ -1,4 +1,4 @@
-import {LayerList, Sidebar, useMap,} from "@mapcomponents/react-maplibre";
+import {LayerList, Sidebar, useMap, useMapState,} from "@mapcomponents/react-maplibre";
 import ParkLayer from "./Layers/ParkLayer.tsx";
 import {useContext, useEffect, useState} from "react";
 import {sendMessageToServiceWorker} from "../js/sendMessageToSW";
@@ -57,6 +57,12 @@ export default function LayerManager(props) {
 
     const data = useContext(DataContext);
 
+    const mapState = useMapState({
+        watch:{
+            layers: true
+        },
+    })
+
 
     useEffect(() => {
         if ('serviceWorker' in navigator) {
@@ -73,7 +79,7 @@ export default function LayerManager(props) {
                 navigator.serviceWorker.removeEventListener('message', handleMessage);
             };
         }
-    }, [setSelected]);
+    }, []);
 
     useEffect(() => {
         if (!mapHook.map || !selected) return;
@@ -124,13 +130,8 @@ export default function LayerManager(props) {
     }, [mapHook.map]);
 
     useEffect(() => {
-        console.log("test")
         if (!mapHook.map) return;
 
-        console.log({
-            parksShown: mapHook.map.getLayer('parks').visibility === "visible",
-            restaurantsShown: mapHook.map.getLayer('restaurants').visibility === "visible",
-        })
         sendMessageToServiceWorker({
             type: "visibleLayers",
             message: {
@@ -138,7 +139,7 @@ export default function LayerManager(props) {
                 restaurantsShown: mapHook.map.getLayer('restaurants').visibility === "visible",
             }
         })
-    }, [mapHook.map.style._layers.parks.visibility === "visible"]);
+    }, [mapState.layers]);
     return (
         <>
             <Sidebar open={props.openSidebar} setOpen={props.setOpenSidebar} name={"Layers"} >

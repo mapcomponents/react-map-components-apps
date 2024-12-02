@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import {useState} from "react";
 
 function App() {
-    const [openSidebar, setOpenSidebar] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(true);
     const ghPagesUrl = 'https://mapcomponents.github.io/react-map-components-maplibre/';
     const logoUrl = ghPagesUrl + 'assets/WG-MapComponents-Logo_rgb.svg';
 
