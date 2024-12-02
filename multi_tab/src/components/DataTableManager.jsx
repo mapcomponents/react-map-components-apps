@@ -25,6 +25,7 @@ export default function DataTableManager() {
                         setSelected(message.selected);
                         break;
                     case"visibleLayers":
+                        console.log("got message")
                         setSelectedLayer(
                             message.parksShown && message.restaurantsShown
                                 ? 'all'

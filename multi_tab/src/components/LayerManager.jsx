@@ -131,8 +131,6 @@ export default function LayerManager(props) {
 
     useEffect(() => {
         if (!mapHook.map) return;
-        console.log("send")
-
         sendMessageToServiceWorker({
             type: "visibleLayers",
             message: {
