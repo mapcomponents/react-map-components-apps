@@ -1,5 +1,6 @@
 import {AppBar, Box, Button, Slider, Switch, Typography} from "@mui/material";
-import {useState} from "react";
+import React, {useState} from "react";
+import {Sidebar, TopToolbar} from "@mapcomponents/react-maplibre";
 
 export default function PointCloudSettings(props) {
     const [pointSize, setPointSize] = useState(2);
@@ -8,6 +9,8 @@ export default function PointCloudSettings(props) {
     const [red, setRed] = useState(255);
     const [green, setGreen] = useState(255);
     const [blue, setBlue] = useState(255);
+
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const saveData = () => {
         props.setPointSize(pointSize);
@@ -20,23 +23,13 @@ export default function PointCloudSettings(props) {
 
     return (
         <>
-            <AppBar
-                position="fixed"
-                elevation={3}
-                sx={{
-                    width: "20%",
-                    margin: "10px",
-                    paddingLeft: "25px",
-                    paddingBottom: "25px",
-                    paddingRight: "25px",
-                    left: "0%",
-
-                    zIndex: 1000,
-
-                    backgroundColor: '#FFFFFFCC',
-                    color: "black"
-                }}
-            >
+            <TopToolbar buttons={
+                <Button
+                    variant= {sidebarOpen?"outlined":"contained"}
+                    onClick={() => setSidebarOpen(true)}
+                >PointCloud settings</Button>
+                }/>
+            <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} >
                 <Box
                     sx={{
                         marginTop: '20px',
@@ -217,7 +210,7 @@ export default function PointCloudSettings(props) {
                     </Box>
 
                 </Box>
-            </AppBar>
+            </Sidebar>
         </>
     );
 }

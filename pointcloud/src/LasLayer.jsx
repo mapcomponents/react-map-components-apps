@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useMap} from "@mapcomponents/react-maplibre";
+import {MlFillExtrusionLayer, useMap} from "@mapcomponents/react-maplibre";
 import {MapboxOverlay} from "@deck.gl/mapbox";
 import {PointCloudLayer} from "@deck.gl/layers";
 import {DirectionalLight, LightingEffect} from "@deck.gl/core";
@@ -33,7 +33,7 @@ const MlLasLayer = () => {
         return data;
     }
 
-    const { data, isLoading } = useQuery({
+    const {data, isLoading} = useQuery({
         queryKey: ["point-cloud"],
         queryFn: fetchPointCloud
     });
@@ -55,7 +55,7 @@ const MlLasLayer = () => {
                 shadow: false,
             });
 
-            const lightingEffect = new LightingEffect({ directionalLight });
+            const lightingEffect = new LightingEffect({directionalLight});
 
             const overlay = new MapboxOverlay({
                 interleaved: true,
@@ -91,6 +91,8 @@ const MlLasLayer = () => {
             console.error("Fehler beim Laden der Punktwolke:", error);
         } finally {
             setLoading(false);
+            mapHook.map.setPitch(60);
+            mapHook.map.rotateTo(110);
         }
     };
 
@@ -105,7 +107,7 @@ const MlLasLayer = () => {
     //cam flying in the center of any pointcloud
     useEffect(() => {
         if (mapHook.map && centerPointCloud) {
-            mapHook.map.flyTo({center: centerPointCloud, zoom: 15});
+            mapHook.map.flyTo({center: centerPointCloud, zoom: 21});
             setLoading(false);
         }
     }, [centerPointCloud, mapHook.map]);
