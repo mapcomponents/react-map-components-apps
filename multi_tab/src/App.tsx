@@ -42,7 +42,7 @@ function App() {
                 options={{
                     style: "https://wms.wheregroup.com/tileserver/style/osm-bright.json",
                     zoom: 12.75,
-                    center: [7.1, 50.73],
+                    center: [7.10000, 50.7325],
                 }}
                 style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0}}
             />
