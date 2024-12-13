@@ -1,79 +1,104 @@
 {
-   "AppRunningContest": {
-      "name": "AppRunningContest",
-      "title": "Running contest",
-      "description": "A WebGis application which shows the results of a running contest between members of the different WhereGroup company locations in Germany.",
-      "i18n": {
-         "de": {
-            "title": "Laufwettbewerb",
-            "description": "Eine WebGis Anwendung die den Laufwettbewerb zwischen Mitarbeitern der verschiedenen WhereGroup Standorte in Deutschland darstellt."
-         }
-      },
-      "tags": [],
-      "category": "",
-      "type": "application",
-      "components": [
-         "MlTransitionGeoJsonLayer",
-         "MlGeoJsonLayer",
-         "MlVectorTileLayer"
-      ],
-      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
-      "demos": [
-         {
-            "name": "Demo",
-            "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
-         }
-      ]
-   },
-   "AppWebGis": {
-      "name": "AppWebGis",
-      "title": "WebGis",
-      "description": "An example of a WebGis application with different measure tools, visualizing multiple layers containg various data within north-rhine westphalia",
-      "i18n": {
-         "de": {
-            "title": "WebGis",
-            "description": "Eine WebGis Anwenung mit Messwerkzeugen, dargestellt werden mehere Layer mit unetrschiedlichen Informationen in NRW"
-         }
-      },
-      "tags": [],
-      "category": "",
-      "type": "application",
-      "components": [
-         "MlGeoJsonLayer",
-         "MlIconLayer",
-         "MlWmsLoader",
-         "MlNavigationTools"
-      ],
-      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
-      "demos": [
-         {
-            "name": "Demo",
-            "url": "https://mapcomponents.github.io/react-map-components-apps/webGis/"
-         }
-      ]
-   },
-   "PowerPlantsApp": {
-      "name": "PowerPlantsApp",
-      "title": "World Power Plants",
-      "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
-      "i18n": {
-         "de": {
-            "title": "Energiekraftwerke weltweit",
-            "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
-         }
-      },
-      "tags": [],
-      "category": "",
-      "type": "application",
-      "components": ["MlGeoJsonLayer", "MlWmsLoader", "MlNavigationTools"],
-      "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
-      "demos": [
-         {
-            "name": "Demo",
-            "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
-         }
-      ]
-   },
+  "AppRunningContest": {
+    "name": "AppRunningContest",
+    "title": "Running contest",
+    "description": "A WebGis application which shows the results of a running contest between members of the different WhereGroup company locations in Germany.",
+    "i18n": {
+      "de": {
+        "title": "Laufwettbewerb",
+        "description": "Eine WebGis Anwendung die den Laufwettbewerb zwischen Mitarbeitern der verschiedenen WhereGroup Standorte in Deutschland darstellt."
+      }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "components": [
+      "MlTransitionGeoJsonLayer",
+      "MlGeoJsonLayer",
+      "MlVectorTileLayer"
+    ],
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppRunningContest.png",
+    "demos": [
+      {
+        "name": "Demo",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/running_contest/"
+      }
+    ]
+  },
+  "AppWebGis": {
+    "name": "AppWebGis",
+    "title": "WebGis",
+    "description": "An example of a WebGis application with different measure tools, visualizing multiple layers containg various data within north-rhine westphalia",
+    "i18n": {
+      "de": {
+        "title": "WebGis",
+        "description": "Eine WebGis Anwenung mit Messwerkzeugen, dargestellt werden mehere Layer mit unetrschiedlichen Informationen in NRW"
+      }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "components": [
+      "MlGeoJsonLayer",
+      "MlIconLayer",
+      "MlWmsLoader",
+      "MlNavigationTools"
+    ],
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/AppWebGis.png",
+    "demos": [
+      {
+        "name": "Demo",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/webGis/"
+      }
+    ]
+  },
+  "PowerPlantsApp": {
+    "name": "PowerPlantsApp",
+    "title": "World Power Plants",
+    "description": "A WebGis application providing precise Information about various types of energy generation across the whole planet ",
+    "i18n": {
+      "de": {
+        "title": "Energiekraftwerke weltweit",
+        "description": "Eine WebGis-Anwendung welche Inofrmationen über Energieerzeugung auf der ganzen Welt darstellt"
+      }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "components": [
+      "MlGeoJsonLayer",
+      "MlWmsLoader",
+      "MlNavigationTools"
+    ],
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PowerPlants.png",
+    "demos": [
+      {
+        "name": "Demo",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/powerplants/"
+      }
+    ]
+  },
+  "PointCloud": {
+    "name": "PointCloud",
+    "title": "PointCloud on world map",
+    "description": "Ever heard of a PointCloud? Basically, it's a set of points placed in 3-dimensional space creating a detailed 3D object. This application contains an example of a point cloud, but projected onto the world map.",
+    "i18n": {
+      "de": {
+        "title": "Energiekraftwerke weltweit",
+        "description": "Haben Sie schon einmal von einer PointCloud gehört? Im Grunde genommen handelt es sich um eine Reihe von Punkten, die im dreidimensionalen Raum platziert sind und ein detailliertes 3D-Objekt bilden. Diese Anwendung enthält ein Beispiel für eine Punktwolke, allerdings projiziert auf die Weltkarte."
+      }
+    },
+    "tags": [],
+    "category": "",
+    "type": "application",
+    "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/PointCloudDemoThumbnail.png",
+    "demos": [
+      {
+        "name": "Demo",
+        "url": "https://mapcomponents.github.io/react-map-components-apps/pointcloud/"
+      }
+    ]
+  },
    "MultiTab": {
       "name": "MultiTab",
       "title": "Multi-Tab Demo",
