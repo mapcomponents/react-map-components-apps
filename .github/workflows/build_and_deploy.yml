@@ -40,6 +40,13 @@ jobs:
           CI=false yarn build
           cd ..
           cp -r multi_tab/dist docs-build/multi_tab
+      - name: Install and build pointcloud🔧
+        run: |
+          cd pointcloud
+          yarn
+          CI=false yarn build
+          cd ..
+          cp -r pointcloud/dist docs-build/pointcloud
       - name: copy catalogue metadata
         run: |
           cp mc_meta.json docs-build/mc_meta.json
