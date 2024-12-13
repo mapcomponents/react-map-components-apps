@@ -91,8 +91,6 @@ const MlLasLayer = () => {
             console.error("Fehler beim Laden der Punktwolke:", error);
         } finally {
             setLoading(false);
-            mapHook.map.setPitch(60);
-            mapHook.map.rotateTo(110);
         }
     };
 

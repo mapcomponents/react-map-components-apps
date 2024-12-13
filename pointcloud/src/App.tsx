@@ -10,7 +10,9 @@ function App() {
                     style: "https://wms.wheregroup.com/tileserver/style/osm-bright.json",
                     zoom: 10,
                     maxZoom: 24,
-                    center: [7.842609, 47.997791]
+                    center: [7.842609, 47.997791],
+                    pitch: 60,
+                    bearing: 188
                 }}
                 style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0}}
             />
