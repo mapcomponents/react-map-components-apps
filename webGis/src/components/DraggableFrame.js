@@ -12,7 +12,7 @@ import { useMediaQuery } from "@mui/material";
 
 import BottomSidebar from "./BottomSidebar";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   icon: {
     width: "30px",
     margin: "10px",
@@ -34,10 +34,10 @@ function DraggableFrame(props) {
   var startPos;
 
   useEffect(() => {
-    if (props.componentId == "toolbar") {
+    if (props.componentId === "toolbar") {
       window.addEventListener(
         "resize",
-        function (event) {
+        function () {
           setPos({ ...pos, x: window.innerWidth - 100 });
         },
         true
@@ -91,7 +91,7 @@ function DraggableFrame(props) {
     if (index > -1) {
       newState.splice(index, 1);
 
-      if (props.componentId == "featureInfo") {
+      if (props.componentId === "featureInfo") {
         appContext.setFeatureInfoEnabled(false);
       }
     }

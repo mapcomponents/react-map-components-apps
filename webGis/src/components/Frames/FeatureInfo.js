@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 
 import Grid from "@mui/material/Grid";
 
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FeatureInfo(props) {
+function FeatureInfo() {
   const classes = useStyles(theme);
 
   const appContext = useContext(AppContext);

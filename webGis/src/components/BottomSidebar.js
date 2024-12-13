@@ -1,14 +1,12 @@
 import * as React from "react";
 import { Global } from "@emotion/react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled,  } from "@mui/material/styles";
 import {
   Box,
   Typography,
-  CssBaseline,
   SwipeableDrawer,
-  autocompleteClasses,
-} from "@mui/material/";
-import { grey } from "@mui/material/colors";
+  } from "@mui/material/";
+
 
 const drawerBleeding = 56;
 
