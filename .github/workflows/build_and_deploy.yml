@@ -40,7 +40,7 @@ jobs:
           CI=false yarn build
           cd ..
           cp -r multi_tab/dist docs-build/multi_tab
-      - name: Install and build multi-tab🔧
+      - name: Install and build pointcloud🔧
         run: |
           cd pointcloud
           yarn
