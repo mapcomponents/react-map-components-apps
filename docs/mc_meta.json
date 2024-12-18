@@ -84,7 +84,7 @@
     "description": "Ever heard of a PointCloud? Basically, it's a set of points placed in 3-dimensional space creating a detailed 3D object. This application contains an example of a point cloud, but projected onto the world map.",
     "i18n": {
       "de": {
-        "title": "Energiekraftwerke weltweit",
+        "title": "PointCloud auf der Weltkarte",
         "description": "Haben Sie schon einmal von einer PointCloud gehört? Im Grunde genommen handelt es sich um eine Reihe von Punkten, die im dreidimensionalen Raum platziert sind und ein detailliertes 3D-Objekt bilden. Diese Anwendung enthält ein Beispiel für eine Punktwolke, allerdings projiziert auf die Weltkarte."
       }
     },
