@@ -1,5 +1,5 @@
-import {AppBar, Box, Button, Slider, Switch, Typography} from "@mui/material";
-import React, {useState} from "react";
+import {Box, Button, Slider, Switch, Typography} from "@mui/material";
+import React, {useEffect, useState} from "react";
 import {Sidebar, TopToolbar} from "@mapcomponents/react-maplibre";
 
 export default function PointCloudSettings(props) {
@@ -12,6 +12,18 @@ export default function PointCloudSettings(props) {
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
+    function debounce(func, timeout = 300) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, timeout);
+        };
+    }
+
+    const processChange = debounce(() => saveData());
+
     const saveData = () => {
         props.setPointSize(pointSize);
         props.setLight(light);
@@ -21,15 +33,19 @@ export default function PointCloudSettings(props) {
         props.setBlue(blue);
     }
 
+    useEffect(() => {
+        processChange();
+    }, [pointSize, light, intensity, red, green, blue]);
+
     return (
         <>
             <TopToolbar buttons={
                 <Button
-                    variant= {sidebarOpen?"outlined":"contained"}
-                    onClick={() => setSidebarOpen(true)}
+                    variant={sidebarOpen ? "outlined" : "contained"}
+                    onClick={() => setSidebarOpen(!sidebarOpen)}
                 >PointCloud settings</Button>
-                }/>
-            <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} >
+            }/>
+            <Sidebar open={sidebarOpen} setOpen={setSidebarOpen}>
                 <Box
                     sx={{
                         marginTop: '20px',
@@ -37,15 +53,19 @@ export default function PointCloudSettings(props) {
                 >
                     {/* Headline */}
                     <Typography
-                        variant="h4"
+                        sx={{
+                            fontSize: '1.25rem',
+                            marginBottom: '5px',
+                        }}
                     >
                         PointCloud Settings
                     </Typography>
-                    <hr width='99%'/>
-
                     {/* PointSize */}
                     <Typography
                         variant="h6"
+                        sx={{
+                            fontSize: '1rem',
+                        }}
                     >
                         Point Size
                     </Typography>
@@ -63,6 +83,9 @@ export default function PointCloudSettings(props) {
                     {/* Light */}
                     <Typography
                         variant="h6"
+                        sx={{
+                            fontSize: '1rem',
+                        }}
                     >
                         Light
                     </Typography>
@@ -73,27 +96,38 @@ export default function PointCloudSettings(props) {
                         }}
                     />
 
-                    {/* Lightintensity */}
-                    <Typography
-                        variant="h6"
-                    >
-                        Light intensity
-                    </Typography>
-                    <Slider
-                        defaultValue={1.7}
-                        onChange={(e) => {
-                            setIntensity(e.target.value)
-                        }}
-                        aria-label="small"
-                        valueLabelDisplay="auto"
-                        min={0}
-                        max={3}
-                        step={0.1}
-                    />
+                    {/* Lightintensity */
+                        light &&
+                        <>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontSize: '1rem',
+                                }}
+                            >
+                                Light intensity
+                            </Typography>
+                            <Slider
+                                defaultValue={1.7}
+                                onChange={(e) => {
+                                    setIntensity(e.target.value)
+                                }}
+                                aria-label="small"
+                                valueLabelDisplay="auto"
+                                min={0}
+                                max={3}
+                                step={0.1}
+                            />
+                        </>
+
+                    }
 
                     {/* Color */}
                     <Typography
                         variant="h6"
+                        sx={{
+                            fontSize: '1rem',
+                        }}
                     >
                         Color
                     </Typography>
@@ -102,15 +136,17 @@ export default function PointCloudSettings(props) {
                     <Box
                         sx={{
                             display: 'flex',
+                            alignItems: 'center',
                         }}
                     >
                         <Typography
                             variant="body1"
                             sx={{
                                 width: '10px',
+                                fontSize: '1rem',
                             }}
                         >
-                            r:
+                            R:
                         </Typography>
                         <Slider
                             sx={{
@@ -133,15 +169,17 @@ export default function PointCloudSettings(props) {
                     <Box
                         sx={{
                             display: 'flex',
+                            alignItems: 'center',
                         }}
                     >
                         <Typography
                             variant="body1"
                             sx={{
                                 width: '10px',
+                                fontSize: '1rem',
                             }}
                         >
-                            g:
+                            G:
                         </Typography>
                         <Slider
                             sx={{
@@ -164,15 +202,17 @@ export default function PointCloudSettings(props) {
                     <Box
                         sx={{
                             display: 'flex',
+                            alignItems: 'center',
                         }}
                     >
                         <Typography
                             variant="body1"
                             sx={{
                                 width: '10px',
+                                fontSize: '1rem',
                             }}
                         >
-                            b:
+                            B:
                         </Typography>
                         <Slider
                             sx={{
@@ -190,27 +230,9 @@ export default function PointCloudSettings(props) {
                             step={1}
                         />
                     </Box>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'right',
-                            marginTop: "25px"
-                        }}
-                    >
-                        <Button
-                            variant="contained"
-                            disabled={props.loading}
-                            sx={{
-                                color: 'white',
-                            }}
-                            onClick={() => saveData()}
-                        >
-                            Apply
-                        </Button>
-                    </Box>
-
                 </Box>
             </Sidebar>
         </>
-    );
+    )
+        ;
 }
