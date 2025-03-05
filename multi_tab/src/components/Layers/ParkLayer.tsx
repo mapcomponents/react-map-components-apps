@@ -33,9 +33,9 @@ export default function ParkLayer({
                         }}
                         options={{
                             paint: {
-                                "fill-color": "#176A17",
+                                "fill-color": "#388E3C",
                                 "fill-outline-color": '#000',
-                                "fill-opacity": 0.5,
+                                "fill-opacity": 0.8,
                             },
                         }}
                         labelProp={"name"}

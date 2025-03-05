@@ -88,7 +88,7 @@ const DataTable = (props) => {
                                 hover={!(prop["@id"] === props.selected)}
                                 onClick={() => selecting(prop["@id"], `${prop.amenity}.json`)}
                                 key={prop["@id"]}
-                                sx={{ background: prop["@id"] === props.selected ? "#b1b1ff" : "#fff" }}
+                                sx={{ background: prop["@id"] === props.selected ? "#B3E6FA" : "#fff" }}
                             >
                                 {keyList?.map((key) => (
                                     <TableCell key={key} sx={{ maxWidth: "150px" }}>
