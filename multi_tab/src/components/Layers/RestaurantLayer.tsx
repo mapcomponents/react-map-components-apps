@@ -34,7 +34,7 @@ export default function RestaurantLayer({
                         }}
                         options={{
                             paint: {
-                                "circle-color": "#ffbf00",
+                                "circle-color": "#CF003D",
                                 "circle-opacity": 0.75,
                                 "circle-stroke-color": '#000',
                                 "circle-stroke-width": 1,

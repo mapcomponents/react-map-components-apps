@@ -49,12 +49,12 @@ const MlHighlightFeature = (props: MlHighlightFeatureProps) => {
     const [paint, setPaint] = useState<any>();
     const [layerType, setLayerType] = useState<MlGeoJsonLayerProps['type']>('circle');
 
-    const defaultColor = '#40e0d0';
+    const defaultColor = '#CCD22A';
 
     const variant = {
         dark: {color: '#555555', opacity: 0.5},
-        outline: {color: defaultColor, lineColor: '#40e0d0', lineWidth: 6, opacity: 1},
-        hell: {color: '#40e0d0', opacity: 1},
+        outline: {color: defaultColor, lineColor: '#CCD22A', lineWidth: 6, opacity: 1},
+        hell: {color: '#CCD22A', opacity: 0.8},
     };
 
     function getHighlightedFeature(feature: Feature) {
