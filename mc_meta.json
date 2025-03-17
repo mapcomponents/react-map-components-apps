@@ -123,14 +123,14 @@
       }
     ]
   },
-  "3dMeshLayer": {
-    "name": "3dTileLayer",
-    "title": "3D Tile Layer Demo",
-    "description": "This application is using a 3D Tile-Layer to render buildings in a 3-dimentional space.",
+  "3dTilesLayer": {
+    "name": "3dTilesLayer",
+    "title": "3D Tiles Layer Demo",
+    "description": "This application is using a 3D Tiles-Layer to render buildings in a 3-dimentional space.",
     "i18n": {
       "de": {
-        "title": "3D Tile Layer Demo",
-        "description": "Diese Anwendung nutzt eine 3D Tile-Layer um Gebäude 3 - dimensional darzustellen."
+        "title": "3D Tiles Layer Demo",
+        "description": "Diese Anwendung nutzt eine 3D Tiles-Layer um Gebäude 3 - dimensional darzustellen."
       }
     },
     "tags": [],
