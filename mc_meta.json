@@ -126,18 +126,18 @@
   "3dTilesLayer": {
     "name": "3dTilesLayer",
     "title": "3D Tiles Layer Demo",
-    "description": "This application is using a 3D Tiles-Layer to render buildings in a 3-dimentional space.",
+    "description": "This application is using a 3D Tiles-Layer to render buildings in a three-dimentional space.",
     "i18n": {
       "de": {
         "title": "3D Tiles Layer Demo",
-        "description": "Diese Anwendung nutzt eine 3D Tiles-Layer um Gebäude 3 - dimensional darzustellen."
+        "description": "Diese Anwendung nutzt eine 3D Tiles-Layer um Gebäude dreidimensional darzustellen."
       }
     },
     "tags": [],
     "category": "",
     "type": "application",
     "components": [
-      "MlWsmLoader"
+      "MlWmsLoader"
     ],
     "thumbnail": "https://mapcomponents.github.io/react-map-components-apps/assets/thumbnails/3dTileLayer.png",
     "demos": [
