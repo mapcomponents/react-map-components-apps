@@ -31,7 +31,7 @@ const AppContextProvider = ({ children }) => {
   const [rawProgressData, setRawProgressData] = useState([]);
   const [routeProgressPosition, setRouteProgressPosition] = useState(false);
   const [users, setUsers] = useState([]);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [goalMarkerPosition, setGoalMarkerPosition] = useState(false);
   const meanTeamProgress = useMemo(() => {
     let displayDateDateObj = new Date(displayDate);

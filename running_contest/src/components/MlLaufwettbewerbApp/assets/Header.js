@@ -13,6 +13,8 @@ import {
   Chip,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 function Header() {
   const appContext = useContext(AppContext);
@@ -32,22 +34,47 @@ function Header() {
           }}
           alt=""
         />
-        <h1 style={{ fontWeight: 'normal',margin: 0, padding: 0, fontSize: "1.8em", lineHeight: "1.8em", color: theme.palette.text.primary }}>running contest</h1>
+        <h1
+          style={{
+            fontWeight: "normal",
+            margin: 0,
+            padding: 0,
+            fontSize: "1.8em",
+            lineHeight: "1.8em",
+            color: theme.palette.text.primary,
+          }}
+        >
+          running contest
+        </h1>
       </Grid>
-      <Grid xs={6} item style={{ display: "flex", alignItems:'center', justifyContent: "flex-end" }}>
+      <Grid
+        xs={6}
+        item
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+        }}
+      >
         <FormControlLabel
           style={{ marginBottom: 0, color: theme.palette.text.primary }}
-          labelPlacement="start"
           control={
-            <Switch
-              checked={appContext.darkMode}
-              onChange={() => {
-                appContext.setDarkMode(!appContext.darkMode);
-              }}
-              name="dark_mode_switch"
-            />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <LightModeIcon
+                style={{ color: !appContext.darkMode ? "#FFA000" : "#888" }}
+              />
+              <Switch
+                checked={appContext.darkMode}
+                onChange={() => {
+                  appContext.setDarkMode(!appContext.darkMode);
+                }}
+                name="theme_switch"
+              />
+              <DarkModeIcon
+                style={{ color: appContext.darkMode ? "#1565C0" : "#888" }}
+              />
+            </div>
           }
-          label="Dark Mode"
         />
         {/**
           appContext.loggedIn || (
@@ -94,14 +121,19 @@ function Header() {
                 variant="outlined"
                 size="medium"
                 color="primary"
-                style={{marginLeft: "10px",padding:'2px', fontSize:'0.875rem', fontWeight:'500',}}
+                style={{
+                  marginLeft: "10px",
+                  padding: "2px",
+                  fontSize: "0.875rem",
+                  fontWeight: "500",
+                }}
                 avatar={
                   <Avatar
                     alt={appContext.user.name}
                     style={{}}
                     src={
                       appContext.user.avatar_url ||
-                        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAAAAAAdJSU2AAACNElEQVR4AdXYBa7jMBCA4b3/JZahzIkjp2qt+BWUWnG5ln2XxaJJb2b5F2ukL4wvzK/rP7bUcbf92u6oftLSe1ldk8efsfaVeEjusZZeC6e1RllaCk/yG6ag1lZ4WwPX69uyD6tAe/g2ipAlNMRS37awDLaFrpcMWxXQOi0jnWCWjFkSZomYJWDWKmatYNZyEWkJsvQimoZYah5NgdaLxagCtF6GRy0DshZPkeYwS/KIJWGWYjwYUzDLxCwDtJ54OKglimBLqHWahii2g1pmHLLGBmwVoRjcKlmgOdw65H5qKuGWCVi5Qlhs6m1sENZi4q3AWNvca5UYy2RjT/SAsiZey6CsIvc0wVlV5lJ0ibPMyLUGCmlxQq0IM0hLdWyro7CWEc3sXsqaK4O2zLxOsmtpfW5Q1u68ZrVmepaaNXEewawtI9X5Xl3U3n1qND6+rfPzvqoIWz/fklNCSLY153YV53J/XUxGCJnKZ1lajsn3/Ffegf6Y5pV2LUsSNL2UHzxUfh3TlYpZqqTpXZm0KZk9zJcqaEmaWPHDw0pxe05K7bWOLHFLWXVetqpYmrjle4+1y0aBaF4UOQ1NU+lYezJClkjLUnSEjqhH6zjAW4OjtY39Ibq+sawUb6W2RQfoqG0VeKuwrRJvlba17faRdbe2pTtYq6Nty/S7yAbGsQjWIq41wVoT1+IdZNy1djUcVdu5lklQWC0xHkt1X31qNEE1Pr3qKv/9XiSNj6Aaifj3/69+AYujsR/MvkpZAAAAAElFTkSuQmCC"
+                      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAAAAAAdJSU2AAACNElEQVR4AdXYBa7jMBCA4b3/JZahzIkjp2qt+BWUWnG5ln2XxaJJb2b5F2ukL4wvzK/rP7bUcbf92u6oftLSe1ldk8efsfaVeEjusZZeC6e1RllaCk/yG6ag1lZ4WwPX69uyD6tAe/g2ipAlNMRS37awDLaFrpcMWxXQOi0jnWCWjFkSZomYJWDWKmatYNZyEWkJsvQimoZYah5NgdaLxagCtF6GRy0DshZPkeYwS/KIJWGWYjwYUzDLxCwDtJ54OKglimBLqHWahii2g1pmHLLGBmwVoRjcKlmgOdw65H5qKuGWCVi5Qlhs6m1sENZi4q3AWNvca5UYy2RjT/SAsiZey6CsIvc0wVlV5lJ0ibPMyLUGCmlxQq0IM0hLdWyro7CWEc3sXsqaK4O2zLxOsmtpfW5Q1u68ZrVmepaaNXEewawtI9X5Xl3U3n1qND6+rfPzvqoIWz/fklNCSLY153YV53J/XUxGCJnKZ1lajsn3/Ffegf6Y5pV2LUsSNL2UHzxUfh3TlYpZqqTpXZm0KZk9zJcqaEmaWPHDw0pxe05K7bWOLHFLWXVetqpYmrjle4+1y0aBaF4UOQ1NU+lYezJClkjLUnSEjqhH6zjAW4OjtY39Ibq+sawUb6W2RQfoqG0VeKuwrRJvlba17faRdbe2pTtYq6Nty/S7yAbGsQjWIq41wVoT1+IdZNy1djUcVdu5lklQWC0xHkt1X31qNEE1Pr3qKv/9XiSNj6Aaifj3/69+AYujsR/MvkpZAAAAAElFTkSuQmCC"
                     }
                   />
                 }
