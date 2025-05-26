@@ -127,7 +127,7 @@ const MlLaufwettbewerbApp = (props) => {
       }
       playDisplayDates();
     }
-  }, [playing, appContext.orderedDates]);
+  }, [playing, appContext.orderedDates, appContext, playDisplayDates]);
 
   return (
     <>

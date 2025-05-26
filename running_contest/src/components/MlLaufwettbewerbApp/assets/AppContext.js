@@ -9,7 +9,6 @@ import * as turf from "@turf/turf";
 import route from "./route.json";
 //const routeTotalKm = Math.round(turf.length(route)*10)/10;
 const routeTotalKm = 1751.3;
-const debug = false;
 const useMercureServer = false;
 
 const backendUrl = "";

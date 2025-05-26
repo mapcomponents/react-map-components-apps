@@ -63,15 +63,6 @@ function Leaderboard() {
     }
   }, [selectedUser, appContext.route]);
 
-  const showIndividualProgress = (distance) => {
-    if (distance > 0) {
-      let tmpRouteProgess = turf.lineChunk(appContext.route, distance);
-      if (typeof tmpRouteProgess.features[0] !== "undefined") {
-        setIndividualProgress(tmpRouteProgess.features[0]);
-      }
-    }
-  };
-
   return (
     <>
       <div key="navbuttonsdiv" className="navigation">

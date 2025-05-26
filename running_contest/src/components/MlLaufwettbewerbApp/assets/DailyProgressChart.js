@@ -35,7 +35,7 @@ function DailyProgressChart(props) {
     if (dataTmp.length && typeof props.onClick === "function") {
       props.onClick(dataTmp[dataTmp.length - 1].x);
     }
-  }, [props.data]);
+  }, [props, props.data]);
 
   const chartTheme = useMemo(() => {
     return {
